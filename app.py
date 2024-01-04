@@ -5,6 +5,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 from tensorflow.keras.preprocessing import image
 from flask import Flask,render_template,request,redirect,url_for
+from asgiref.wsgi import WsgiToAsgi
 import requests
 
 app = Flask(__name__, static_url_path='/uploads')
@@ -608,5 +609,7 @@ def Corn___Healthy():
 def Corn___Northern_Leaf_Blight():
     return render_template('Corn___Northern_Leaf_Blight.html')
 
-if __name__=="__main__":
-    app.run(debug=False)
+asgi_app = WsgiToAsgi(app)
+
+if __name__ == "__main__":
+    asgi_app.run(debug=False)
