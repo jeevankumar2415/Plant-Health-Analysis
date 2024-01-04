@@ -608,8 +608,5 @@ def Corn___Healthy():
 @app.route('/Corn___Northern_Leaf_Blight')
 def Corn___Northern_Leaf_Blight():
     return render_template('Corn___Northern_Leaf_Blight.html')
-
-asgi_app = WsgiToAsgi(app)
-
-if __name__ == "__main__":
-    asgi_app.run(debug=False)
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=8000,debug=False)
