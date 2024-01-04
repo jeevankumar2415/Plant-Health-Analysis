@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p> <q>Healthy Tomato</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Healthy Tomato</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <li><b>Green and vibrant foliage:</b> The leaves of a healthy tomato plant are typically a deep green color and appear lush and vibrant. They should not show signs of wilting, yellowing, or browning.</li>
+         <li><b>Strong stems:</b> Healthy tomato plants have sturdy stems that can support the weight of the plant and its fruits. The stems should be upright and free from any signs of weakness, bending, or damage.</li>
+         <li><b>Abundant flowering:</b> Healthy tomato plants produce an abundance of flowers. These flowers are typically small and yellow in color. The presence of flowers indicates that the plant is ready for pollination and potential fruit set.</li>
+         <li><b>Fruit development:</b> A healthy tomato plant will develop fruits of appropriate size, shape, and color based on the specific tomato variety. The fruits should be free from deformities, cracks, rot, or other signs of disease or damage.</li>
+          <li><b>Balanced growth:</b> A healthy tomato plant exhibits balanced growth, with a well-developed root system and a proportional ratio of foliage to fruit production. The plant should not appear stunted, excessively leggy, or overly bushy.</li>
+          <li><b>Resistance to pests and diseases:</b> Healthy tomato plants are more resistant to common pests and diseases. While it is still possible for them to be affected, healthy plants generally show fewer signs of pest damage or disease symptoms.</li>
+      </ul>  
+
+
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8vPDzNPninBVzqYCjKCOkRmjO7HnoPavVyg&usqp=CAU" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+            
+        </div>
+          <div class="column">
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGK-4JWuG6l5NzTP1yY-y3_JnsM-YLDvWdVg&usqp=CAU" alt="Disease image" style="width:100%">
+            
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Growing healthy tomato plants involves several important steps to ensure a successful harvest. Here's a guide on how to cultivate healthy tomato plants:
+
+          Choose the Right Varieties: There are many tomato varieties available, each with its own characteristics. Consider factors like size, growth habit (determinate or indeterminate), disease resistance, and intended use (slicing, cherry, sauce) when selecting tomato plants.</p>
+        <p class="imp"><b>Note:</b><i>The Scientific Name Of Tomato Plant is<b>Solanum lycopersicum</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"><b>Choose the Right Varieties: </b>There are many tomato varieties available, each with its own characteristics. Consider factors like size, growth habit (determinate or indeterminate), disease resistance, and intended use (slicing, cherry, sauce) when selecting tomato plants.</p>
+        <p class="para"><br><b><h3>Select a Good Location:</h3></b><br>
+<p>   </p><b>Sunlight:</b> Tomatoes thrive in full sun, receiving at least 6-8 hours of direct sunlight daily.<br>
+<p>   </p><b>Soil:</b> Choose well-draining soil with a pH of around 6.0 to 7.0. Amending the soil with organic matter, like compost, can improve its structure and fertility.
+          <br><br><b><h3>Planting:</h3></b> <br>
+<p>   </p> <b>Timing:</b> Plant tomatoes outdoors after the last frost date in your area. You can start seeds indoors 6-8 weeks before the last frost date.<br>
+<p>   </p><b>Spacing:</b> Space plants appropriately to allow for air circulation and prevent disease. Indeterminate varieties may need more space than determinate ones.
+          <br><br><b><h3>Provide Proper Support:</h3></b><br>
+<p>   </p><b>Staking or Caging:</b> Most tomato plants benefit from staking or caging to keep them off the ground. This promotes better airflow and reduces the risk of diseases.
+          <br><br><b><h3>Watering:</h3></b> <br>
+<p>   </p><b>Consistent Moisture:</b> Tomatoes require consistent watering, aiming to keep the soil evenly moist but not waterlogged. Avoid letting the soil dry out completely between waterings.
+          <br><br><b><h3>Fertilization:</h3></b><br>
+<p>   </p><b>Balanced Fertilizer:</b> Use a balanced fertilizer to provide essential nutrients. Too much nitrogen can result in excessive foliage growth at the expense of fruit production.
+          <br><br><b><h3>Pruning:</h3></b><br>
+          <p>   </p><b>Remove Suckers:</b> Indeterminate varieties produce suckers (side shoots) between the main stem and branches. Removing these suckers helps focus the plant's energy on fruit production.
+          <br></br><b><h3>Mulching:</h3></b><br>
+          <p>   </p><b>Mulch Benefits:</b> Apply organic mulch around the base of the plants to help retain soil moisture, suppress weeds, and regulate soil temperature.
+          <br><br><b><h3>Disease and Pest Management:</h3></b><br>
+          <p>   </p><b>Rotate Crops:</b> Avoid planting tomatoes in the same spot year after year to reduce the risk of soilborne diseases.
+          <p>   </p><b>Use Resistant Varieties:</b> Select varieties that are resistant to common tomato diseases in your area.
+            <p>   </p><b>
+              Monitor for Pests:</b> Regularly inspect plants for signs of pests like aphids, caterpillars, and tomato hornworms. Use natural or organic pest control methods when needed.
+          <br><br><b><h3>Harvesting:</h3></b><br>
+          <p>   </p><b>Mature Fruit:</b> Harvest tomatoes when they reach their full color and are slightly soft to the touch. They will continue to ripen off the vine.
+          <p>   </p><b><br>Use Pruning Shears:</b> Use pruning shears or a knife to harvest tomatoes, cutting the stem just above the fruit.
+          </p></br>
+          <p class="imp">Remember that tomato cultivation can vary based on your local climate, soil conditions, and specific tomato varieties. Regular care, attention, and a bit of trial and error will help you develop a routine that works best for growing healthy tomato plants in your specific environment.</p>
+    </div> 
+
+
+
+
+</body>
+</html>

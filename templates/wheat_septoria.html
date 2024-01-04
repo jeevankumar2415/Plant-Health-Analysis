@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Wheat Septoria</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Wheat Septoria</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <b>
+        Symptoms of septoria disease typically appear as small, oval-shaped lesions on the lower leaves of wheat plants. The lesions have a distinct dark brown or black color with yellow halos surrounding them. As the disease progresses, the lesions may expand and merge, leading to the formation of larger, irregularly shaped blotches on the leaves. Severely infected leaves can become necrotic and die prematurely.
+      </br>To manage septoria disease in wheat, a combination of cultural, genetic, and chemical control measures can be employed:
+      </b>
+      <ul class="para">
+<li><b>
+        1)Crop rotation:</b> Implementing a crop rotation strategy by avoiding consecutive wheat plantings in the same field can help reduce the carryover of the pathogen. Rotation with non-host crops can disrupt the disease cycle.
+</li><li><b>
+2)Resistant cultivars:</b> Planting wheat varieties with genetic resistance to septoria disease is an effective strategy. Resistant cultivars can limit the severity of the disease and reduce the need for chemical control. Consult with local agricultural extension services or breeders for information on resistant wheat varieties suitable for your region.
+</li><li><b>
+3)Fungicide applications:</b> Fungicides can be used to manage septoria disease in wheat. The timing and frequency of fungicide applications will depend on local disease pressure, weather conditions, and the susceptibility of the wheat variety. Consult with agricultural experts or extension services for specific fungicide recommendations and application guidelines.
+</li><li><b>
+4)Sanitation:</b> Good sanitation practices can help reduce the inoculum source. Removing and destroying crop debris and volunteer wheat plants after harvest can help reduce the carryover of the pathogen.
+</li><li><b>
+5)Balanced nutrition:</b> Proper fertilization and balanced nutrition can contribute to the overall health and vigor of wheat plants, making them more resilient to disease.
+</li><li><b>
+6)Irrigation management:</b> Avoid overhead irrigation or excessive moisture, as prolonged leaf wetness can create favorable conditions for disease development. Opt for irrigation methods that minimize leaf wetness.
+</li><li><b>
+7)Integrated pest management (IPM):</b> Incorporate IPM practices, including the integration of multiple control strategies, such as resistant cultivars, cultural practices, and fungicide applications, to manage septoria disease effectively and sustainably.
+</li> 
+    </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFBgVFRUZGRgaGyMdGxsaGhsbGxsaGyIjIRsdHCEdIy0kGx8qIR0bJjclKi4zNDQ0GiM6PzozPi0zNDEBCwsLEA8QHxISHTMqIys9NTMzMzMzMzMzMzMzNTQzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM//AABEIAMgA/AMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAGAgMEBQcBAAj/xABGEAABAgMDCQUFBgUEAQQDAAABAhEAAyEEMUEGElFhcYGRofAFIrHB0QcTIzJyJEJSYrLhFIKSovEzQ3PCgzRT0uI1RGP/xAAaAQACAwEBAAAAAAAAAAAAAAADBAECBQAG/8QALREAAgECBAUEAgMAAwAAAAAAAAECAxEEITEyEiJBcYEzUWGxBSMTwfBCkdH/2gAMAwEAAhEDEQA/AM8SovRlDGtza2vpC1KpV6ar+tMNKB+6KPV2rooIdQXDPtGHVIWYQ4ljS6j9PtiLavlfVD5I2a6ijvEO2pvGkPXju0R0VmQzaezkslOweMTggkgDqhiPY0slP0iJQTcesI8nJ8zAWHrOmqTs8DAJ7Rpg9/LR+GXof5lEbvlvg9soq2o+EZ57R1/a2oCJadGKl9boZ/Hq9bwGgsgQUAA5L4nUI0z2e1sKdS1j+7OPMxmU0snXidP7RrHs9lZvZ0sn7ylq3BZD8Exo/kXaj5X9kyWQieGOweUR1JJff5xItQOdyjqpZCa6/CM+MshJoHcplNZlA4rQnmVeCTAWitXdy4D9EwY5Wg+4/wDKltyVwHjONApmp67I1sJ6fkZo6Fnk8XtUlx984aEqPlByv5hu8IC8mJZ/i5d5ZKy99c0+sGsz5uEK41867f2DranU3nb6wEZWqa2LJdsxFf5BdBsg1O31gMypL2pd3yo2/KmJwe99iKO4H8/OBGaq9nNKftdxgiyNS0pVXeYo/wBoigVKpjxu84JMj0j3H8yj1wh+s/1svW0L5OEcmip2eDw4Jd0MrNTtPlCKYscVh1jFZ28n4KjjRv6hFoq/rGKvKBbSTpdI5/tF6e5E09yBbOL33Xneet0PdnTAZiBjnVLYgGsMJNCVNc5JLF2O6HezUn3yBoJN2hKmfdD0tGOT2sKJaajdE9u6N8QJfzRPB7o3whNWsIDAHzCAoKo9/WBg3QamARKABS5nuuuuENUeozh+o4tDknTofc8cE/Npmg63j2feXq7Q4Eq0CtbzB2MilpAIFDS+7jvj2c7M+w7/AFMKFwv13c+MN0q+m+7r94g4aYNezUL89sRbSu9w1Lzi71I0RLURfebuDVMQ58p3uoKaLr4vHXMg3SzI7iXxSPKJaUBg+ryhcuSM1AFQEp8ocUnuhhh5CPHzdmV4T1nSx61Rl3tDUDbF/lQjiz11VujWZCa9aW8oxzLSYVW2awuKRuCEvD34tN1W/gIlZA6uYT824tyMbVkwjN7Nsw//AJP/AFZx84xdRq1wD02xumTssHs+yjTIl80j1h38n6S7/wDpFrorLQsZ1NPn+8R1rcdaBD9slsptnlEVSabvSM+LVkJPUpMsU/Z//Kj9K4CBiKVw6wvg5yuUf4U/8iP0rgERf1d08a+D9PyM0tpf5H1tYLuyFkcAN18GMw9/f5wIZF1tKmAHw1Nrcprqvu1QYTfn60wpjH+3wCraiEjx84Bcq1/a1nUgbGQnjB1L8/OATKhL2udf9zZRCcMf3gmD3vsdR1KS0ZxrnECu3UILskUj3AatVfqgWtBAS5Z6l6Po8IKskx9nRrzjxUYdxD/X5LV9Aiki7rAxEnfNv/8AjE6yivCIa8d3XKM+L1FWIOGz1imyn/0wNKwKXsyouSOutsUuVJaWP+QfpMGobkXp7kD6U36Wxh/sms5OBAU+vukecRQDrr4Y6hfyib2On47fkUX4Q9LRjdTawhl/NE9Nw3+EQJXzROSaDfCM9RAZk4wDhQSkAGregrB1JDkwBSHGDG7Ho1hqh1GcP1HTRiS1dLXwiZOL90lutUcNlepqS52bIWVNieEGyGTgml22vdeCW0l2ha1srBmx3boRMcvfU0uxv61x4AgMGoWcm7p8Ik4Wv5QddNmmIVpXQ6G2HR6xJUKCgIxOGttcMTzVOcXch60qQ8ctSWfQXYGcuVKUUKBzEk4FNA7vteH1AijM4828odsaynNALUL0ctcBsGjnD6kpWgKSfmzTuLGPN4iklHiRZxaViPZ/lPX4jGKZRTQu1z1P/uKGruqKR4CNmWv3cslR136AP3jCLVNKyV3FRKidZJPnDf4uCzkQ1ZIjWlSXqrvaL/CNoybtxFiswZwJEsU1JTGIWpYIfF6m+kbNkpIV/B2d7vdoNcXQFJYvQVFdREN46N6a7l6VrkvtJncaL937RWTT4f8AYCL2fIzkpNxzaimKScKf4iBb7Lmk6K/rjFjJRfCK1qbUm+gL5Wh7IvVMQeSx5wCLZmx8BeWg8ysLWVdHeYgAf1QArWHatbyLm1daY28F6fk6ntCfIQD3806EVO1Q4XXQWTar3nxgW9n9ZlobBCBxUfSChXz7zCeL9Z9gVXUbQet8AeUb/wAZO2it/wBwcIPZd2/zgDygJ/i5uAKr3NaAQbBbmdR1Ki0IADVe/rRBlkwPsyNafFRgPtA7oqGvpob/ABwgyyZL2ZB/L/2Jhyvs8l6+gR2RBZWr1ERFIqesDF72JKzpa6dOIqpqGUraeT+sZUZ5tAHHJMryK9aoosqAChDmmd5GvCCHNqIHcqz3UN+I8qb74bobkTT3Io0JxvF9SaERP7I/1ncfIfFPKK5y2/GjPE3sNTzT9Bx/MPSHZaMaqbWX8r5onkUG+IEj5onqw2QlPUQGbNjAOS3eDUa+Dqzi/rTAEvEvVto4YG+GqPUZw/U7LW4BNNF/WiJKF0w33xFQWu6p0IUQo1SzbTBmhlDyk3d0A67tGGyGpiiMA54eF8LzgQXoDrDsIZzr3am40ujkjjsvGhL8rnoL8YjWlQAIxbnhdExK6UIpw59XxAnMc5xU7qRaOpx9I2ZIzUi/OGDDSdunlHlTFoHdveiSxDBnZtXhsivyftKl2azrcHOlIUQcCU6R8tRrdmasWk1XdzncgUbTmlsLr/CMecL8rD5XKbKGbMTLWsgFCUquvuDbK0jFDQEA4MwL3adBFI2rKmf9knm74S9LGhrW6MOYglyXFQa9aIZwULJlanQjzaJLDftjcMm0fY7OVPWVKD3BHw0h3vTodO9qmMNngByaEjwjeuxrR9jkJAAR7hGsgJQl6FJBLlq6ILi9q7lafUnl2UwIGZT7xHdNGDuQG2vEXtNOdLDORw+/E2zKJlpVTOUgF2oVFJ5OYbtk9K5YIILmjVcFQYjd4xg1Gr5e5eu1w2ADK/8A9Mtr/eIA4L/eAUJvOq/RTVvg5yyCV2NKx3QuZLWz356Fln1PygCQ4LX0uO943MJG1O3yK01ZBn7OZYz7QxpmoGupUdEES0987/CKP2bLBVaCDhL499+tUXc/5zs8oQxT/e/H0gNXUSkdb4z/ALfD2ua7fOWJOMH8vCM2ygnPPnMmgmKD4Egl+cMYFczOo6shrILseIIpjhdSkG2TI+zI0Zo8TARPmsk0OGimhjq9IOsnU/Zpf0p8IbxGzyWr6I0PJiUDKUdZirt1maun1EXOTD+7ZqF68aQjtKX8MH8r8hGDfhk38hJQ5EBpFRq8iYGMqjVD0os/pgqbvb/WBHKlXfQKXHxbhGph1zIXpbkU4UM0kX3asSA3TxLyePfWfyCumsQ1KBTm6TfczaDEzJ9TrmDBKUim0w7LaxirtYQST3oslCgbq6Kyz/NvizWbm1wjLURG0fegIny3Syb9QvPQg2Ue6s/lJ4AwEZ7hhxufVshql1GsPoxlSWLm7DCsL94NEeSi8EEJ0k8uUJWgvR2g4wPaqatF4OmE0VQpxDB7t92muuEqQXDVB10pfshCyQ9SWLUF/mxYxKRwpE5nxOOitztEVZJqWLXkYNhqh5QzquzXC6I6zQCuPXWmJSONiyAtXvLDJJvQ6dfcUrNbR3WrtEFImAAKSQEhgQnvF7ma5mINLoDPZf2PNl2YrmhPu5pz5Qcls5JCgoMyc4CWQQblYFxBdOMsISp0AgE95SQSUkaSGfNDlsN0IVY2m/YKpXQM5e2rNsqw5KlJSkE0cEpCq6b4ylaHAcAsb38MI0X2k2xKpUlKT/uKXRyksFJFbnGcdj6xACqWK4YdHq+DYZWiRPNlfaEEju3mnkOJLR9C2KzJCTLzRmIQEssjNo2asA6Mx3a8mtIwXs6Rnz5EunemITRzQrAuje7VMCASUgksCVBwvvAhLCrJcs71UdJMDxkrcK7nQQ7JmD3bgggsaFxXNF4vvMVtpLJGbT5SANr8GEdtNpIzUlno9GxiLaV91OxMYSjeVwGIqXdgOy2H2ZIbupmig1JXm7GAMBKA1Xa7eYN8tK2VJpSag/2zBAWqhAanLpweMb+Ed6X/AGRTd0G/s2TS0fXLFNi4u7QkZxrh5QP+zqaSbSB+KWa4k+8gktcogu0ZuJyru/x9AqqzGkigjNe00tOnDStZ4qNRreNMTh1hGbdrzQJs5nJ94sbO+cOr4ZwOsjqOrKmcnukOOTDSaYRofYSWkSx+RH6YAVyWQRRzoI0co0DsMfAl/Qj9MN4p8iJr6I0XJo/BZ613QvtKW8q+5HkIrsl5awhaie6UnNHBya6g1MTphXaK5iAnuAoUkpUcUEOQWxSQ+sHNoQSU4koJu3kZ/wCHgFm7z6/KA7KdTTEgs2YDvKiIMwKndAZlcHnADBA23qPBiI08MuYUo7ilWpTA0uZq0c/4ifk6nvTdiOPeiApYYPiWDUqW0a3i0yaDiYR+IJve4HHfDk9jC1drLuzJde+LNSaDfECyI72+LJaaCM+b5hQhWmktZ/Ir9MAs2UMQGeoGh7qwb9o0kzT+UjjTzgNCuPRxuh2i8mMUFys4qYG1viG2M26+FywWuGu++G0y2IDvjc7ub3jpnNTOMF7DA5KIapFLqhxfdoxiPOWTgdRIemvyh1IFAWB0Y1uPLlCFLKSMTqfCJWpxyYk7KaPDG6IxQVUDuohIB0kt5xMml01Ok6xiPHw1Q92VKKrRZ0CpVNRpuCgTyETxWRNszeZCEoRLloqESwhCReAkhBejJABQdbahCZ/ZktPfQjvd9wDUuVEbAXIfQoVGM+QEjOZ2DUYjNNQcMXBeItoXVISSX+ZL/KEHOSvic3XnDQ0ZcZPqEa9jLMv5hM2XRkZqlIoAWWQ5pQtmjnUwJrL3aeiNBvgm9oc3Ptac1Oan3QYK+8VKXnKD6aU0iBtaAnvAULOx6akP09qKy1JmSNn95b7Mkfjzm05iSr/rG2z5YLKLd063Lty2xlvsxlZ3aSVN8ktarxoCf+/ONOt89wQMCeRJ8oy/yU3xJL2OU+GLKSfMJUDr8xDC5zJH8vnCpl42+cMKuH8sKJZGe3dlHlan7IoAt8RHPPA8YCJaVXM/hvg5yr/9GHxmoxa4TD4gQDKXtc87vV418H6fljNLaGPsyQ0yeHv92eClPu7w4xpS7MlRIegZsKtXwjMvZuhRmWlaakIQkfUtb4akK4wf2SyEJQFKzy5cl3JIU/N4Rx0FKo23nl9B6dNSuVdokFCgDq8IzLtI/aJ7j/cXd9RFfGNSlWBcqWlKy4StWa5c5hWsoBOJzSkHZGV2xxNXV1+8VnE0dTl6bXhjBayXsLwhwyaK+3YmjNhy3xoPYo+DL+hH6YALQjNSo0dnppvfdwpGhdkD4SPpT+kQzinyIpX6Gg9hpazP+UmE9sL+Gd3nHezltZP5DEftU/CJfERg2u/IZy5fAMS0khWw8mgHyoWP4ojQhI/tfzg6lm/W8Z7lQxtM3H5bicEpHlGxhc5MBR1K9RYOLh6g431i7yeUMxRxKzyCRA8iY4a434HfUtF52BOT7pQIJUFljpDJd9FYar3UAlXNBJZEG9r4n5tA8K7FClpRmoBIFQokY30viTb7RLQgoZlflLgsS4ufRxjJcpOVwLpNR4mDnbaj/CrIxYDeoQGy5V5NTiRz3QYdurzrIyCAygTfnYgMNpBfVAb74gVqbqDg+nCNTDtuL7hqKtEdRMDkJrmtUsfEbY4T1SOIq4c87+MNGYgULvrvGqDpBTpmV/bc77I7NKg9XOJe7RDqUjRvubHRCVB1EUbRz8rok4bl2dV7nfTYdz4ReZDSSrtGQBXNK1EtgEqHiQN8VqzeQHuApSmmC/2W2LPnz5xLBKAhKtBWXPBkn+aKVJ2jJlks0avJDg0vvNWdgX2gjlDPu/iAlgCCFJKQSO7pFAeOOmEzZoISAyipikgMzMVUL357XUatwjq3CnNCq6/As4Jpcbmpro2TPlVwqzMx9pqkG1pTeUS+8dpLJGlgBxgKWABe74DAYeUFPtJS1uDCnuU8XV+3GBVRatzXbtkaOHzpp/AKTzDX2Tpe1zVN8sgh/qWjj8pg9mVBPVx9YBvZCfjWl8Jaeaz6QdTKP1o9YyPyL/dbsDnoVC0V3vzUfKGFpwOrkkxMAx1eR9Ybmy68T4esA4sxawN5ZkCyoBxnJZtIQstzgDUkaGJ0B4Nsu5nwZAOK1k6e6hIH6jAaZbMb6N6YRs4LKkn3+xinoHnsyQ0qavEzkp3ISD4rMH7D5nuam7qmqAXIIZtjT+aYs3NcUp/6tBYueXB1eojKxjf8za/1iadXhkxPa7+7TsGy4u0ZF23LAtMxxULJfbV+cat2nagQgaAPL1jL8rEEWtbP3gk/2h/CGfxrd3chzUpuxS25fdLGuyhjROyx8JH0p/SIze2A3aiSaGnT36I0qwf6aNg8IexW1eQNfoFcqe1nzfynyhq22l5ZHWERETvhEPgfIRGUt360RlKnkUc2Ni7f5xm/bk0qtE0GnxFMdLUHhzjSUCh2+cZja1BU2YWPzrrpdROm66NPCdS9DVkK0nNDNfSgdv8AHlBDk9Z2lJJvU6txPoBA7bLieYGgAeXN4M+z0ZqEj8KUjgBB8Q+RImu7JILrBJVLlpAF4CuN9cKRS2pWcok41DXV0QS2G10CdCRsqKQN24MttAA4CMahJudnqTVmnTSXQgW9Hwlt+AnhUQJ0LvqGsk62rhugymjOQU6QRxpAYFvWhFwxO3a8bFHRnUHk0IUtnzmF1w5woSmpnc/3jygBekPgDqq/GFIK2uA1PBmHRxT1q2gk3HUdphCV3PoqcdW2HS15FMdOoQgynBrQlh5dao5HHlpcOaMX3HCNY9nNgEuxJWpJzlrUt2wLpSX2IRxjJV0BFx6rXfG5ZJkCyWeWkMRLQ5N9yTX+onfC2KlaCXuEgru5dCTnZualQSopVnJXUuSVAg4MqupQbUx2iopWXegxu1MHpQCJUkd4KS4oXOaAk91gUli1wGg5r6Hru2ZjOHfCt/3v2hDFytC3uSna7Mry/mvaySWPu0B64ZxHjzgQmLJrUvpF27ZBLlusKtaxiEIGr5Qa016YGhcQmoqanC/HZGjhValHsgSYe+x9YC7Uo/hl+KvSNAtAqWqCaH+n0jPvZJIUU2ou2cuWl/p94TyIjRLMtK0htLjWKRlfko/tcu30gjhxQIkmTQADq7z5QzOktXUo7O8PSLGVMEvNBvUeQIuiJ78KUtLV8nV1ujPtKzfTUp/Dy3AL2hzQEyEgV76txKUD9KoETMcH0evTwWe0VQ97JTcRLdtOctdP7YD7RLLEg9br49Fgkv4YlYqyNGyIT9jkjSpZ/vX6QQTCyiNCfOKfI1ObZLM2CFKLaSpZPjE+fP7yusTGTiOarLu/sWlqyMtROa/VRAdlilrQklqyk0vuUrz8YK0KuPV8CGWsz46P+Ib++uh60w3g1advgiluBy0hkkM5AcYs/k0aTZB3E7B4RmtsUClxe13kY0uwjuJ2DwhrFaLz/Rav0LFCvhkbfEQ0pd9OmEdll6dYQi0pYjrCENEgLHuz0ZxL1GuMotQ+IpqArVeDe5/aNl7Bk5yVbfKMatLZ6wfxmmivKG8FK8pLsMUo2VyJMSc9KCSQSNjEiDxCaHS8AtgTn2lAH4weFfKNBSjuAYk9da4axHRfBSs80TOzrXmO+rxiHOnZ6yd/IR40A3vEeV5eUIxppS4gLeViQfKAzOAJp8pNMHB86QY1pAnbEATFAfjJ502CHaQeh1GJiKawzXXgaobWgv8AMIUtTX4B+HjC0S84Z2dfqMGGTiE6tfROsjjCwgFnDb8NI6whKF0AGJ4aHjqwQdoFaYOzU0HlHHHBKK1iWx7ykppoUQH53RunZQDDNGaRhhcb+CYyLJGRnWyUCPkzlEUqyS135lJMbF2UtJma6vowQPAxmY6rzxiv9dloT4XYtLOVOAUsADQly7gAgfdBGED3ac8LBYVKn3FP7mLuecxKi5oMSHoHwpgOJgXnLdZ1E8iB5QrinmkiKkrK3uZlla/8ZMv+YDghLRSziAANAbrVF12/nLtU+7/UUNySwfhFNag4OF+Pg2GPCNmgrQivhFVoaP7JVfZ7TRx7wXMGZOs48IMrCkpWAVA1I7rNQMaYd4ENgza4HPZjZPd2BK3zfeLUtRLg0JQGr+QNreCNaFKmSyCGKbwq8UZqd4a8OL5eMtKcv9oMwySGhNCplQg5ndBzhngqCbgRRyQNw00gLnAKKnYAi85z17wS2AJauNLmd5SwkTs4ITnJL1OhQqoEKSSEC4U1xAsUkKzRgUChAdQIBJNcGa4MaXCKfxxUPBCk72An2gzQu2LSPuS5aP7Aojio8YHV0YaOZ27TFvlNLULbaAokvNXUs2a7oDCgo3AaIqVprfRmjVopRpqK9kBZqeSiPslnbCSOYUfOPWii1P1UxLyXQ1mkkYSEUP0D1iJ2iv4isG/eMWTvWl3YpNZXG0S6DrEQH5Zo+KhTistq6lq8jBWg3dYwNZYB5kuj9zxUqvKG8LdVCKW4Fbcl0l7+TteOHONO7PlkoSBWg8IzG3pdOJAu0Y4cI1Ds5bSw9xSxYkXpahFQdYrDWM2x8l62qLD+HKVsb+75R3tCzh3Bdj3tRYMOCgd8OpJUsq+nyhzteQhJEwOFqTmFiQCM5KklSXYkMQCzhzGbdN/RRJNMk5NI+GstifCMNtQdRUzOSb695+J8I2/sRGdZ1jOUnE5rBTCpYm52bfGID5ASGPV0O4FZyfyM09iPdhS3tKdABI4G/XWDt+6IDsnEk2km9kquwDgefODBZuhjEPm8IWq7js9YzQGaI8keAhydhHkekA1YFim63wK28H3swC/OJbgd+N8FauuMCnaf+usDSNtwOw/5hiiHw+rIq01drrgWO2mH7Q3LXShYQ4tbYE0J08tMNgkuWIrcHYaoONCwhizPXBqjp4cQhJYNc1+Aem+EFDgkgvt8GOni0NhSnYlm0imuOOC/IeWPeTF07qQl/qLn9PONByeW804U8ifGAHI1B92s3OogbgG5qMG3YiwmY+sjmPIxi4lXrN9gPFzouO3rSQClwb7tYYcmgdkl66S/En0iX23agpYFxYU0P3vOItm+6NnnAq2bKzneRmHai3nzlP8A7i8dClNFZbXY1w62XRYWpbzJin++ptecokeMc7JsomWuQjTNQGrRKVOrkFcI3ItJX9g/Q2fsixiRZpMpeCEpLiuewJJ152cYlSk580LvQlLpfAqfyiRaECYgpJqQTsLFuZEcIEtAcuW8CA3CPOyrtpt6sYc1wpkHtWylnTLdyXKfmYpWDQ93OZSqqpde4ELsCCEkzAKEhNQWSkMLsb9enCLCarPQ4O0XO4qOcRe1JgCSE33MNwMdKtemo9WdKSS4jH8sv/yFoIpVCi+n3aTFGVUNaRd5aJ+1LV+JKFEnTmgeKYoVIdJrQYteMfLjG/Q9OPZfQve6Nh7DXmyJYf8A2UfoEVtsX8RXWJhFitGalGqUmn8ohqYt1qOn1jI4WpyYpOV1YfkVYdXiBnLGkyWXZ5ddLBSvWCSzG7rGBzLEgzUCre74d5XW6GcN6hNHUFrWTmnGj4UpzjSrD/pp2DwjN7WsZpcn5br+sI0izf6adg8IZxekfJev0COxyu5nfTzIhntgulP1Dzi0lS2s6D9H6hFV2phtHnGRF3a7lZR4YkvsQfZZhq4BbA3aYw1SwwbReLmjcuzB9jXT7puLG6MImijilBczV0xo4DNy7jENiLPJJPxlq/KBxL/9YKlpfhAtkgnvTSPy/wDaCzRthitvfj6Fau4bnGOoFeHhHLRCk374CtQTOrgY7Xf3q9gO9gw60wTrGvp4Fe3HE5TGhAoPpFaF6Ug9LUNQ3ELPa4uReMdO7xjmYfxNqhCVNpL7+sIdzUGvrDI2KzKB32YXMSDzjgTxG9qi4Hw1R6fntiW0AafXlCZa84EAsXxHrEdDg2yXpISTeVE/3nyEEthWxHPaf8QPdioaRL+kHiknzi1mTDhTHrjGLN/sb+WJyfMxdpmPMJ1+AESZCmbU3L/MV66k7/OJi1Mk6gTwEBnnIhGTrU1zl79NdD33mLrIKVn2+Wq/MStW1klIJ3q5RQsQEtoBpsugr9m6Piz5h+6gIH86qin0CNuu+GlJ/H3kNSdomlLtRBYfh8/2hu22tyA/RJ9IhTF986mHn6xHnLc10eAPrGDGkm7izqO1i1l9okJIfruxBtFoIXe9R4V8Ir7RMOaW0kc/2jqphWT9Xg0XVKKzIdSTVmBeWSgq01u90im46NvKKKYnu34aW57oucsR9pSRQ+6TyKh4CKWdRJxLXasPKNynsiNQ2o0NKqI/406/uiOk1PWmPKFE/QnwjpHeOyMyQkx+yXbPWBjLA/GRW6WP1K5XQT2ZNNX7wJZZkiaki73YppGct/KC4ZfsC0dxSTkgJUL6MOGMaRYx3E7B4Rmqz3DVr7730czGldnJ+GnYP0wbFbV5L1+gZ/8A6ydQR+oRS9p/d6xi8mp+zD/xj+4GB63roBi3nGTTWh1bp2JMudmWKaR/7az/AGmMPmpoCa+ZbCNbttoKbHNAN8tQ3kMIyK0JbrDjGrgI24n7svSd4l7ken4a1aVNwH/2gkxHWiKLJNLSTrWrwSPKLw+sXrO82LT3MTNW5fwh0X74aUkAtrEPITXfAolGJmGBztsfGIL3JqMKdcII5t+6Bft/O/iCPyJ0uTDFJZhqG4hLluOeGJo+nfDJW1Kdb4cmLoAlwWYkMzUh2WA1SX+n9oYGxBmnEVwbzwx5QpUw5qrrtejHrGES9hGGF8OoAUySGClBOtzTxpFXZHB/YkZqEJwCQOGaIlzLwNbPwHlCZaO8OW8/tHD812MYb1EGeF8e7VVmyZx0IW39JEJkCoGsPyhPbxayzj+Q/wBymHjHQjzpfJaOpma14OCW5ef7weezqz/Z5q2LqmhJ/kSCG0h1wCzUm5r66/3jQ8kEGXZJb3rKltozlU35qRGpi3+q3uMVNpdTiHJvvL6RESaqvWqHM8ZoGc99+gqcDYAW3RHWb4zor2FZaiVLonaBxJhAW12k+ESElOakYvWu8HXs1xEHynf5xYhqwNZXpBny9cpOP51384HLStkqAYU0ftf6ReZUqeekNUS043d9RigtaO4WBDRq0lyxHIPlRpKzdsHhHs2scN+71hSl1uwjKYmLkqbrWIGMrG96gl3zABe3zGvhBLIr1rEDeVrhcr6S7aARB8P6gSjuB21Dumrki84dUjUOxQ8tP0jwjMp4BSQDfhpPQjSuxVlMtB/Kn9MFxe1eQtboHE9HwEigPdB0lqgeNNcDfbKWzSPwn1gpMtCrMElIIWllJYsc9yXa4klVdJgX7flpQEpSGASb3Ju0mvGEOBKxetHluDXbk5rMsO3cV4RndqUGcG8decG/by+4sflMAlrFN+qurXGng1kUpbWFuS0sfwwfEqb+oiLM+m6K/sFP2aXsfiSfOJ2IgdR8z7sXnuZ31EOBVd5hpaa01eMOoviqKM9MED3bimnG75U0xBLwQTDA7lAl5hfBIO8jnjB6WoehuK4LDMwPh4esICVfdFNphUtIBo1OvC+FU19boOxsaWtheCBo0+IuiXYklc6WH++jf3gfCPR6K1Mosh6M0WzqIIIvDVu0+sIHl5R6PRh9fAidlo7w2xW5TzPsigfvFAP9QV5R2PQWj6i8FqeqAFc0MfFw8aV2QybPIb/2Uc0g+cej0aGLXIg1bRDqDQbBDUw0j0ehCIsIzWUmvVISo9wax6x2PRLOBTKGX8cfQk7qvzBiltyX+W80G04eEej0adLah2OxGiqQxOryMdVLd9LR6PRliQ9JQAOtIgeyzQCqVW9CxvcG6PR6C4fevISjuBhVmCc7S13XXONG7GPwUfQn9Mej0Hxe1Ba3QOZU5Is8vOwKC+KagEvh+8UmVIqBq8o5Hoz47V3C1PTAzKBDS1n8vpGe2wg1x6rHo9GrgtANLaw57JDWeWPyp5piSkVj0egMtWLvU7MP7wtJj0eiPcqcVA/24j4px7goL8cdEcj0Gp6h6G4rwnDbsffqflHMwdf4j0eg42f/2Q==" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://assets.syngenta.ca/images/pest/125/ca-2017_septoria-tritici2_500.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Wheat septoria disease, also known as septoria leaf blotch, is a common fungal disease that affects wheat plants. It is caused by the fungi Septoria tritici and Septoria nodorum. Septoria tritici is the primary pathogen associated with septoria leaf blotch.
+        </p>
+        <p class="imp"><b>Note:</b>The Scientific Name Of Wheat Septoria Disease is <i><b> Septoria tritici blotch</b></i>
+        </p>
+      </br>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            
+            <tr>
+              <td><b>Crop rotation:</b> Implement a diverse crop rotation system that includes non-host crops to break the disease cycle. This helps reduce the buildup of the pathogen in the soil and decreases the risk of infection in subsequent wheat crops.
+              </td>
+              <td><b>Fungicide selection:</b> Choose fungicides that are specifically labeled for controlling septoria disease in wheat. Different fungicides have varying modes of action and efficacy against septoria, so it's important to select the appropriate product based on local recommendations and disease management guidelines.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Resistant cultivars:</b> Select wheat varieties that have natural resistance or tolerance to septoria disease. Consult with organic seed suppliers or breeders to identify cultivars with good resistance to septoria.
+              </td>
+              <td><b>Timing of application:</b> The timing of fungicide application is critical for effective control. Fungicides should be applied preventively, before significant disease symptoms appear. Typically, the first application is recommended at the early flag leaf stage, followed by subsequent applications as needed based on disease pressure, weather conditions, and the susceptibility of the wheat variety. Follow local extension recommendations for the best timing.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Sanitation:</b> Practice good sanitation by removing and destroying crop residues, as they can harbor the septoria pathogen. This reduces the inoculum source for future infections.
+              </td>
+              <td><b>Application method:</b> Fungicides can be applied as foliar sprays using ground or aerial equipment. Ensure thorough coverage of the plant canopy, targeting both upper and lower leaf surfaces where septoria lesions develop. Adhere to recommended spray volumes and application rates.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Adequate plant nutrition:</b> Maintaining balanced soil fertility and providing proper nutrition to the wheat plants can enhance their overall health and resilience to diseases. Conduct soil tests and ensure that the plants receive adequate levels of essential nutrients.
+              </td>
+              <td><b>Fungicide rotation and mixture:</b> To minimize the development of fungicide resistance in the septoria population, it is important to rotate or mix fungicides with different modes of action. This helps prevent the selection of resistant strains of the fungus. Follow local resistance management guidelines and recommendations.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Crop vigor and canopy management:</b> Promote strong crop vigor through proper planting density, timely irrigation, and weed control. An open and well-ventilated canopy can help reduce humidity levels and create less favorable conditions for septoria development.
+              </td>
+              <td><b>Adherence to safety guidelines:</b> Follow all safety precautions and guidelines provided by the fungicide manufacturers, including proper handling, storage, and disposal of chemicals. Use personal protective equipment (PPE) as recommended.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural practices:</b> Implement cultural practices that promote good airflow and reduce leaf wetness, such as appropriate row spacing, avoiding excessive irrigation or overhead watering, and managing irrigation timing to minimize leaf wetness duration.
+              </td>
+              <td><b>Integration with other control measures:</b> Chemical control should be integrated with other disease management practices for sustainable control of septoria disease. This includes using resistant wheat varieties, implementing cultural practices, and monitoring the disease's development.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological control agents:</b> Explore the use of beneficial microorganisms or biocontrol agents that can suppress the growth of the septoria pathogen. Consult with organic experts or suppliers for potential biocontrol products suitable for managing septoria in organic wheat production.
+              </td>
+              <td><b>Regular monitoring:</b> Monitor wheat fields regularly to assess disease severity and progress. This allows for timely and targeted fungicide applications, especially during periods of increased disease pressure or when environmental conditions are conducive to septoria development.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Integrated pest management (IPM):</b> Employ a holistic IPM approach by integrating multiple strategies, such as crop rotation, resistant cultivars, cultural practices, and biological control, to manage septoria disease effectively in an organic system.
+              </td>
+            </tr>
+          </table></br></br>
+        <b><h1 class="iden">Caused By:</h1></b>
+          <p class="para">caused by the fungus Mycosphaerella graminicola (asexual stage Zymoseptoria tritici, synonym Septoria tritici). Septoria tritici blotch survives from one season to the next on stubble
+          </p>
+        </br></br>
+          <p class="imp">"Regular monitoring of wheat fields, adherence to recommended management practices, and adjusting strategies based on local conditions are crucial for effectively managing septoria disease. Consult with local agricultural authorities or extension services for specific recommendations and guidelines for septoria disease management in your region.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

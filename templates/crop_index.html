@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ crop }} Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<style>
+
+button{
+    width: 190px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <center>
+    <div class="header">
+      <h1>{{ crop }} Disease Detection</h1>
+      <p class="header-text">Detect and diagnose diseases in plants</p>
+    </div>
+
+    <div class="crop-item">
+      <a href="/detect/{{ crop|lower }}">
+        <img src="{{ image_src }}" alt="{{ crop }}">
+      </a>
+    </div>
+    <h3><span>{{ crop }}</span><h3>
+    <form enctype="multipart/form-data" method="post" action="/detect/{{ crop|lower }}">
+      <input type="hidden" name="crop" value="{{ crop|lower }}">
+      </br>
+      <input type="file" name="image" accept="image/*" required>
+      </br></br>
+      {% if uploaded_image %}
+<img src="{{ uploaded_image }}" alt="Uploaded Image" width="300px">
+{% endif %}
+    </br>
+      <button type="submit" onclick="blur()">Detect Disease</button>
+    </form>
+  </center>
+  
+{% if prediction %}
+<h2>Prediction: {{ prediction }}</h2>
+{% endif %}
+
+</body>
+</html>

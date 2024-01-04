@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Tomato Yellow Leaf Curl Virus</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Tomato Yellow Leaf Curl Virus</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+        <b>Symptoms of Tomato Yellow Leaf Curl Virus may vary depending on the tomato variety, environmental conditions, and the stage of infection. However, some common symptoms include:
+        </b><br>
+        <li><b>1)Yellowing of leaves:</b> The leaves of infected tomato plants show yellowing or chlorosis, starting from the lower leaves and progressing upwards. The yellowing is often accompanied by upward curling of the leaf edges, giving the plant a distinctive "leaf curl" appearance.
+
+        </li><li><b>2)Leaf curling and distortion:</b> Infected leaves may exhibit severe curling, crinkling, or cupping. The leaves become thick and brittle, with a leathery texture.
+
+        </li><li><b>3)Stunted growth:</b> Infected plants often exhibit stunted growth, with reduced vigor and smaller overall plant size compared to healthy plants.
+
+        </li><li><b>4)Flower and fruit drop:</b> TYLCV can cause a significant reduction in flower and fruit production. Infected plants may drop flowers and young fruits prematurely, leading to decreased yields.
+
+        </li><li><b>5)Malformation of fruits:</b> If fruits develop on infected plants, they may show abnormalities such as green or yellow stripes, mottling, and uneven ripening.
+        </li>
+      </ul>  
+
+
+        
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="https://content.ces.ncsu.edu/media/images/IMG_5369.jpeg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ENKqsuj67CysTiAp3xl1nirwqdNNp2VBeA&usqp=CAU" alt="Disease image" style="width:100%">
+            
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Tomato Yellow Leaf Curl Virus (TYLCV) is a viral disease that affects tomato plants. It is caused by a group of viruses belonging to the genus Begomovirus. TYLCV is primarily transmitted by the whitefly Bemisia tabaci, which feeds on infected plants and then spreads the virus to healthy plants as it feeds on them.
+        </p>
+        <p class="imp"><b>Note:</b>The Scientific Name of Tomato Yellow Leaf Curl Virus is <i><b>TYLCV
+        </b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para"><br><b></b><br>
+
+          <br><b>Preventing and managing Tomato Yellow Leaf Curl Virus can be challenging, but here are some strategies to help mitigate the impact:
+          </b><br>
+          <br><b>1)Use virus-resistant tomato varieties:</b> Some tomato varieties have been bred to be resistant or tolerant to TYLCV. These varieties can help reduce the risk of infection and minimize the severity of symptoms. Look for varieties labeled as resistant to TYLCV when selecting your seeds or transplants.
+          
+            <br><b>2)Implement whitefly control measures:</b> Since whiteflies are the primary vector for TYLCV, it is important to manage their populations. This can be done by regularly monitoring your plants for whitefly presence and using appropriate insecticides or biological control methods to reduce their numbers. Reflective mulches and sticky traps can also help deter whiteflies.
+          
+              <br><b>3)Remove infected plants:</b> If you identify any plants showing symptoms of TYLCV, it is crucial to remove and destroy them to prevent further spread of the virus. Be sure to dispose of the plants properly and avoid composting infected material.
+          
+                <br><b>4)Enhance plant health:</b> Maintain optimal growing conditions for your tomato plants, including proper watering, fertilization, and weed control. Healthy plants are better able to resist and recover from viral infections.
+          
+                  <br><b>5)Physical barriers:</b> In areas with a high incidence of TYLCV, consider using insect netting or floating row covers to create a physical barrier that prevents whiteflies from accessing your plants.
+          <br>
+              </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>There is no treatment for this disease use the preventive measures.Destroy the diseased plants.Avoid overhead watering to prevent the spread of disease. Add a 2-inch layer of mulch around tomato plants to limit soil moisture evaporation. Leaf curl brought on by tough growing conditions usually resolves when the conditions improve.
+              </td>
+              <td>Use a neonicotinoid insecticide, such as dinotefuran (Venom) imidacloprid (AdmirePro, Alias, Nuprid, Widow, and others) or thiamethoxam (Platinum), as a soil application or through the drip irrigation system at transplanting of tomatoes or peppers. 
+              </td>
+            </tr>
+          </table></br></br>
+        <b><h1 class="iden">Caused By:</h1></b>
+          <p class="para">Tomato leaf curl disease is caused by viruses in the Geminivirus family of plant viruses, and is spread by whiteflies. The virus causing this disease is tomato yellow leaf curl virus (TYLCV).
+          </p>
+        </br></br>
+          <p class="imp">"It's important to note that there is no cure for Tomato Yellow Leaf Curl Virus once a plant is infected. Therefore, prevention and early management are crucial to minimizing its impact on your tomato plants."</p>
+    </div> 
+
+
+
+
+</body>
+</html>

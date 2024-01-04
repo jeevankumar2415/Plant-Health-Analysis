@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>SugarCane Rust</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>SugarCane Rust</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+        <li>
+Sugarcane rust is mainly a disease of the leaf.
+The earliest symptoms are small, elongated yellowish
+spots that are visible on both leaf surfaces. The spots
+increase in length, turn brown to orange-brown or
+red-brown in color, and develop a slight, but definite,
+chlorotic halo (Figure 1). Lesions typically range
+from 2-10 mm in length but occasionally reach 30
+mm. They are seldom more than 1-3 mm in width.
+Infections are usually most numerous toward the leaf 
+tip, becoming less numerous toward the base.
+Pustules, which produce spores, usually develop on
+the lower leaf surface (Figure 2). Certain cultivars,
+however, may have some pustules on the upper
+surface. 
+      </li>  
+     <br><b> The primary symptom of Sugarcane Rust is the development of reddish-brown pustules or lesions on the leaves. These pustules are typically small and raised, containing masses of fungal spores. As the disease progresses, the lesions may merge, causing widespread discoloration on the leaves.
+</b><br><li><b>
+      Leaf Discoloration:</b> The presence of the rust pustules leads to a characteristic reddish-brown coloration on the leaves. This can be particularly noticeable on the upper surface of the leaves.
+      </li><li><b>
+      Symptoms Progression:</b> Over time, the infected leaves may become yellow or chlorotic around the rust lesions. Severe infections can cause affected leaves to dry up, wither, and eventually fall off.
+    </li><li><b>
+      Disease Cycle:</b> The rust fungus completes its life cycle on the sugarcane leaves, producing spores that are spread by wind and rain to other susceptible plants. High humidity and warm temperatures favor the development and spread of the disease.
+    </li><li><b>
+      Impact:</b> Sugarcane Rust can lead to reduced plant vigor, photosynthesis, and overall growth. This, in turn, can result in lower sugarcane yields and quality.
+    </li>
+    </ul>  
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://agritech.tnau.ac.in/crop_protection/images/sugarcane_diseases/3.2.jpg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://pestsdiseases.com/wp-content/uploads/Rust-Management-in-Sugarcane-2.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">
+          Sugarcane Rust, caused by the fungus Puccinia kuehnii, is a fungal disease that affects sugarcane crops. Here's a description of the disease:</p>
+        <p class="imp"><b>Note:</b><i><b>The fungal spores of Puccinia kuehnii are windborne and can spread over long distances, especially during periods of high humidity and rainfall. The disease can also spread through infected planting materials and contaminated farm equipment.</b></i>
+        </p>
+      </br>
+       
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+         <b> Managing Sugarcane Rust Disease involves various strategies:
+        </b><br>
+<b>Resistant Varieties:</b> Plant sugarcane varieties that have shown resistance or tolerance to Rust Disease. This is one of the most effective methods of control.
+<br><b>
+Fungicides:</b> Apply fungicides according to recommended schedules and dosages, especially during periods of high disease pressure. Fungicides can help manage the disease, but their effectiveness can vary.
+<br><b>
+Sanitation:</b> Maintain good sanitation practices, including cleaning and disinfection of tools, machinery, and equipment.
+<br><b>
+Crop Rotation:</b> Rotate sugarcane with non-host crops to break the disease cycle.
+<br><b>
+Cultural Practices:</b> Proper spacing, irrigation management, and avoiding plant stress can contribute to healthier plants more resistant to diseases.
+<br><b>
+Timely Harvesting:</b> Harvest sugarcane at the appropriate maturity stage to reduce disease spread.
+<br><b>
+Field Monitoring:</b> Regularly inspect fields for symptoms of Sugarcane Rust and take action if an outbreak is detected.
+<br>
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Resistant Varieties:</b> Planting sugarcane varieties that are resistant or tolerant to Rust Disease can be an effective organic strategy.
+              </td>
+              <td><b>Fungicides:</b> Apply fungicides according to recommended schedules and dosages. Fungicides containing active ingredients like triazoles or strobilurins might provide control against Sugarcane Rust. Consult with local agricultural authorities for approved fungicides.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural Practices:</b> Implement proper spacing between plants to enhance air circulation, reduce humidity around the leaves, and minimize disease spread.
+              </td>
+              <td><b>Systemic Fungicides:</b> Some systemic fungicides can be absorbed by the plant and provide protection from within.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Nutrient Management:</b> Maintain balanced and appropriate fertilization to promote plant health and resistance.
+              </td>
+              <td><b>Protectant Fungicides:</b> These fungicides create a barrier on the plant surface, preventing the pathogen from infecting the plant.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological Control:</b> Explore the use of beneficial microorganisms that can compete with or suppress the growth of the rust-causing fungus.
+              </td>
+              
+            </tr>
+            <tr>
+              <td><b>Organic Amendments:</b> Improve soil health and microbial diversity through the application of compost or other organic matter.
+              </td>
+              
+            </tr>
+            
+          </table></br></br>
+        </br></br>
+          <p class="imp"><b><i>
+            As with any disease, an integrated approach that combines multiple management strategies tends to be the most effective. Monitoring your fields, using disease-resistant varieties, and staying informed about the latest research and recommendations in your region are crucial for successful management of Sugarcane Rust Disease.
+            </i></b></p>
+    </div> 
+
+
+
+
+</body>
+</html>

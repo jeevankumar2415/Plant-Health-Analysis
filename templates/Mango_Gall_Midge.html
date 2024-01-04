@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Mango Gall Midge</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Mango Gall Midge</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+  <li>      Adults are small flies, about 1-2 mm long, with the males being slightly smaller.
+</li><li>
+They have a wing length of 1.0-1.5 mm.
+</li><li>
+Eye facets are circular, but further apart laterally than in other genera and the tarsal claws are toothed.
+</li><li>
+Both sexes have different antennae size, with males having the longest. The males have distal claspers on its abdomen.
+         </li>
+      </ul> 
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="https://agritech.tnau.ac.in/crop_protection/mango/gall%20midge.jpg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://www.greenlife.co.ke/wp-content/uploads/2022/04/greenlife_post_mango_anthracnose.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://www.pestnet.org/wp-content/uploads/2021/03/IMG_20170527_140512.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">The mango gall midge is a small fly that can be found in most mango-growing areas. The larvae of the mango gall midge feed on the plant tissue, causing abnormal growth called galls. These galls can damage the leaves, flowers, fruit, and shoots of the mango tree. 
+        </p>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"><br>
+<b><br>          Cultivate resistant varieties
+  <br>Monitor fields regularly
+  <br>Hand-pick the insects
+  <br>Remove debris and broken branches
+  <br>Remove weeds regularly
+  <br>Collect and destroy surviving stages of midges in fallen leaves
+  <br>Hoe under the tree canopy, then irrigate to kill pupating midges in the soil
+  <br>Properly prune after fruit harvesting
+  <br>Burn damaged branches away from the orchard
+  <br>Source plant material from clean, accredited suppliers
+  <br>Check the orchard frequently for new pests and unusual symptoms
+      </b>    </p>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Planting resistant mango varieties
+              </td>
+              <td>KINGCODE ELITE® 50EC (10 ml in 20 Litres water)</td>
+            </tr>
+            <tr>
+              <td>Maintenance of field hygiene/ sanitation
+              </td>
+              <td>LEXUS® 247SC (8 ml in 20 Litres of water)</td>
+            </tr>
+            <tr>
+              <td>Proper weed control (weeds are alternate hosts of the pests)
+              </td>
+              <td>TOMARADO® 500SC (10 ml in 20 Litres water)</td>
+            </tr>
+            <tr>
+              <td>Pruning the infested branches
+              </td>
+            </tr>
+            <tr>
+              <td>Mixed and intercropping farming reduces the pest population
+              </td>
+            </tr>
+            <tr>
+              <td>Ploughing of the orchards exposes pupating and diapausing larvae to sun heat which kills them
+              </td>
+            </tr>
+            <tr>
+              <td>Avoid movement of infested plants to new areas
+              </td>
+            </tr>
+          </table></br>
+          <p class="imp">Inspect mango trees for misshapen leaves and increased leaf fall. Examine the leaves for the presence of blister-shaped galls and shot-holes. Inspect stems, fruit and flowers for similar symptoms.</p>
+    </div> 
+
+
+
+
+</body>
+</html>

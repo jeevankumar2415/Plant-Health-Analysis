@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Mango Bacterial Canker</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Mango Bacterial Canker</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <li>The disease is noticed on leaves, leaf stalks, stems, twigs, branches and fruits, initially producing water soaked lesions, later turning into typical canker.
+          </li><li>On leaves, water soaked irregular satellite to angular raised lesions measuring 1-4 mm in diameter are formed. These lesions are light yellow in colour, initially with yellow halo but with age enlarge or coalesce to form irregular necrotic cankerous patches with dark brown colour.
+          </li><li>On fruits, water-soaked, dark brown to black coloured lesions are observed which gradually developed into cankerous, raised or flat spots. These spots grow bigger usually up to 1 to 5 mm in diameter, which covers / almost the whole fruit.
+          </li><li>These spots often, burst extruding gummy substances containing highly contagious bacterial cells.          
+         </li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://plantwiseplusknowledgebank.org/cms/10.1079/pwkb.20167800285/asset/cdc98d4f-c8f5-4ff7-b3c8-86858bee4154/assets/graphic/black-spot-of-mango-ghana-2.jpg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://www.shutterstock.com/shutterstock/photos/1677664432/display_1500/stock-photo-mango-bacterial-canker-disease-is-incited-by-xanthomonas-campestris-pv-mangiferaeindicae-on-mango-1677664432.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://www.researchgate.net/publication/273002485/figure/fig11/AS:668774428602376@1536459657124/Symptoms-of-bacterial-canker-disease-on-mango-trees-A-Infected-leaves-B-oozes-and.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Bacterial canker, also known as black spot, is a disease that affects mango plants. 
+         <br> It can attack the leaves, leaf stalks, stem, and fruits. 
+         <br>The disease is caused by the bacterium Xanthomonas citri pv. mangiferaeindicae, which can infect many types of mango cultivars.
+         </p>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para"><br><b>
+          Regular inspections:</b> Check orchards regularly for signs of the disease.
+<b><br>Sanitation:</b> Practice good hygiene, such as sterilizing pruning and harvesting tools.
+  <b><br>Use resistant cultivars: </b>If possible, use resistant cultivars.
+    <b><br>Remove infected material:</b> After harvest, remove and destroy infected material to reduce the risk of disease the following year.
+      <b><br>Harvest carefully:</b> When harvesting, remove fruit by clipping stems instead of tearing it off. This reduces penetration points for the disease.
+        <b><br>Monitor leaves and fruit:</b> Monitor leaves for spots and fruit for raised black spots.
+ <br>
+          </p>
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Bacillus coagulans
+              </td>
+              <td><b>Carbendazim<br></b>
+                Spray with Carbendazirn (Bavistin 0.1%) twice at 15-day intervals during flowering to control blossom infection
+                </td>
+            </tr>
+            <tr>
+              <td>LSF-8
+              </td>
+              <td>Spray with Streptocycline (200 ppm) three times at 0-day intervals to reduce fruit infection
+              </td>
+            </tr>
+            <tr>
+              <td>Organic liquid pesticides (BDB-I, II & III):
+              </td>
+              <td>Apply copper oxychloride at a concentration of 0.3% on wounds after pruning
+              </td>
+            </tr>
+          </table></br>
+          <p class="imp"><i><b>
+            Use clean planting and grafting material, and certified seedlings
+            Use resistant varieties, such as Bombay green, fazali, Jehangir, and suvarnarekha
+            Spray with thiacloprid to control mango fruit borers
+            Spray with pesticides containing chloripyriphos (2.5 ml/l water)
+            Spray with copper fungicides from flower bud emergence to flowering
+            Replace copper sprays with mancozeb during flowering and fruit set
+            Apply copper fungicides on a regular basis from when flowers begin to form
+            Reduce plant stress, including stress caused by drought and nutritional deficiencies
+            Reduce sunburn of the trunk and branches when severely pruning the trees
+            Prune dying branches by cutting the branch back to below the edge of the dead or symptomatic areas
+            
+            </b></i></p>
+    </div> 
+
+
+
+
+</body>
+</html>

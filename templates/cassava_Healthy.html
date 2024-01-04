@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p><q>Healthy Cassava</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Healthy Cassava</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <b>A healthy cassava plant typically exhibits the following characteristics:
+  </b>
+      <ul class="para">
+      <li><b>
+1)Sturdy and upright growth:</b> A healthy cassava plant has a strong stem that supports the leaves and the weight of the plant. It stands upright without leaning or bending excessively.
+      </li><li><b>
+2)Vibrant green foliage:</b> The leaves of a healthy cassava plant are generally lush, with a vibrant green color. They should be well-developed, showing no signs of wilting, yellowing, or necrosis (browning).
+</li><li><b>
+3)Well-formed and unblemished leaves:</b> The leaves should be smooth and have a consistent shape and size. They should not show any signs of deformities, spots, or lesions caused by diseases or pests.
+</li><li><b>
+4)Adequate leaf coverage:</b> A healthy cassava plant typically has a dense canopy of leaves, with sufficient leaf area to capture sunlight for photosynthesis. This ensures good plant growth and productivity.
+</li><li><b>
+5)Active growth and development:</b> A healthy cassava plant shows active growth with new leaves emerging regularly. It exhibits continuous development and the formation of new nodes and internodes along the stem.
+</li><li><b>
+6)Vigorous root system:</b> The roots of a healthy cassava plant should be well-developed and firm. They should be free from rot, soft spots, or discoloration. The fibrous roots extending from the main storage roots should be white or creamy in color.
+</li><li><b>
+7)Normal progression of plant stages:</b> A healthy cassava plant follows a typical growth pattern, progressing from stem cuttings or seeds to vegetative growth, flowering, and eventually the formation of storage roots. It should exhibit appropriate timing and progression through these stages.
+</li>
+ </ul>  
+
+
+        
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="https://storage.googleapis.com/kagglesdsdata/datasets/2781321/4803640/Cassava__healthy/1017415426.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20230823%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230823T033059Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=b5bfcf721b5855c0e537a698528e61acd34652246a12b30173c39acd174450822dae500414725be08566250ed9e4b988ea0c45c7a0b70977fee5be1c10b67a24bbb52ddedba5a0f710710714879e07e0309cf28d61b83d15e3ec7b3713c6f95bf152849ef0cd3b48644ebcc901a95d5c500f63cb1617137ca9d030d569ed794c1322d5cee20bf06af3c980e1d1690f8a2e52f5ec0b4953092aa4e59995e4132c4219be7326f5dee83f240a1f5d1ef5d599e05645d4cc5579d29856a7e624aa7520246b9c9838349ebb75c2a470d8df9202bef55f8587750bd4358b39dd5cbea8d160ae4b4655aa67b27579cb31dcecdb845f5c38af4e599cfbf6502b5bde55e8" alt="disease image" style="width:100%">
+            
+            
+          </div>
+          <div class="column">
+            <img  src="https://storage.googleapis.com/kagglesdsdata/datasets/2781321/4803640/Cassava__healthy/1060543398.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20230823%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230823T033059Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=7c8e59d894c3989fbdda2ecf92bf80371c4be8000ac7c7f7c9324eacdeb793b1981f664efd4259ed9ce7f1ac6512258800902810bd2b064256172a370349ff69b9188f808c2899fd4b6befe25499853558e9d4bb776c900debbf5a1c80bc9ca97db85ace3b25612600654d9088b33f697784b597f7310d8a3dbc4feec693f4c64141b907fd27e021ca0151ceceec0504a7a7cee9177f6835d39ff25bb11933bb82802ada95eb38103ff5122eeea9a072ac1b9700b4b4ffeb145f30087273e223329cd7f2b30ecc7785e11cde55c4268dc3ee1e6edf8ec3433760eed112c40535737fcf78ba0c789dc4748ac2578928c9ee50f26c4fff1de06740c72d4f132d7c" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://storage.googleapis.com/kagglesdsdata/datasets/2781321/4803640/Cassava__healthy/1082098147.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20230823%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230823T033059Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=5ef3f6b4b6fa8a446a71bec59287c7d3aeb5530874b014915484c8bf65ac9259bf20e443fc933adfed10a3df6e29fdc54652d2cc42577210d276764dd27f46d2344424bafffd0a28b9daaf4146bb3f706ca0a8791dfbd54e11029ceb47df70dc92ca0d60704d75c4f0769eabc3ff183776b67855b1ee84e07945fcb54e5fda18a080b2e205e7e252d98addc6d8a232022c3d4935ea6d9aad57b819349935495952733999146acad08df22be8acd42fa5fc1ae3f7dc24badb399d4d285a7b66526e166d4fbe30a611e908f72fe13cd444efb1bb80282123731320fd51ec7f5dd2cccf9c9e4504117271b7cd005415f222c8e19f22004b91f4dc1d30ac820bb1d8" alt="Disease image" style="width:100%">
+            
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">The Wheat Plant is Healthy . Follow The Same procedure </p>
+        <p class="imp"><b>Note:</b>The scientific name of the cassava plant is Manihot esculenta.
+          <i><b> Manihot esculenta.</b></i>
+        </p>
+      </br></br>
+          <p class="imp">"It's important to note that specific varieties of cassava may have variations in leaf shape, stem color, and other characteristics. However, the overall health and vigor of the plant can be assessed based on the absence of disease symptoms, normal growth patterns, and the ability to produce quality storage roots. Regular monitoring and early detection of any signs of disease or pest infestations can help maintain the health of cassava plants and ensure optimal yield.
+"          </p>
+    </div> 
+
+
+
+
+</body>
+</html>

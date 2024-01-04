@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Tomato Target Spot</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Tomato Target Spot</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+        <li>Symptoms: Tomato Target Spot disease initially appears as small, circular to irregular-shaped spots on the leaves. The spots typically have a concentric ring pattern, giving them a target-like appearance. They may start as brown or black lesions and eventually turn gray or tan in the center with a darker border. Severe infections can cause leaf yellowing, defoliation, and fruit lesions.
+        </li><li>Disease development: Target Spot disease thrives under warm and humid conditions. The pathogen spreads through spores that are dispersed by wind, rain, or physical contact. Overhead irrigation and prolonged leaf wetness can promote disease development and spread.
+        </li><li>Impact on yield: Target Spot disease can lead to defoliation, reducing the photosynthetic capacity of the plant and affecting fruit quality and yield. Severe infections can result in significant yield losses if not managed properly.</li>
+      </ul>  
+
+
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFhYYGRYaHCMfGhwcHBwaIxwaGhwaGRohHBwcIS4lHB4rHxoaJjgmKy8xNTU1HCQ7QDs0Py40NTEBDAwMEA8QHxISHzQrJSs9NDY0NDY0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAMIBAwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xABAEAABAwIEAwUHAwICCgMAAAABAAIRAyEEEjFBBVFhInGBkaEGEzKxwdHwQuHxFGIzUgcWI1RygpKissIVQ5P/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEAAUG/8QAKhEAAgICAgIBBAEEAwAAAAAAAAECEQMhEjFBUWEEEyKxkUJxgaEUFTL/2gAMAwEAAhEDEQA/ALJ9EtbiiMgFLh9Osxpo0HZajmOl2ZzC5xJpH4ifjd0iLhOBdWrvoe8gtFEtP9FQewh1FlZ4qObSAaTLgO0NRrorziPBKeIyud/UsJoNpv8AdvyiswND8jwWmfjcJEEyRyVjwai2jVq1Wtr/AO3cwOa4AtYGNLGloDQQA0AGSYAHcbRceHi6+CdI8oxWFYyo8CJzu8BmMAIZ2GDnDoj6lM+8qE6l74/6im1KjaYkiXnRq8mcvBBJt6BK/DWfE8gfMrckUX0GYjCgMfTaA9g/UBqep+i86dd5fVf1DR8k93tAWty0+yOhScJtU3a/Rop1T2ex8B4uKrAQYdFkP7T+2DsMQ33cEiWu1B5wvM/Z72hc14kw4a317u+9l6fxTh1LG4fI8RIDmOGrXRII8D43C6Lkri9E4ycXR53xL24xFSRnIHS3yVFW4i5xkklWOG9malKs737YZTMzqH/5Y6FargnAMBWOeu/K8n4AcoA20T8Y3RTt9mD/AK12jUm4WvVMMpvd3NK974V7O4OmJpUmX3gH1Vuyi0aNA7gFojhXY3FI+f8ADexeOeJFB8HnA+ZVjR/0Z452rWN73D6L3NJOscTqPFqn+i/GkAZ6Rj+4/ZU+O9hsdSIBoucN3M7Y9Lr6BSTfbR1HhNDgNYGX0ntaALFpudLounQDGnKwkgcl7WUDjfdNGZ4b5BQy40ldnUeU4GtSvnlswCdCr/AcNw5e3Nmc06EXjv3T+P8AB6WJPYGR+xCzNCvXwb8rzmjQ7QsXNxdp6JOTPTW+z2GizTBv8RUOK4Nh2t+GAJ9b/RAcK9qGVG37LlaY2majLbhbfvRlHRybfRT0eFYNxDcsgaaalD8c9mWikXYYkFsnLJOYQbNGxVjguEQ0ndPp4sAFs3ChJ6popjl7Mr7OcDxD3dtpaw6l2oEbN1JVhxD/AEfsYHPouMxo66eeIupvLi6x6oyv7Q5mwHDzU8U4RTSWwSyKV2jzxnvsNUOYEQddlqOHcYZVgOIDuakxxa9kOAJO6zHE+DOpNz05PROpJk7PUuE1spgGWq+BXjHs97QPpvZnPZJ0Xr+DxLXtDmmQQtGGdOmUg7CV1NldC0J2OdSSSTHHi3CeMggB5gi2bU9zuYVxxDhzMQPhAeBZwi+/iF5vwzFX7rm62nB+KAw0kxsR+n9l5TuLM8lRR8RxTKDiwg526zaPugaOEqVXZnuNNjt8pc8jWzf0iNzHcVo/attJ5ZmaHVW3B1GXbMNCLzHQbKoZUcDL2HvP53qsKrlWwOXFUg3DezeCeRL6rucvbJ8A2ydX9iMM50U61RptY5HxPSxSwzw+zGSTvy7zGqs2DIJe8kDYCSPH7BW5SE5y9ldhvYekwhzq73xfstay/i4rd8KxDGMA+FjWhrc2siAJtf8AlZvDVs57IIG5JB5ac/H0V1R1bOu3S3qeqWTcjuTb2yy4vw9mJpuZo8aEXhw+YssC+i+m803gBw168iOYK2lEOZdpuNf7uccih+PcMZiWZmnK9tw4bTe4GrTuNRt1zTi0N2VHB/al2GdlLszN2k6dy9OweKbUaHtMg6L5/wCK4R9N5a8Q4eRGxad2nmrT2d4niWOAbWcyk0337mtEXJ5KuHI4q70aI6jdns/EOK0KABrVWMB0zOAnuGpVb/rlw/8A3ql/1LzDjHEKtR7nls1H2E3yiLeCoX8OAaMwJcfiy7HoivrHbtV6KwUZKz22p7Y4AEA4qlJ/ukeJFh4p/wDrdgP97w//AOjZ8plfPFZjgcuoGhNiB+bJ2G4a99wQ1o3g+it96lbaGcEj3HHf6Q+HsBDcQC6LFrHuH/UGwfNZDFe0xqn/AGbK9UayAGN8HOJ+SyVJlCm2A3MTq5157m6AIvC8ScPhENGg29FjzZpTWl/OkQeZRekXdL2gqUCHVqD2M/tdnIHUENQvGcWKjg9rszHiWnmPuicHinVB24y6EbKncxjKrsOXQ15mkdmv0Lb6Nd6EDmsuJ87jVNb10CS5xcorZ3Duc27TC1vs/wC1j2dh9wslkIMGxFiOqc5u6Xk09GWORo9XocUYWF2cALFcT46GPcaZzEqroYokZSbHdMdQaOSb/kyqmg834AsbjH1HS93hsoadUt3KLfTGwUT6XRJzTEcrewzCcVe3U5gtbwPHU6xyOgE7FYDQouhWiCDBHJOpuLtHKbTNH7W+xjmNNalcC5A5Jvsj7Tupwx57PIq+9nvaxr2+5r6kQHc7aHqvNeOUTSrvDDLcxLY5G63RnGauPZqtNJxPesBjmVW5mGUWvIPYj2gLarGuNjY+K9eBWvFO1T7Hi7Q5JJJWGPkw1i2+6u+FcQkgSQQJOpAEBxMcoWZe6VpeA4NwZm0NTfkwfcifALNKEeOxJUolycRnOaB9ekwigwx2mwN7gz01soKT2NbLfO1yNb/ZNpPLrnT5/cJP7GV7YYcQSMrZA6WjxU1KgxvaJLiNth+fRBF/l6eikw9XOf7W8ufih+wFzhnwAYgnv00jwReHrDNJ2G+nPzVa2uNJ0009FMw2kEyeX1RRxeOqSLfyn4Wo4HswCL3iCd5jY/MKoweK5b89DzhWmHec0cwb+CGSPJBi9g3EMJSxTGkNa4G4Bdlh2+V4+G+xkHcSqDF8JrMMMYwMGgD2mNibm5PPuV8cN7gktBdSdOdsfDvI5XQGN4M0k1Gkvaes9nSyyKMr4so3aM8aFRkmJdzkHL0H3QPvKhkOBid42WkpYUNMBvmNte5cxGBa4EwAeir9lPsXk0ZinRIcXak7EiyldUcRcjTQH7K1PDzpCkZwwE/dF4U3bOc5PsznuCb280bg6UXIJHIX+SuXcLHP0U2EwHT6BdPFyVA5eytxlWp7otZTe0H9UeQHJZnEVfizyXaSTp53/hes4HEtYMo8dL8rHVVftFw2hXZBY1jx8LmANPjFoUcfHFqS/wAm7HlhxpGTwGN9+wz/AItMdv8AvYIAfH+YWnmIPNEtEhZ7EUKmDrseYIDpB2cNwR1EiOq2eLwbWw5hljxmYRexvCX6mEaU4dMy/UYqfKJVPB0C5TrfpKO/pYF0FUpgXWWMk9GXfTJmPhSE7qGlTkSnvYUrSsTkIsDkHUYWlWFN3RD12yjGVOh+SaRyhXRJYHmXKsfSy3mykwuKVEnF8ojxUo/l4D6mFFMtqMtBuvYOB433lBj+bb94XkzawcwtN+S03sbxUtpOpk6aeK2Ys17XZpjJdo2NXjtJpInRJV9LhzCAcq4m+9l9jcn8HzVSZJWzZlZDYPZAHp/CDwvsw9hBc9nUCf8A2hHvptJuXAybfl+S1SnGWkLldo7TyvMxDR6noVO+pNhYeXyUL7CNAEMavIEjuhLpIh2EVWG02nQfZFsc1rQBqO7f89UBhWOeS50C1p8lI9pte500Q6Oa8Bbq8wNT/GiOoV5GkR+aKlosh0kzA77/AFRIqXsT8ly7FZbUq9yPG+/5ornB4iwM6flvMrMMcDEwT4X+iscJUAHYEjfn+ybvRyZrqFTslpMi9lU0axpEtcIY7xyE6Ef2p1GsHb9uAY1DtvOyjY/M8AzHI8oPepZI8kmux+VEjmONnsbPNpsRzg20TXYXk3x/iR8k6lIhjicutMzpf4XHkdu9PZXFxERYjry+SWLdVezn7IH0ABG++ij93OkdPE9fojadQi025aohlMOh0X74t8t1R2hSrdTbPKev5KExJLd/zu8VdYnBMO5BtH7HZQHhhIJnT83AQbDTaM8MblGd3hG/eoWcXc92hIHK6uKuDpixaCf7r/SPJdYG6WbGkBRyQ5K2dZQ8XoOfTLXN12OvTxlN9lcd2Rh6kgRlBIuMvw9+sdwVviaznAtMEjQlYvG1HhwJlrmmxFlLDFq4PpmzHOMo0zW1GOa9zHx2TrzGoPiEJWwpdMKerxyi+mxtRw95Aa1zbknQB0Wy9TEXUDnGIlZMuJ45a6fRmzY2pfAzDkNsTopauJYhCwppYk4pu2ZpRJvfBdc8EQh/dLrqTolNxXgCg/ADi8Rl7MSTsoIdEudlCbgmF9UkiYRfEeG1nwGtt3rZGNNR/ll4qqiFYel2M7HgxsrL2T4uHOd2bj1WSxFGrSbBBaDqrn2YxrGSALlW+3GO0VpLaPRm+0jhbKkvPMVxKrndHNcS8pehrKn/AOWJc2zG3izZOu5KPIhxLptoBvGh7lmH6q/xTnCq0jSCNtyTcc9PyVdxUVoMoqtHfeAXyzfeT8ks2Yho031t4KCrSeTpAPNHUMO1g3JOpKZbRB0hPqxZotp4b96je/pfu/PROeonmNNfzSFzQCSm4huhk7W07j+WTs3Pzj5rrqcATtrqPTcaqMGRf89Ul7AwhgJuLDreL7/dGYZ5aZJ/OnRAUcURoJ8NUm4vQEuB7vDfX1TKTvo6maPAV+20z2YcD5z8ijXYphMNk90nvWTx+IOTLN56mSDJHfb0UfD2Oce0Sb8wfmY2lIoyltOkaceFTVs3bcjhlzG4vIIMW/ZOfTf/AM4Fo/8AsYP/AGA81T4emcoMkTrDreMEyjqj6oZmaQ7KdQJPfIGsRb9ksoSTtMeX09LQ6nUkSRF7CDr47/dHUXRcFCscKrc7Lu0eGkETrLeYv6pnbBhzH3i7QR46X/lOpWjNwLaZ68/yEwvMyDfTvQDMUBZkkgXa4Q484MQ5EUWlxDiL7NFz4op2K1Q+vWDhDmCNrb731BQ1fhzWgOAGUz4RqO9WNSgGjtiSQTGgbOk9enVDvcXXcZA5bcgkbO8bAW4VoktbcdPv9VnuM8Ec8l0XOxWwqOGu3JEtwejgJ6nbzXJ0UjOujBcG4K7OM1MEDQvFutityaLPd9umzIwG4aLDysnHDumzT6Iupw97qLgBD7EXF42uVOajpX2PiuUqfRh+JZA45GOPQSLbwHXKZh8KXtLhTeANZbMDuaSfRa48GqAB7msbAFnPPqQI3PmVYYHDNpXc7M8izQIb3SfiSzx4atF5YcbV0YF2EtIuEBii5gPJbnH0s0kQAZt9ljOP03gERZZ1GMZGRxp6M8zGEEkBEs4rVGh0Vc8wLaoF2KfcL0YRTVodRTLoe0TnHI9ge31VtRwzKRbUDCGu16SqDgWFbnD36ArRce4oXMDGBCUU+jnV0Gf1+H5JLFf/ABtd1w03SS38oewB+krQsryAY217jAssjTqk2Wj4O4VGZTq35fz81olGuzsq/EKfiCSAbDVcfVU9CiC8zcC0aa66+C66iwG3qUtmdtA5cbm557hMoOD3SD2Rv12RL3QCBEen8J9V5IBjUbD5/dJbsK4035GueQb/ACP0QsG8EZe9SVTI6oN4uVydgSJffmJBTm4smTa3XfbkevggqtjAv+c90nggAfkpmNxRYYntUif1NIOwsu4WqLEaacrc/kh8I0OYQRaChsM8js6QddtxfleyWHTRq+mkkmjacMfLZDiTMWkd3ON/NXWFxAzZXCJ57zsYNj4rH4TExlfIAgQ0nWACR10jXvWipvLzYEF2wB11TNNM09hJJovzgk0zDYygaiHTk8NeeuiNYWNaACXNddubtQTctM7jr0QjmZ5aRYz9JnqPqi6+GyMhsGwLmdNiHGe1F5/hRmuMrM2eCatFjgsMw8o2vEE2myqH1KrHvawB7Jv2ixwEXA1a4chZWXDJ/wA82kHnynkeip6lYuqPcQRJvy/NkuP8pP0dhgnHZZYfGU3QKhNP/KHw2d9Qcrj0B5qzexgb2Y52vJKqqbi61okTIBtygyOiKoUYk03ZJFmRLbWJi3lbrCdw9Bl9Mv6Q3DYEEgkEn5Iv+kcCX7RYSfVBUq1UQ4BjnCAe0W31Gx1b9dEW/iNXLJotiBb3jdfKOWpU+M7EjgaTFRaZkp2JqG0E2OyDZxEvIY5hYTuC0gmPP0QmND2b+BkfL6pHyT2iUoSj2Hv4jaCI6TKq8TxK+UXbs0jQoGri3kHM0k9LoWlkJlxGf/x/dLxXYv3JdFu6sSInuFgRvvqEHiKjHHI8dk77hcpvlwvIjfVMxL2wbgDn3oNJoDk+ii4/7KFoL6VxrHNY6nhxJzCHDZer8AxwLvcPMsfOQn9LomO4j171Ue1HsvLi9gh3zRhlcfxbH6WjD08xNlrvZ7hbKnx2HVUNLClhIdZ3VXnDcfkBzECFSUm4/iDzo1LeCRYaDRcWcd7blthskk4z9FKXo8nw7oN1b8Gq5H5p7LrHuKo3PlJrjzK9WUbLPao376YaCRobzfkN0PTaSbWHO5/lGcJre9oMLhMC52Jm/wD3A+i69hkxp4fRZ4qrT8GGa4yoHfkEDLmcSNbx3hTveCMux/kaqCO3a5AJ102Tqr52uuoRgziGzBk6DSw/LeaDrEkzKKeNrKB4HKT1RodA7NegSnVSlto3P59fRRtEpWO2T0nAt1jwQ2MpGA8Xix7p2ttPr0RbWgDkuscIyE9lwIUk+LtDY51Ihw1TQ3ju18tVreDVwWlxPa0F+Qgu7hEBY/EUnUfjBcwmGuaSAeQcI+KArv2foVahEAtYZgxbbQ6acvRaE41yvRuc1Ru/Z1gL87h2WiSY66Rzv5hG4moHvkHUztp47KKg9jKYaDp89jA0UVCpmLTE8/M/so2pyvwYs2Tk6Qyoz3ZlklhuWjnzEX8FWupgPlpkEkiNxJMCN7HyHNW2KqAOggx81V4lpDonsmeuVx0OojXmg4rG7XT/ANBw5eLphFIQ3O0yz9VyIm4uPDrIRDKxBOV4vzyi8RJDnAA/8pnmq6jTeLxLhqRbxjWDroRc7plSswSXMy9WS3ztbvt3Km30egmqLKvjiDOYmwkjKBIuCXARqTYT4JjuLgAtk30t43+gVLVx9jkueZ7RHeT80fwfCQPeV3HMTIB1y2In/LvbusllJQVsWU0kWGFx+dwy/pMlxNmgalxt5am3ejcfxRjwYdaLGPCwKrOIcQa7sRDRy++kqgxT5PZJ8h87LPJym01ox5cylrwWj+INByl1+79oTnBlS9p3IWWrV3TfXu280/D4zKQ4ONtRe8qri6Myo0bKYZIzfFpue9TMpNGwd33KqqOPDxlcYO080fgXNAJdGblO4SSgkrQFtjGMYx7XkEEOzC5iRcWXoNekHsDo1aD5iVhKzczZBAO8hbxlce7bGmUR3Qo5eKWy0dJpmH45wlrzpdZk8Gyuh0kLdY54LkFi6ILZWWOV7QtlXS4Vh4HYCS5JCSTnL2GzxqUgnGmm5CvpzUbP2Rrg0nME5mkyJ2cbEecKxrGB89uqyHs9iSyqNYcCO8xb85wtrVwdR1MugBojqSJv3fusmV8Zf3oz5IOUlQNQbYvix01ulVyiSjsHUDg8FroDGyXOLrku5m0iLDkhnU28vrHmuV20RyR4ugB7d0O93L5I+uNTqPD6IE329E50RjxACiD4JT3i91GWlTl6COdUG6jbVHZ7z5Jr6dlDTOnil46GSNZw97XMcDEHY37pB33VpgsYGN1gx8lkMFispAm35+6ficU7N2f3CxSwNyq9djqbUaNY3iAe4gm+w6/UXVrSxJaAJtGkGdpnksZw0PMQWgdSD6bKzfiC0xOnWx6wLrfBKKSIbLyvXzO1PoFLRaxw1BB5+JP5qqfD1xOsk84jwPf9FM3EZXdLkdDvf6JtNUCy3o4gMdBaHwJAIzS2I78wJFxeAjKWKpFv+FmkTZzhrO5E+qpWNe/tNkZbh3X6g/UqSjiAGzcSbi3Zdr3wRcFQ406XXgtHLJR0ywfWYBLaDWkXLj2jztmEg+qqsVxGTJEd8kD06Kxp1+V+6YT6tVhdDmiSOXz8Qi8SS7ElOUuzKnEF5uQB4DuP8KR9Vx7DBLuffuYVtjeGsItY+BVHiKVVk5IPlM9UvF38Ckn9GW3dBJ1/k6ei7kaAVWv4g7V4cI11UtHGBxmdU8XaOaCKb+QgjxRraZfBD4d5Zv3QXvwbDX83TmV8sTqUWgIOqE5Q0SIP5K0vCsdNIMJkstrtt9vBZduKzjRxI5bj6ojA4sB4g62PioZ488dLwUUvBc13S5NqusmGoEx77Ly0hqAnQkoKlS5XF1HUeQVaRbr5pmYq2ovabOuFDj+HFoztu35L6VTV0zQpA2FxOR7XxOVwPkZXqXD+MMc0Frg5j9BpaIgjnIXkyLwGOdTcHNNtx+bpc2JTS+BZJta7PTcViWBsMYGtJkxufuqzMQLi/kmYDFNewPBnp/l12+q7iXZtyJMT39FKK49mSTbewKq8uOUab9wTK1SIGw2/PFEPAaIaNdTeT3oKo2XDlr9tfBMgojqMcNgR02TXPzDSITqzuRXQy1kkq7CRPYcqDadO9WH9TAjLPNAZhEjn9/2SRb8odEzCQV1j+1fdRtePHdOaLymOLXCVQHQd+R+6KOJGfLMDlY7fm5VbhmwRB36n5IjFF2aRqBp0OkdLBFdCVZaUzBsfL5d33HerfCvtz3i/17wsxhMefhI7U6es3VrTLzuB4GQNfFc7QjTRet4jAiLdb+mxUz6eZgdEkCHN/wAzdY7xsfBVDcO0EPJLovBmNgFaDFwLGNvzXRB09MNg7HwYkQbg2GZp0InQ6AqRsm/6fH00TXtM6gtcZaSPhfpBB2d8+UpU3PNnAmOUTPXbwXJ3p9nNeSX325J7/wB/2QlbEXkdxgrrqbpkkju+sJrsOALlvqmQAc4hh2E76eN0O7hlJ0kdh3T7aLmKw249Jj5qClViOY0i3y1SNBTI34eoyYGZvMa+qiZUMw6R81YNxLp6FTVcMyprIdFnCyDXo4WGrAIkNDr6OO8IAYVzO07tN5jbvCLa8OjLqluuwrssi+wPNce8hqHwDy4HcBxhG0sI6q9tNupPkOa837T5tIu40VOYnZJep4XgFFjGtygwNUls/wCvl7DxZ8yMpgdUTTrEAj9J1BUC60re99jNDBgmEz2h0U7cLSGxPeoi9QPdO5RuTOpst8BiqdN0tMA6jY/ZXjGh5Y8EZbkX6GxWJYwzEK84Liiww/4D/wBp593NLOPyLPHq12WtSJN+qFDZJPL88VYYhovHL0/Pmg6bDeRckJY12Zegaoyb9fXxUXvICNxFMxb83QuURdc6aGTA6rrKCBp0T6hk/JRt1XMqkPZqpqT9VC1EU2iEGcwrCxYm90XWHbnmNCdbkeSBpz+nTp5b9VPXBGW+339YK5q0LWwjFUohzBppHJT0MUXX38hz+/kh6FSfz5wulrmnMyCDqBrPO90N1sVq9MuWVpAb0id/Pf7rrCQfiB5G/wC/z2VYHvLc2XTnfbl9RyRLMSBG/MAyeQnx3QoXi+i9wwdlLXGQRBvGboLW8Fyo4sJknO2M9ic7NA7qdQT4ofCY0WJ+evjCmqVHv7YhrgeyTNxu09Da3RLL2u0FadM6MTnMCYidxZPrOGWNfzWYQb6zDllpEyWOaQN7gzuCm/0ryfiJ6W+W/wC6Kla0DpjDG4Hn+yErEXAXMRSe2027jHpKGLntGk8yIP7hdyDRP74RGyX9QRoDCHp1wP0yfzyUjqsm0ockdTWyajjntN7tIMq1wjmBjnsi4juJWfc2dfmu1qppU7O+NwEbRqUsmpNJlYR5SVml4RhKhphzWPcCT2g1xBgmbgLZex+CIL3Oa4ECJcCLnlKoPYz2obRpvpv7QDszYOjXC4HiCfFbvhfFW125mC3WyrhxQjLk3v0Wmlyos0kyTy9UltsJ8pSoXuMp9RyjDVFI4USpGUp2XWwNdeScHlc2FK2TMEKGq9PBXKlMwkVWUUEiw4VxaAGVHHL+l2uXoebVc02dsZTMjXW0arFOsj+H8YdTsdNt/MbhGUL3Ehlwp7RpnU3AdvX89FXnCvf8IETqpX+0eeAGMFrm5k9BIjuurThPFKTmFjgG1ADlGzuUE6Hp81B84q2v4JLC07KtnBRmAc7e9oPmo+LcIawnI7ML2OsCN/FaPGsJA7MOA+IbjoOUqoxFYggOMAiM19bW6baLvNGpYkZ1nVEUpBtCWTS3mutFtUbRmmqdBDJN9I8h4clLj6cAOExr58+kgdyiovsB5jp+BH1AHMF42jSJ0v3rrFaqmB4d86gkd+w77ImntF0M6Mo6HwPiRqiqDrDUn87r6phJBNLEOOsaaGPQHwUWWJ0A1BGo5JNbaNR+ctlFinwLelvwXCSO5UdBXInwuJgDQjQgkeBjz9VbU8Y4QQBHKNbDTkszTcXSRYD8gneJ1Vrh8Se/rt5W6p8qinrsvLgvGw/HQ8EG2Ygg7NfHyIABQeGxpiJuLbyOeqkD81jcaBBYkGc2+juuzXeMR4KK/ZnSTDRiCTf88FFiHCA4Qb9EJSxCdTAAytGvzN0Xaeg0kE1Mjm3EOPL8uoGUiBYz+bKLNYpNrRuuS9nbHZhN57lJWptqNykGRdsc1zOHWcCDsUM6pexspyTu0wxk4uw7BcOAyiSHGxvOuy9EwGLGHpgDWF5vw2qc7dbEfNaWtiHvdkYC4nYJIylu9sdyctltV9oHye36pIWn7J1iATbpySVfz+Q8JHkD2XXDbvRGIEHwQhN1tTsqPY1SkXTaLUiUGUgPa5Oc5RgpEpaKEFRQvaiHqOFSLoD2QtMKywzyBmGvn6HVVzwjMK+AjLaJytGmwHFgfj7J5i7fEajwsu4ykH2I1vmb2hodOWipGPAEo7h1Yh1vmR3qDVO0cptdg7iQCwkOg9kix22QpcZhbFmAZVaDMOF4GXXrZZ3i+ELHkO+I3tuOfelTt9E5NS6B2v6KwwtRx5QPzWFUsv4Iig/Kd/NGiUlYfQq94m2kgnuOqnNGm6chyEi4mRM8jsgKNS5BIta6kptaC4+WvUzPgEiBxRM1z2G4kcxp8rLrqZfpbv6Su0nk7nb86JoLhqTr+d37Lr9Cx+B9MNbqZIPdpyCdWr6uEad24Hj3dFE256fm6irGSB493JdSvY7SRYYbGiLX6Hn1UlesXdsnQQRGrTr91VU2ZT0/hEsqFztdEqik9CNDYgkHwPTZStPVSljSL7ab2P2K41gmNkytnOiB74KjuTOyMqgE6QB6qCtTj4fJCrBe6IHvUTnTK68z0UbJGqKjQ6SDuFPGdoNgSATykr2L2foYeg0ZYLjq7deRcK4c94zsh1yI0PZDSTJ7P6haZ15Fafh7MSHNDgIkfrZuYH6vyUiTjK6KrHKk1+0ennEtSWcpYh0BdVPzF5I8Hr6N7kFuupLREZdBP6Uxq6klZbH0dUbkkkUUZx6jK6kmARuUmGSSTeBJE79UXh9EkkkuiT7LnB/RRcU/wmeH/gkks/kaHbKmh8SkdqEkky7IvsVT4z+bBEs/PMJJJX0dIPo/Af8AhHyKfU+Af8Lv/IpJIIn5BRqPzcqCp8fgPkkkm9j+Rw1CnbukkgCQUNP+U/JQUvqkkj4Yq6CKuya/4vBJJKukIwTF6jvUWJ0CSSou0Uh2iClqrSh/ieKSSjl/9Bydnq/Dv8JnckkkvQRI/9k=" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+            
+        </div>
+          <div class="column">
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvXQyt0CF0WPhKLo2cwJ3GMYl0ZFn5n2yGfw&usqp=CAU" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Tomato Target Spot disease, also known as Corynespora Leaf Spot, is a fungal disease caused by the pathogen Corynespora cassiicola. It primarily affects tomato plants and can cause significant damage to the foliage, leading to reduced plant vigor and yield if left unmanaged.</p>
+        <p class="imp"><b>Note:</b>The scientific name for Tomato Target Spot disease is<i><b> Corynespora cassiicola.</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para"><br><b></b><br>
+
+          <br>
+          <b>Proper plant spacing and pruning:</b> Providing adequate plant spacing and proper pruning practices help promote air circulation and reduce humidity around the tomato plants. This can minimize the favorable conditions for disease development and reduce the severity of Target Spot infections.
+          <br><b>Irrigation management:</b> Avoid overhead irrigation and water the plants at the base to minimize leaf wetness. Watering in the morning allows the foliage to dry quickly, reducing the time for spore germination and infection.
+            <br><b>Remove and dispose of infected plant material:</b> Regularly monitor the tomato plants for signs of Target Spot disease and promptly remove and dispose of infected leaves or plant debris. This helps reduce the inoculum source and prevent further disease spread.
+              <br><b>Fungicide applications:</b> Fungicides can be used to manage Target Spot disease, particularly when disease pressure is high or when cultural practices alone are not sufficient. Fungicides containing active ingredients such as chlorothalonil, mancozeb, or azoxystrobin can provide control. Follow the label instructions and recommended application schedules for effective disease management.
+ <br>     </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Crop rotation:</b> Implement a crop rotation schedule that avoids planting tomatoes or other susceptible crops in the same location for consecutive seasons. This helps break the disease cycle by reducing the buildup of pathogen populations in the soil.
+              </td>
+              <td><b>Chlorothalonil:</b> Chlorothalonil is a broad-spectrum fungicide that provides protective action against Target Spot disease. It helps prevent the development and spread of the pathogen. Chlorothalonil is usually available as a liquid concentrate and is applied as a foliar spray. Follow the label instructions and recommended application schedules for effective disease management.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Resistant varieties:</b> Select tomato varieties that have resistance or tolerance to Target Spot disease. Resistant varieties can help minimize the severity of the disease and reduce the need for chemical interventions. Consult with local nurseries, seed suppliers, or agricultural extension services for recommendations on resistant varieties suitable for your region.
+              </td>
+              <td><b>Mancozeb:</b> Mancozeb is another commonly used fungicide for controlling Target Spot disease. It has protective and curative properties, inhibiting the growth and spread of the pathogen. Mancozeb is typically available as a wettable powder or liquid concentrate and is applied as a foliar spray. Follow the label instructions for dosage, timing, and safety precautions.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Proper plant spacing and pruning:</b> Ensure adequate spacing between tomato plants to promote air circulation and reduce humidity. This can help create an environment less favorable for disease development. Additionally, prune the lower branches of the tomato plants to improve air movement and reduce the chances of spore splashing onto the foliage.
+              </td>
+              <td><b>Azoxystrobin:</b> Azoxystrobin is a strobilurin fungicide that can provide control of Tomato Target Spot disease. It has both protective and curative properties, helping manage the disease and reduce its spread. Azoxystrobin is usually available as a liquid concentrate and is applied as a foliar spray. Follow the label instructions and recommended application schedules for optimal results.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Mulching and irrigation management:</b> Apply organic mulch, such as straw or compost, around the base of the tomato plants. Mulching helps suppress weed growth and maintain soil moisture, but be cautious not to over-mulch, as excessive moisture can favor disease development. Practice proper irrigation management by watering at the base of the plants to keep the foliage dry.
+              </td>
+              <td><b>Propiconazole:</b> Propiconazole is a triazole fungicide that can be effective against Target Spot disease. It has systemic properties, meaning it is absorbed by the plant and provides internal protection against the disease. Propiconazole is typically available as a liquid concentrate and can be applied as a foliar spray. Follow the label instructions for dosage, timing, and safety precautions.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological control:</b> Use beneficial microorganisms and biological control agents to suppress Target Spot disease. Products containing Bacillus subtilis or other beneficial bacteria can help protect tomato plants against fungal pathogens. These products can be applied as foliar sprays or incorporated into the soil as seed treatments or drenches.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural practices:</b> Practice good sanitation by removing and disposing of infected plant material promptly. This helps reduce the inoculum source and prevents disease spread. Also, avoid working in the garden when the foliage is wet to prevent further disease transmission.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Organic fungicides:</b> Some organic fungicides can be used to manage Target Spot disease. These fungicides are derived from natural sources and have lower environmental impact compared to synthetic chemical fungicides. Examples include copper-based fungicides (copper hydroxide or copper sulfate), sulfur-based fungicides, and botanical extracts (neem oil or garlic extract). Follow the label instructions and apply these products as recommended for effective disease control.
+              </td>
+           </tr>
+          </table></br></br>
+        </br>
+          <p class="imp">"It is important to note that chemical control should be integrated with other management practices to achieve better control of Target Spot disease. Regular monitoring, early detection, and timely intervention are crucial for successful disease management. Consult with local agricultural experts, extension services, or crop advisors for specific fungicide recommendations and guidelines suitable for your region, as they can provide the most up-to-date information based on local conditions and regulations."</p>
+    </div> 
+
+
+
+
+</body>
+</html>

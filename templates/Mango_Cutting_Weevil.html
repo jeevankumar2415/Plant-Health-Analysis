@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Mango Cutting Weevil</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Mango Cutting Weevil</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+<li>        The mango leaf-cutting weevil is a light tan beetle with black wing cases. It's a pest of mango trees in tropical Asia. 
+</li><li>The main damage is caused by the female weevils, which cut young leaves. Infested shoots become almost leafless. When the density of weevils is high, the adults can cause serious damage by their feeding alone.
+         </li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://agritech.tnau.ac.in/crop_protection/leaf%20twisting.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://content.peat-cloud.com/w200/mango-nut-weevil-mango-1550239574.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">The most obvious symptom of attack by D. marginatus are young leaves that are cut and have fallen to the ground. Stripped shoots can be easily seen on the infested plant. Adult feeding produces 'windowpanes' on young leaves.</p>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para"><br><b>
+          Collect and destroy eggs:</b> Collect leaves with eggs, dry them, and burn them.
+<b><br>Plow the soil: </b>Plow the soil under the host plant's crown to kill pupae.
+  <b><br>Apply insecticide: </b>Apply insecticide when young leaves are 3 cm wide. Insecticides such as trichlorphon, deltamethrin, and fenvalerate are effective.
+    <b><br>Spray chemicals:</b> Spray chemicals such as Monocrotophos (0.04%) or Dimethoate (0.06%) to control scale insects.
+      <b><br>Remove webs:</b> Use a "leaf web" removing device to remove webs made by leaf webbers.
+
+          <br>
+          </p>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Neem oil
+              </td>
+              <td>Insecticides such as trichlorphon, deltamethrin, and fenvalerate are effective for controlling the mango leaf-cutting weevil. Two or three applications of these insecticides at weekly intervals can protect young shoots from weevil attack. 
+              </td>
+            </tr>
+            <tr>
+              <td>Imidacloprid 17.8% SL
+              </td>
+              <td>You can also try bagging mango leaves with a mosquito net or polythene bag. 
+              </td>
+            </tr>
+          </table></br>
+       
+          <p class="imp">
+            <b><br>Plow the soil</b>
+Plow the soil under the host plant's crown to kill pupae. You can also deep plow the orchard immediately after harvest to expose eggs and pupae.
+<b><br>Collect and dispose of fallen fruit</b>
+Collect fallen infested fruits and dispose of them by dumping in a pit. You can also ensure orchard quarantine by restricting movement of fruit from old orchards or areas known to have mango seed weevils.
+<b><br>Monitor fly activity</b>
+Monitor the activity of flies with methyl eugenol sex lure traps.
+<b><br>Use bait sprays</b>
+Combine any one of the insecticides and molasses or jaggery 10 g/l, fenthion 100EC 1ml/l, malathion 50EC 2 ml/l.
+<b><br>Apply pesticides</b>
+Spray wettable sulphur +Imidacloprid +gum acacia (0.2+0.25+0.3%) or Indian oil formulation No. 1 & 2 (4%) at 15 days interval. Application of pesticides should cover both sides of leaves.
+          </p>
+    </div> 
+
+
+
+
+</body>
+</html>

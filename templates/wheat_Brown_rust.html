@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Wheat Brown Rust</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Wheat Brown Rust</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <b> Symptoms of brown rust typically appear as small, reddish-brown to dark brown pustules on the leaves, stems, and sometimes glumes of wheat plants. These pustules contain spores and often develop in clusters or stripes. As the disease progresses, the pustules may coalesce and form larger patches, leading to the blighting of foliage
+      </br>
+To manage brown rust in wheat, a combination of cultural, genetic, and chemical control measures can be employed:
+</b></br>
+      <ul class="para">
+       
+<li><b>1)Resistant cultivars:</b> Planting wheat varieties that have been bred for resistance to brown rust is an effective strategy. Resistant cultivars can limit the spread and severity of the disease. Consult local agricultural extension services or breeders for information on resistant varieties suitable for your region.
+
+</li><b><li>2)Crop rotation:</b> Implementing crop rotation practices can help break the disease cycle. Avoid planting wheat in consecutive seasons in the same field, as this reduces the carryover of the pathogen from one crop to the next.
+
+</li><b><li>3)Timely sowing:</b> Optimal planting time can minimize the exposure of wheat plants to the disease. Planting wheat early or on recommended dates can help the crop establish and mature before the peak periods of rust infection.
+
+</li><b><li>4)Fungicide applications:</b> Fungicides can be used as a preventive or curative measure to control brown rust. Foliar fungicides specifically formulated for controlling rust diseases can be applied according to recommended guidelines and local regulations. Consult with agricultural experts or extension services to determine the most appropriate fungicides and application timing for your region.
+
+</li><b><li>5)Monitoring and scouting:</b> Regularly monitor wheat fields for early signs of brown rust infection. Scout for symptoms and assess disease severity. Early detection allows for timely implementation of control measures.
+
+</li><b><li>6)Sanitation:</b> Implement good sanitation practices by removing and destroying crop debris and volunteer wheat plants after harvest. This reduces the carryover of the pathogen to subsequent crops.
+
+</li><b><li>7)Integrated pest management (IPM):</b> Incorporate IPM practices, including the integration of multiple control strategies, such as resistant cultivars, cultural practices, and fungicide applications, to manage brown rust effectively and sustainably.
+</li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjRrk83RnhONsn7EXNzULvtlYNAPKvK7_Gw&usqp=CAU" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">The severity of brown rust can vary depending on environmental conditions, wheat variety susceptibility, and the presence of favorable conditions for disease development, such as high humidity and moderate temperatures. Severe infections can result in premature senescence of leaves, reduced photosynthesis, and ultimately yield loss.
+          Brown rust is a fungal disease that affects wheat plants (Triticum spp.) and is caused by the fungus Puccinia triticina. It is one of the most common and economically significant rust diseases of wheat worldwide. Brown rust can reduce crop yield and quality if left unmanaged.
+          </p>
+        <p class="imp"><b>Note:</b>The scientific name of the fungal pathogen that causes brown rust disease in wheat is <i><b> Puccinia triticina</b></i>
+        </p>
+      </br>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Resistant varieties:</b> Select wheat varieties that have inherent resistance or tolerance to brown rust. Resistant cultivars can reduce the severity of the disease and limit its spread. Consult local agricultural extension services or organic seed suppliers for information on resistant wheat varieties suitable for your region.
+              </td>
+              <td><b>Fungicide selection:</b> Choose fungicides that are specifically labeled for controlling brown rust in wheat. Different fungicides have varying modes of action and efficacy against rust diseases, so it's important to select the appropriate product based on local recommendations and disease management guidelines.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Crop rotation:</b> Implement a diverse crop rotation system that includes non-host crops for rust pathogens. Avoid planting wheat or related cereal crops in consecutive seasons in the same field. This practice disrupts the disease cycle and reduces the build-up of inoculum in the soil.
+              </td>
+              <td><b>Timing of application:</b> The timing of fungicide application is critical for effective control. Fungicides should be applied preventively, before significant disease symptoms appear. This typically involves applying fungicides at the early stages of brown rust development or based on local disease forecasting systems. Follow local extension recommendations for the best timing.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Proper field sanitation:</b> Practice good field sanitation by removing and destroying crop residues and volunteer wheat plants after harvest. This reduces the survival and carryover of the brown rust pathogen from one season to the next.
+              </td>
+              <td><b>Application method:</b> Fungicides can be applied as foliar sprays using ground or aerial equipment. Ensure thorough coverage of the plant canopy, targeting both upper and lower leaf surfaces where rust pustules tend to develop. Adhere to recommended spray volumes and application rates.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Adequate plant nutrition:</b> Maintain balanced soil fertility and provide proper nutrition to wheat plants. Well-nourished plants are better able to withstand disease pressure and exhibit better overall health and vigor.
+              </td>
+              <td><b>Resistance management:</b> To minimize the development of fungicide resistance in the brown rust population, it is crucial to rotate or mix fungicides with different modes of action. This helps prevent the selection of resistant strains of the fungus. Follow local resistance management guidelines and recommendations.
+              </td>
+            </tr>
+            
+            <tr>
+              <td><b>Timely planting:</b> Plant wheat at the recommended time for your region to ensure that crops establish and mature before the peak period of brown rust infection. Early planting may help escape severe disease pressure.
+              </td>
+              <td><b>Adherence to safety guidelines:</b> Follow all safety precautions and guidelines provided by the fungicide manufacturers, including proper handling, storage, and disposal of chemicals. Use personal protective equipment (PPE) as recommended.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Optimized plant spacing:</b> Adequate spacing between wheat plants promotes air circulation and reduces humidity, creating an unfavorable environment for brown rust development.
+              </td>
+              <td><b>Integration with other control measures:</b> Chemical control should be integrated with other disease management practices for sustainable control of brown rust. This includes using resistant wheat varieties, implementing cultural practices, and monitoring the disease's development.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Beneficial microorganisms:</b> Apply biocontrol agents, such as specific strains of bacteria or fungi, that can help suppress the growth and spread of brown rust. Some biocontrol agents can induce plant defense mechanisms or compete with the pathogen for resources.
+              </td>
+              <td><b>Regular monitoring:</b> Monitor wheat fields regularly to assess disease severity and progress. This allows for timely and targeted fungicide applications, especially during periods of increased disease pressure or when environmental conditions are conducive to brown rust development.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Organic fungicides:</b> In organic farming systems, the use of certain organic fungicides may be permitted. These fungicides are derived from natural sources and have minimal environmental impacts. Consult with organic certification agencies or agricultural experts for approved organic fungicides and their proper application guidelines.
+              </td>
+            </tr>
+          </table></br></br>
+        <b><h1 class="iden">Caused By:</h1></b>
+          <p class="para">1)Brown rust in wheat plants (Triticum spp.) is caused by the fungal pathogen Puccinia triticina. This fungus belongs to the Puccinia genus and is specific to wheat and related cereal crops. Puccinia triticina survives between growing seasons on volunteer wheat plants or through alternative hosts such as barberry shrubs (Berberis spp.), which can serve as a source of infection.
+<br>
+            2)The life cycle of Puccinia triticina involves both sexual and asexual reproduction. In the asexual phase, the fungus produces spores called urediniospores on infected wheat plants. These spores are easily dispersed by wind, rain, or human activities and can infect nearby wheat plants. The urediniospores can germinate under favorable conditions, such as high humidity and moderate temperatures, and initiate new infections on susceptible wheat plants.
+          </br>        
+            3)During the sexual phase of the life cycle, Puccinia triticina produces a different type of spore called a teliospore. Teliospores are formed within the pustules of brown rust and are capable of overwintering on infected crop residues or alternate hosts.
+        </br>
+            4)When favorable conditions return, the teliospores germinate to produce basidiospores, which are then carried by wind to infect barberry shrubs. Barberry bushes act as an alternate host for the fungus, allowing it to complete its sexual cycle. From barberry shrubs, the fungus produces yet another type of spore called the basidiospore, which can infect nearby wheat plants and initiate new cycles of the disease.
+      </br>
+            5)The continuous cycle of infection and reproduction leads to the spread and persistence of brown rust in wheat fields. Effective management strategies, such as resistant cultivars, timely fungicide applications, and cultural practices, aim to disrupt this disease cycle and reduce the impact of brown rust on wheat crops.
+            </p>
+        </br></br></br>
+          <p class="imp">"
+            Remember to follow the specific recommendations and guidelines provided by local agricultural authorities, as disease management practices can vary based on regional factors, wheat varieties, and prevailing environmental conditions.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

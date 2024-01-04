@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>SugarCane Red Stripe</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>SugarCane Red Stripe</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <b><li>
+         Reddish Streaks:</b> The most distinctive symptom of Red Stripe Disease is the appearance of red to reddish-brown streaks or stripes on the leaves. These streaks are often elongated and can extend along the leaf blades and sheaths.
+         <b></li><li>
+Leaf Lesions:</b> As the disease progresses, the red streaks can develop into elongated, sunken lesions on the leaves. These lesions may later become necrotic and result in the death of affected leaf tissue.
+<b></li><li>
+Leaf Drying:</b> Infected leaves can dry up and become brittle, leading to a reduction in photosynthetic capacity.
+<b></li><li>
+Reduced Yield:</b> Severe Red Stripe Disease can result in reduced plant growth, stalk deformation, and a decrease in sugarcane yield and sucrose content.
+</li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCAoSEg0KCgoICA0PCQ8KCQgICBEJCggMGCEZGRgUFhYcIS4lHB4rHxYWJjgmOC8xNUM1GiQ7QDszP0M6NT8BDAwMEA8QGBIRETQdGCExMTExNDE/MTQ0NDQxMTQxMT8xMTQ0NDE0NDE0NDQ0NDE/NDE0MT8xNDE/MTE/MTExMf/AABEIAO0ArQMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAEBQYDAgEHAP/EAEYQAAIBAgMEBgYGCAUDBQAAAAECAwARBBIhBSIxMgYTQUJRYiNSYXKCshQzkZKhsQckU4GiwcLwNENx0uJEdPIVRmNl0f/EABoBAAMBAQEBAAAAAAAAAAAAAAECAwQABQb/xAApEQACAgICAQMEAQUAAAAAAAAAAQIRAzEhQRIEIjITUWFxgTNCkcHw/9oADAMBAAIRAxEAPwDBtYyOO7S/ZrNvqOAamEBujL4ZqB2cN9x4NQZiZSYTHOEVOwVO7bcdYHtxWm+AsUJ8GpRt9bEGvJcYxztLsWjjYDb7DxWm2NIyGkWxWtIB4rT3F8hpJqsiYAIfVj2NQeOkyggHVt1aLT6s39alGLkLPbsXdrT6ZXJndhMDmyk9tVuwVC4ViBrLtNs3uomX82apFFN1Qdi1X7IDDCYcNoTi3ky5vbl/prf5WqKRKLos95W/7VLUp6SG2Ie51zNl+yj+ibemH/b5fu0s6Un9YkPn3fsodjvQngdiZGtypGq1PbXJMsjnNq9OME46uVx6qbzUq2nZpHK8DIuWiIwGa5GQ8AuVaO6NSFJDGTod5VrjEoN8AcGpSmKkjkDg6BqycZIyixVyfQ8Wm6GFI9s4fNGJANVpps/HiWMaMTlrRMLJIrR9W5vy7tedik8U6fRyM+g0OSPEYphzNlSqmMMIxIQupzUJs7Z6wwRwOuQls0i0ZiC27EvIFu1YvVZPqZW/+pCN2ziR8y5tAAtJ8TPZrE0zmkURkKKlNo4o57X4Chgg5cHLkHwzauvmrDDraR/a1dYdt91rQ2DsT2rX1TfBToL2S/OnmoPpCugNq22O/pGU9q11t+PcY+FeVm4zJiiPZTWkT21RYobjVMYFrSJ71VGI5D7tLl+aYBaSBE5JtakqcQfio3FyHKIweLZmoWJdR7Wy1vwQ8YtvsI+2Zg2YdYR3ao4osuGgccoZW+8y0FhXiSKwy5ilMYXBwZvbdjVl+EpVdFYoJ6Kt6dbdqSq3vKzLS/pWR10uvBmzeXSjejDL9IjQHh1/zZv6qA6YkCaS2XezfK1N2EndmEdTKb8WT8qCxa76+3JRWzSOocW4ZN74azxq+kjVTY9SmVvNlorngGRcsDxD83tpdJCpN2phiFA3iLA931W9WgWPbWSMXFtMkg7AbSkh3YwhHnqv6N7aaZkhYIjlu6tfP71UdBolM0kzHVI8sfvNWf1UE8bbOa4LmRyzk30XlrxpyoNxcM3NX5Rw3Wuf4qExLbxRiyhe61eGkm6JLYPjcStm7Aq1IzEuzMPG1O9tSBRlVr5qV4fIqgvxber0cEfCPl2yi4BYn9JfzURi+KnxpbC++GPrUzxnBGr3XymP0ebPa0qe3dphtobjacVpVE1pEbzU22qQ0ZPkrzPUr3xYhJ4c76Hz1WOLp8NSKGzA+D1TzzWiuOLLlWjOLlKKRwixRuzEfDWaabx7K1de2snvy+OWvQbpDIbbLaR7Zi2WqqBl6howVuEfd90rSTZEYCrpatpJHSTFR5t0JufFlb/dWTDOU8rfRbCrbQ36MW+lo9+2ZD/DQPTd7TN7Y2y/ZRXRtv1tQvDrpf6aX9OWHXG/7OX5a2dhS91CfBACGT2Kmb7tBbVJzpkazLHEy+bKq0Tgm9FiFutxl+VaX7SkBkjUaN1asv2LTLYuVe4MdFljzjQnn8sndalkeHdsy8Cu6y+rTDByBSGIuj7si+q1bT4SRGbFoueNGSPEMvdV91H/AJUmeL8fJEhBIpBKtoRT/ZDvFGkoLBnbP8Ne4vZaSZHjNi/M1dYgAEIORPRp7q1heRTjR12iy2VtiKQr1hsyx92scQ7Es7ZrM2bM3q1IriMl3jLB83w5acPtgSRjNlDInVqq150vTNStaYGgHGO0kmQHQvlX3aXbUnUOEQ3CrlpjgwAsuKcjcTLHm7zVM7Qclz7BW7FjU349IKVsKjbt81N59YwaSp4U5h3oreWvSQyByeRqZTPeOx9WlYOg9jUdf0fw1i9RG0n9mITx4n3qbtKzJGh4KtLY0zOF7DJTFl7Kvhin7jjFh9tYxEE6+tXeLkCg292gkcixvTzVoJSx4tUCm/CisepaSRwLX2VhcV7zKuVvmqX6x2Gp4LV/tnZ4SOLEMP8A20rZlXvIu98y0uOCho1+l2wXo1IfpYseGJk/pobp64E5Nv8ALl+Wu+jz/rQIIv8ASXb72XLQ/wCkJh1xHacPM34VXsVfMR4Bz1c4HDq1/JaXbUU9YjDsjT8qM2U5ZMQu79Wvd+GhcS95ACNDGtMtiZvkEYdwRc8Duv8A7qt+heFjnjxuFxC51MKwuv7SNqhYgym/Z3vdq66BMf1hlvnRY2j9WSPezLRn8WR0yamTF4XEvs+Us3VLnjl/bQnkb9/53rFn11y7q96q7p8Ib4WVVHWNG/pO91fNlb9/zGo1it7j1a82SSlSOf4M5j+7vUOkmVt42FdzubanTu0ETqB2cze7Twjw2zkigxM6dVFBFvlt52XvNS3E7Pcsx9tO/wBH+CTEYtkkXOiYOSQL6jbqj5qN2nhBFLJE4tZt0+Iqck8KTXYyh2SCmm+zzdGWk4jdeYU02Y3MtegtndmduYeDUfChMbEdi0DLo7r40z2brGw8FrNm0xWJcIm87ns3aL11Nu7XMaWze12avZ2CqWPALV4KoIAm2lNeRYwdF5q9Rb2oSY3fMeJpjhV7a5j0H7OwZd44lF2eRI1XzMctfTemAQRYlE16nY0q5V7qkf8A4tSvQLCrJi1kcbmGw74ls3rcq/Mx+GnuPxRnixsjDdljyKubmVka37qKNWCNJyJDohMWxLXLFg6fdtXX6SmKzoB34XX727WXRKJ1xCyFlt9Xl7267L/TRv6QsOHeSRS2aPDLI2Zc65WdV+GmS5Of9Tgm9kbseJPA5kjX7aFnO8DRWC+rlC6k4mKNvLozUNirXX3f5tSTdaI5vmwuEZgCNfNVf0HmyNNE5sr9UySfs5N7LmqM2ccpVpCwjL77Kudo17zKtfWtjbD2cqNJhHklTEQoxZ5Fkz+q6131IyjXZKrI/p1L+sLGCwy4dWWP9mzHeWp5ytrgWIXLu97zUz6VOzYzEIG6woyx5u+2UUnlYcOwbzVilzJgYLO2tr0NfifW3a6kYnTtO6teEDQDsrRFUlEZKkfQP0SoOuxj9q4WNB+8/wDGq3b+x0lkWS3FTe1Rn6L8QEmnUm3WKkf3a+qkA1WUVJUyseVR8IlylSRXOzW37eNNMRhI8hsNctJsMcsgF+DZaWGWM+URvkJx4tID40w2Ud2QUFtUcj0XsZhZ2PALmpcqtUB7MStjalW1Z9VjB8zU0ncDMe2pyeTNIzeara4ORjJziqDZODd0z3UClWFwnWSWvoFqn2LmymJEdyjZd1an5JvxCuWFYCaTCx4zfyNMiwxuvM2UOzZaM2Y0nVYiJuC9THlZu71a8v3qXbZcBcPHIjIyu0zKy+tu/klHYDEoTjmsxQPDl8qoi060ejCNY0LOjLemNuyZszt3mzvTbppa2JFubBoubzZ1y/M1IOjskmfEZMpdMSzR5fMWZfmo3pPipurj6xQHlwjK6t3crpvUf7ifi3K/yIcJl6uVr6/T4Vy+tuvQeKO8o8tFYRiUKEatjIvhyo1B4q+YA9i0k9EM/wAjY4oKuUD3aoOhXSSTDN9ExDH6NJJeORm/wEzd73D2/bU3DhJGGfK1q0WO2hHBt6s6cU6RJ0lQbi8Q0k+ImY3L4h2/Gg8RIbEX4tXUZ0ZhmtQsza27BSxVyFXLOVOvDhXo43rkcL9prRRp/ru1pjy7CP8Ao1K8MkUu8FLLmb3q+2YeQMiuNQyg18PGJQIsYFmVVWvqfRHaIlwyXbVDkaraXJSLSZ8hO1XYZTru1jExuG81Aiiom4VGMIw0JJUONoLeMN4V+2a9kYDt5q75ovhrPCALE7niWy09W0Bgm05bKSDrSKK5Io7bMtwFB4tvUJCvA0GzkPdlQ5WLHtWrfoVLhV61ZDGj9Y289Rey5ASF7QtHYYb7G7A5qxJv6jsC2G9LJo5MTiMpXKkixo3uhv8AdX7ZJVcNtNzxRkZW95HVflpXi2Jkdg+cNjmjX3VFFNIY4MaEDASMis3Orautb1wj1cauAv6LSXkxT5luZImzcnZRHS93H/p4kkV3ZZI8yrutvrQfRlLSYld4/VbvrUd0kW0eFtGUCw4hVVt9lbOldfIte5/sV7MS+RxrbFs3u5Vy/wBVeRYQyyhLbo5vtonZuiRqNLvM29zU46M7Nkld5EGgfK1R9Q5KD8dmLO7kzafAxxx8q36vdqfw+FaSQxrpm5m9Wqjb5dC0TjKyru+daXbAi0MrjR3bK3lX+2ryoSlGEm9mfoU4/ZssOYsu4vM7Ly0lN+B4mrXpDO/VNGxc513fMt6i2RxvspAObI3db1q1elk5Rt7Gjo9F72twraNdVHmrOPx/vNRuCQFnPEBGbL61bobSD2eYg2IaqTo1tZ4VlUGwYI3zVMY3SwvXcElha9aHT4OF0YY8AxopEYDUEV9P2X0QgCrmVVv5aXdMthRQxdZGugrOpJ6C+UTeBN42Xy15PuRoh0JzM1c7Kbih7Wrnajgu6KdFXLT3xYHoRY4XsPFq/ZbAVrMl7eyuJBpUW+aFCtly2kA7CtNxIVcN4vU7h3s6sPWp/wAcjeZajJVks7s1jAIz5bAYls3ma9YY7EejeIjir5fhdqJgFowL6nHvvfEtLMcW61YyLZ8RNG32tWyz2cXwS/IV0V/xeITsKRyZac9PUytg8g0Eb5ly82Yr/tpL0WP63I3jCn508/SAw9CTxWPdb4lrkQl/VEWBU2jF75Umaq79H2PiT6RC5Xem6xHb/SpOFCjsl7gRzfmtabDDXkkVmQoy8tSyy8YtmTK/c2ij6cOsjqYd5rrGMvfzctJ8ftKHCR9QhWScRrHGn7FV7zf68bV5tDGMmaVmXMkbtHm701sqfi1/hqKmYhSSWcnmZt9mrP4RypPolVjPB495C74iZ33uszStn3q02hiIHSEwNnVVy8uRl9bNSEA2CjieajNnBSJM5scnWL/f3ar9GMXa6OaN1voPu0VhJxG635Su/wC7QWYDerwMeJO8OarRVOw0NNpwnmHAb3wt/f8AFQcb2FqZYdxJFlIu0e6y+tH/AHpSx1VSVfX1W8RVUA+np0zgUhGZNN3mpZ0q6RRYiIxRlSGXlzV85kBJzVtA3ZUPFR0NSob7LbePu5qzZszu3ZvV+wJsksnguVa6gjIAZu+1M/iJ0AyjUisJDpRWKQhjQklR3ICM1bVT5qpcKQUQny1Lt2GqXAG8amhk4aYWa8I4ScuuOf5loDaNxIruLD6X1i+Zb1viJCI4AQub6Y7fitY7SOmZjyyKv41oPUxviP8AIR0asMbMBwEa5ftpz+kAfU62vGv50k6P6Y2S/bhkb8Vpx06dr4dSvFMub960UTl87FrqA7hRp9Hdt71mK11sC5GIXzpm+xq/Tlc84Udzd929Z7DnWMYyRzYLHHJ81Z89+DoxTdsB29MC4iB0Vsz+9SGd+54tRU8jMXkY3Ltmpfe5Y3v3Vo4Y0q+wt1wdMdOPFt2t4aHXU+wUSugPiavpHJ2cmS7EG4CtlraNh28DWRUHfHutXS+FAKGGzsQEcBtFbck92jsTDFmIl0tohy8VpMDwNPcJaVFJYh1GRz63gaZMAmVbke2m8WxSR1mdgSubKtJYpCCD2iqnZ20UZCmW7ZaV8jIVuhSMRvxeSmDJuqQOFAbUf0irwyrmb3qPjfcUeNLJ0gdAGNTvUrl7adY8aGksvbWeHIiB3OlUWzG9GKnJeFUGyT6Me8tPlXCCz9igckXj9KZs371rPbC7rlc1gyt900TPGuSMk/8AUrl+KsdtCyPfiV3feu1Vs9PC+Inewm/XA3jg1/NacdOvrMEvrLl/FaR7BYfS4iOJwjZv4Ke9NyeswAI0bdzea6UyEn80LZTvzW4ZP50lxMsi541OjqmfzZf/ACp3K2s3jl/nSLFm5GnBcvvUstGGQBiGstgdeahktYk9i/xVpiDc921Z24KBXRVIm2awp2/FWvtr9GuhPhXqjQ0zKI8hOpXd3ly71dkHhbUc1ZgG+ulbknXlGdcrM1KcjxD2VrHMy3AJHjahweFjXYY0wT8R4U76NzRq7mTLuwtIit3mpOBqQaIwib9xwVWZqB2grFI5z4kndbEdWtFYNyQo8FpdJinZFj3QiMzKvrZqYbN4E+WknpivZ+xjXzUllPGm845xSiVeJpIqkAHk4VR7FiPVF7aCpx+FV+wj+rkeWk9RKkq+4WC4gDq08RMrL/DWe2gvVOwN7M3w6/8AKvMU+4mvCZc3m5a62mLwuB2t/Ferm/G6jH9mGwP8VCfHDt+S1R9OFudmt4YtV+Hdqa2A/wCsYbXQwt+VVfS5QTs+4YgYnM32U6Oy8TEMhF5rcctJcXpc04lBvI3YU9b20oxg0Y9ual2YXsWFdda/RLxY165/HdrZU00rha5OlXdv41vgIbspcbuaicPhCQM3ALWrMiCw406X3CDbTSMEBSpObu0MVJUgakbyrXbPnY3rq1iLUFy2hgUC+ory9dyKFLJbQ7yt8tcXrjjdRxIrWLMEkk8V6taxD20NFYkFYol7WbrGrh5IEiY8DT/ZPAikyRd8Cm2zmsL0kiT2e4oDMfbSqZeNN8aOVqVTdtK+wPYCw41X7GH6vfy1JMONVOy5kEAW+vLUfUJtR/YWL8Vy8OEn8lrbHlepPaS2b8a4xtslvBf5f8a0xf1dvLmzVdG/H8Yv8gmwPrsKf/hf+qq/pUpP0FrajFLl+61RvR8nrsMeNutjq06TnTAje1xP9L06OzfL/JMyH6zXuUsxQ5xfhG2WmMgN3HloFluXB4FHy/ZQMDE8akkHiBR2HjzMq+beoWBdL0dhHCuhIvvV3YEMsYXRSyowHrUmEpcteqXGMpjZmykdXUxhRqadseqNcPE2ZrDu1o41saabOw4szHiaDljvIyiowleRoC2C4qIlBIvcbK3utQlqeRRWzxuNCu8tKJI8pK8bVZoLP0Kl3SMcWZVozbbDrBGOCIsdZ7DjLTITypmdqHxzl5XcdsjZaCKS5YVhpRlKn4aOiayA+asIdmyZc9u7my11NdUVOBzUkndE5Ra2G4vVFalUvjTW+aP4aWOul6WWxXsCbtovCzuAFB0zLQrjjRez8O8hEaDWmpNHB+OAysR6rfk1dP8AVObqQE3W/dXONBsyW1ysvzVowHVugNx1P8qVGzG/Yv2L+j7elw/h1zr+FWvSX/odf85vlaojo/frICeP0t/yarfpKP8ABG3CRvlaqfcpl3/BLOd+TwGWhVU5jpeytmol75pPeWhQTmFjxXepTz2LlHZ4VvhI2d1RBcs27WT8z+x2/OjdiyKkgkPZRWwrY32tsx0i3pGJC5svdqbwfE1YbcxsbREhwSVyqtSGEGpp2UkVOzIhkuTxWlzgCZR5ste4TFuvox2ctDSSelVif8yoxg1JyJ0NcbDlYOOBWkMiZibjUGxqpxih41ZexampEOZuYb1aFyhmbbJXKk8x7E6taWRW6xWbh1i5vtpk10ww11d81L4kuL0gyfustc8WXS1stTePdS7ZeBdmWslxctljzactc4o7yjy0lDZZeSGODN0I8tAyd4eFE7OfQrQ2IFmYUstWQegJu2nXRj6wAjQ81JW7aN2XimiZZFFwG3lpkFDHaC2kdGDEfS3X4c1ZxvuBSNWhb8q9x0yu7TJwfELJ7uYrXUUYyi44R97u93dpEWxv2v8AYs2CyiTDgd7Fv/XVz0iGmC9kjt/A1QOxiOuw/lxzr+DVf7dG7hSexn+Vqr9y+bf8Eo/Fz5sv4UHbe0ouTix89CrzUphYDPxf2u1EYHCySaxq1vWoWc6t77Vf9EMJCYULBc3M1cgoj8QjruSZrqveoTD8xqk6YpGrjq8vNl3anMJzGqvQwwiTvUHiG1J8KYlbKPdpXM2pplXiApdgy9YpjbUiqyPorhZFV3Fjl1qH6KShZgrHRlr6tHiEVV3lW63AqUm1o6bdKj4xtJ/Rxx9mXLQ+GAtWu09WVDwC6VlFpa1ctBibqmqnzVhjJPSCiiScutt6gMUN+ghmMNnvrbxr3GrvX8aHwLEMKLxY4Uk/iSeha441pCNDWcnbROGAyn3aN8I4JjAyIDw3aLhGie5/OgoeQf361HQ8fgZf3BmpV2UhpiXZIPXRg8F2i35NX0Dbh3MMfM/ytUDgDaYD/wCzX8mq821qmEv+0b5Wql7NOT/RJy9t/Wahu32GiZ+b71Ck60DE9itmux9rtVZsPHvHHkvwXdqPi1Iv61UeE5KeKDEw2zimd7sb2oDCnWu8XxNcYXmppaCOJeX4aSztqacYjk+Gkk/H4qOonB2ypCJIyDb0lUW2cdjMVIsezbtHh4gkjjvu3/jUnExAzDja1fUejezoIMPFlUSNIokkdxqzVJsbqz//2Q==" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://us-central1-plantix-8e0ce.cloudfunctions.net/v1/image/w400/766df209-a107-4a6d-9803-d30890ba02fb" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Sugarcane Red Stripe Disease, also known as Sugarcane Red Stripe or Red Stripe Disease, is a significant fungal disease that affects sugarcane (Saccharum officinarum) crops. This disease is caused by the fungus Acidovorax avenae subsp. avenae. It is characterized by distinct red to reddish-brown streaks or stripes on the leaves of infected sugarcane plants. Here's more information about Sugarcane Red Stripe Disease:
+        </p>
+        <p class="imp"><b>Note:</b><i><b>The fungus responsible for Red Stripe Disease, Acidovorax avenae subsp. avenae, can spread through contaminated sugarcane planting materials, farm tools, and machinery. Rainwater and irrigation can also facilitate the dissemination of the pathogen.
+        </b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+      
+        <p class="para"><br><b>
+          
+Use of Disease-Free Planting Material:</b> Start with healthy, disease-free planting materials to prevent the introduction of the pathogen into your fields.
+<b><br>
+Crop Sanitation:</b> Maintain good sanitation practices, including the cleaning and disinfection of farm tools and equipment.
+<b><br>
+Resistant Varieties:</b> Plant sugarcane varieties that have shown resistance to Red Stripe Disease, as resistance can vary among cultivars.
+<b><br>
+Biological Control:</b> Explore the use of beneficial microorganisms that can antagonize the fungus and reduce its growth.
+<b><br>
+Fungicides:</b> In severe cases, fungicides may be applied as part of an integrated disease management approach. Consult with local agricultural extension services for recommended fungicides and application schedules.
+<b><br>
+Proper Irrigation:</b> Avoid over-irrigation, which can create conditions favorable to the disease.
+<b><br>
+Crop Rotation:</b> Implement crop rotation with non-host crops to reduce the buildup of the pathogen in the soil.
+<b><br>
+Timely Harvesting:</b> Harvest sugarcane at the appropriate maturity stage to maximize yield and minimize disease spread.
+<br>
+          </p>
+      
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Crop Rotation:</b> Rotate sugarcane with non-host crops to reduce the buildup of the pathogen in the soil.
+              </td>
+              <td><b>Fungicides:</b> Apply fungicides according to recommended schedules and dosages. Fungicides containing active ingredients like triazoles, strobilurins, or copper compounds might offer control against Colletotrichum falcatum.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Resistant Varieties:</b> Plant sugarcane varieties that exhibit resistance or tolerance to Red Rot Disease.
+              </td>
+              <td><b>Systemic Fungicides:</b> Some systemic fungicides can be absorbed by the plant and provide protection from within.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Sanitation:</b> Regularly clean and disinfect tools, machinery, and equipment to prevent the spread of the fungus.
+              </td>
+              <td><b>Protectant Fungicides:</b> These create a barrier on the plant surface, preventing the pathogen from infecting the plant.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological Control:</b> Introduce beneficial microorganisms that compete with or antagonize the pathogen. Some antagonistic microorganisms can help suppress the growth of Colletotrichum falcatum.
+              </td>
+              
+            </tr>
+            <tr>
+              <td><b>Organic Amendments:</b> Improve soil health and microbial diversity by incorporating organic matter like compost or cover crops.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural Practices:</b> Proper spacing, irrigation management, and avoiding plant stress can enhance plant health and reduce susceptibility to diseases.
+              </td>
+            </tr>
+          </table></br>
+                    <p class="imp">As with any agricultural disease, an integrated approach that combines multiple management strategies is often the most effective. Additionally, it's essential to stay informed about the latest research and recommendations for managing Sugarcane Red Stripe Disease in your specific region, as management practices can vary based on local conditions and the prevalence of the disease.</p>
+    </div> 
+
+
+
+
+</body>
+</html>

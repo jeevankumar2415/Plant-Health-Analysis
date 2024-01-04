@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Mango Sooty Mould</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Mango Sooty Mould</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <b><li>eaf coating: </b>A black, velvety coating on the leaves. In severe cases, the entire tree can turn black.
+          </li><b><li>Dark spots: </b>Small dark spots that grow and spread, eventually affecting the entire panicle.
+          </li><b><li>Infected parts:</b> Infected flower parts and young fruits fall off the inflorescence.
+          </li><b><li>Stunting:</b> Plants may show stunted growth.
+         </li>
+      </ul>  
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="https://pestsdiseases.com/wp-content/uploads/Mango-Sooty-Mould-Disease-Management-1.jpg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://agritech.tnau.ac.in/crop_protection/images/mango/sootymould/crop_prot_crop%20diseases_fruits_mango_clip_image030_0000.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">The disease is common in the orchards where mealy bug, scale insect and hopper are not controlled efficiently. The disease in the field is recognized by the presence of a black velvety coating, i.e., sooty mould on the leaf surface.</p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"><br>
+          Controlling sap-feeding insects and ants that protect them
+          <br>Starting insect control as soon as sooty mold is observed
+          <br>Building physical barriers around trees to prevent ants and sap-sucking insects
+          <br>Fertilizing and watering trees to ensure natural resistance to parasites
+          <br>Spraying with a solution of Phosphamidon 40 SL and Maida
+          <br>Spraying with a strong stream of water and mild detergent
+          <br>Spraying with Liquid Copper Fungicide
+          <br>Spraying with alternating sprays of Wettable sulphur, Tridemorph, and Bavistin
+          </p><br>
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Use neem oil to repel insects and reduce the growth of the fungus. You can also spray plants with insecticidal soap or dish soap.</td>
+              <td>Spray trees with Copper Oxychloride (0.3%). You can also use a horticultural oil to control the insects that produce honeydew.</td>
+            </tr>
+          </table></br>
+          <p class="imp">
+            Prune diseased twigs 2-3 inches below the affected area.
+<br>Spray with Liquid Copper Fungicide.
+<br>Spray with a strong stream of water and mild detergent.
+<br>Spray with PlcoCure natural fungicide.
+          </p>
+    </div> 
+
+
+
+
+</body>
+</html>

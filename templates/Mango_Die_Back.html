@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Mango Die Back</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Mango Die Back</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <li>Die back is one of the serious diseases of mango. The disease on the tree may be noticed at any time of the year but it is most conspicuous during October-November. The disease is characterized by drying of twigs and branches followed by complete defoliation, which gives the tree an appearance of scorching by fire.
+        </li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://pestsdiseases.com/wp-content/uploads/Mango-Dieback-Disease-Management1.jpg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://content.peat-cloud.com/w400/mango-dieback-disease-mango-1549985019.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://industry.nt.gov.au/__data/assets/image/0009/1064592/mango-4.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para"><b>Mango dieback is a serious disease that causes the branches of mango trees to wither and die. The disease is caused by fungal pathogens, including: 
+          </b><br>Neofusicoccum ribis
+          <br>Botryosphaeria dothidea
+          <br>Diplodia sp.
+          <br>Pseudofusicoccum sp.
+          <br>Ceratocystis sp.</p>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"><br><b>
+          Regular monitoring: </b>Monitor the orchard regularly to identify possible infections at early stages.
+          <b><br>Avoid damage: </b>Avoid damage and lesions to trees, which are the predominant entry sites for the fungus.
+            <b><br>Remove dead material:</b> Remove dead tree material immediately from the orchard.
+              <b><br>Reduce stress: </b>Reduce plant stress, including stress caused by drought and nutritional deficiencies.
+                <b><br>Reduce sunburn:</b> Reduce sunburn of the trunk and branches when severely pruning the trees.
+                  <b><br>Disinfection: </b>Disinfect the pruning tool after each plant.
+                    <b><br>Copper-oxychloride paste: </b>For the control of die-back, apply Copper-oxychloride paste to the cut ends in nursery plants.
+                      <b><br>Copper-oxychloride spray:</b> For grown up plants, spray Copper-oxychloride @ 0.3%.
+                        <b><br>Wider plant spacing:</b> Wider plant spacing will inhibit severe epidemics.
+                          <b><br>Intercropping:</b> Interplanting mango with other types of trees that are not hosts of mango anthracnose will inhibit epidemics.
+          
+          </p><br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Biological control of mango dieback disease has been achieved using Streptomycete and Non-streptomycete Actinobacteria in the United Arab Emirates.
+              </td>
+              <td>After pruning, apply copper oxychloride at a concentration of 0.3% on the wounds. Apply Bordeaux mixture twice a year to reduce the infection rate on the trees. Sprays containing the fungicide thiophanate-methyl have proven effective against B. rhodina. Flutriafol was the most effective fungicide against dieback.
+              </td>
+            </tr>
+          </table></br>
+          <p class="imp">Pruning away dead or excessively dry branches
+            <br>Ensuring the tree receives adequate water
+            <br>Deep watering during dry periods</p>
+    </div> 
+
+
+
+
+</body>
+</html>

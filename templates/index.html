@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<style>
+  
+button{
+  width: 190px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1 style="color:white;">Plant Disease Detector</h1>
+    <p class="header-text">Detect and diagnose diseases in plants</p>
+  
+  </div>
+  <div class="description">
+    <p>This web app allows you to detect and diagnose diseases in plants. Select the crop or plant below to begin the disease detection process.</p>
+    <div><p align = "right">
+      <button  class ="info" onclick ="window.location.href='/detect/info';">Project info</button></p>
+    </div>
+  </div>
+  <div class="selection">
+    <h2>Select the Crop (or) Plant to detect the Disease:</h2>
+  </div>  
+  <div class="crop-images">
+    <div class="crop-item">
+      <img src="https://i.pinimg.com/736x/56/86/a7/5686a746cc00212c68cb52a9153b103a--plant-drawing-tomato-plants.jpg" alt="Tomato" onclick="window.location.href = '/detect/tomato'">
+      <span>Tomato</span>
+    </div>
+    <div class="crop-item">
+      <img src="https://i.pinimg.com/originals/8f/fb/be/8ffbbed8daf164e61112e13620b77fe5.jpg" alt="Rice" onclick="window.location.href = '/detect/rice'">
+      <span>Rice</span>
+    </div>
+    
+    <div class="crop-item">
+      <img src="https://img.freepik.com/premium-vector/potato-plant-with-leaves-roots-vector-illustration-flat-design_8124-428.jpg?w=2000" alt="Potato" onclick="window.location.href = '/detect/potato'">
+      <span>Potato</span>
+    </div>
+    <div class="crop-item">
+      <img src="https://i.pinimg.com/736x/1d/88/84/1d888456eedf9a87ca7ee3558b4c722f.jpg" alt="Corn" onclick="window.location.href = '/detect/corn'">
+      <span>Corn</span>
+    </div>
+    <div class="crop-item">
+      <img src="https://i.pinimg.com/736x/67/34/2d/67342d791d409692c7143a8760a2b605.jpg" alt="Mango" onclick="window.location.href = '/detect/mango'">
+      <span>Mango</span>
+    </div>
+    <div class="crop-item">
+      <img src="https://i.pinimg.com/564x/48/2a/30/482a30960558590443784288b955b8b2.jpg" alt="Cassava" onclick="window.location.href = '/detect/cassava'">
+      <span>Cassava</span>
+    </div>
+    
+    <div class="crop-item">
+      <img src="https://i.pinimg.com/474x/ba/cd/fb/bacdfb00501387732ddcb79cbb02f6a8.jpg" alt="Wheat" onclick="window.location.href = '/detect/wheat'">
+      <span>Wheat</span>
+    </div>
+  </div>
+</body>
+</html>

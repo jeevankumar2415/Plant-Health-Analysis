@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p><q>Healthy Rice </q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Healthy Rice</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+<b>        A healthy rice plant exhibits several desirable characteristics. Here are some key features of a healthy rice plant:
+</b>
+      <ul class="para">
+<li>1)Green and vigorous foliage: Healthy rice plants have vibrant green leaves that are erect and upright. The leaves are free from discoloration, lesions, or spots.
+</li><li>
+2)Strong root system: A healthy rice plant has a well-developed root system. The roots are white, firm, and actively absorbing water and nutrients from the soil.
+</li><li>
+3)Optimal plant height: Depending on the rice variety, a healthy plant should have a height that is appropriate for its growth stage. It should not be excessively tall or stunted.
+</li><li>
+4)Uniform growth: Healthy rice plants exhibit uniform growth and development across the field. They have consistent plant height, leaf appearance, and tillering.
+</li><li>
+5)Adequate tillering: Tillers are the lateral branches that emerge from the main stem of the rice plant. A healthy rice plant typically produces an appropriate number of tillers, ensuring good canopy development and potential for higher grain yield.
+</li><li>
+6)No visible signs of pests or diseases: Healthy rice plants are free from visible symptoms of pests and diseases. They do not show any wilting, yellowing, or browning of leaves, and there are no lesions, spots, or deformities on the foliage or panicles.
+</li><li>
+7)Good panicle formation: A healthy rice plant produces well-formed panicles that contain healthy spikelets. The panicles should have sufficient length, width, and filled grains.
+</li><li>
+8)Normal flowering and pollination: Healthy rice plants undergo proper flowering and pollination. The flowers should open and shed pollen, facilitating successful fertilization and grain development.
+</li><li>
+9)Strong stem: Healthy rice plants have sturdy and erect stems that can support the weight of the panicles without lodging or breaking.
+</li><li>
+10)Adequate water management: Rice plants require sufficient water for healthy growth. Healthy rice fields maintain appropriate soil moisture levels through effective irrigation or natural rainfall, without excessive waterlogging or drought stress.
+</li>
+  </ul>  
+      
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZMWOuMXfF7rT0A4j98resjzODj8Co86sDTA&usqp=CAU" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">The Rice Plant Is Healthy Follow the Same Procedure</p>
+        <p class="imp"><b>Note:</b>The scientific name of the rice plant is 
+          <i><b>Oryza sativa</b></i>
+        </p>
+      </br>
+          <p class="imp">"Regular field monitoring, adherence to proper cultural practices, and timely implementation of pest and disease management strategies are essential for maintaining the health and productivity of rice plants. Consult with local agricultural experts or extension services for specific recommendations and best practices for growing healthy rice in your region.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

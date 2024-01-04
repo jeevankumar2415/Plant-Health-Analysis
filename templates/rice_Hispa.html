@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Rice Hispa</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Rice Hispa</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <b>Check for feeding damage:</b>
+      <ul class="para"><li>
+scraping of the upper surface of the leaf blade leaving only the lower epidermis as white streaks parallel to the midrib
+      </li><li>
+irregular translucent white patches that are parallel to the leaf veins caused by tunneling of larvae through leaf tissue causes
+</li><li>withering of damaged leaves
+</li><li>whitish and membranous leaves
+</li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://4.bp.blogspot.com/-Sqh0ONBjQ9U/Uk6VptQ0CjI/AAAAAAAAAb8/v7khF8EXxAM/s1600/gkgk.JPG" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Rice Hispa disease, also known as rice leaf folder or rice leaf roller, is a common insect pest that affects rice plants. It is caused by the larvae of the rice leaf folder or rice leaf roller insects. The scientific name of the leaf folder is Cnaphalocrocis medinalis, and the scientific name of the leaf roller is Marasmia patnalis.
+          The larvae of these insects feed on the leaves of rice plants, causing damage by folding or rolling the leaves and feeding on the leaf tissues. This results in characteristic symptoms such as folded or rolled leaves, skeletonized leaves, and frass (insect excrement) inside the folded leaves. Heavy infestations can lead to reduced photosynthesis, stunted growth, and yield losses in rice crops.
+          <br><b>Egg :</b>
+          Eggs are laid inside minute slits on the tender leaves generally toward the tip.
+          <br><b>
+          Grub :</b>
+          The grub is whitish yellow and flattened. It feed inside the leaf tissue by mining. It pupates inside.
+          <br><b>
+          Adult :</b>
+          The adult beetle is somewhat square shaped about 1/6 to 1/8” in length and width Dark blue or blackish in colour with spines all over the body.
+          </p><br>
+        <p class="imp"><b>Note:</b>The Scientific Name Of Rice Hispa Disease is<i><b>Dicladispa armigera</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+     <b>   <p class="para">Management Strategies:	 </p>
+     </b>        <p class="para">
+<ul><li>          Avoid over fertilizing the field.
+</li><li>Close plant spacing results in greater leaf densities that can tolerate higher hispa numbers.
+</li><li>Leaf tip containing blotch mines should be destroyed.
+</li><li>Manual collection and killing of beetles – hand nets.
+</li><li>To prevent egg laying of the pests, the shoot tips can be cut.
+</li><li>Clipping and burying shoots in the mud can reduce grub populations by 75 - 92%.
+</li><li>Reduviid bug eats upon the adults.
+</li><li>Spraying of methyl parathion 0.05% or Quinalphos 0.05%
+</li></ul><b><br>
+To manage rice Hispa disease, several control measures can be employed:
+</b><br><ul><li>
+Cultural control: Implement cultural practices that help reduce the population of the pests. These include maintaining proper field hygiene by removing weeds and alternate hosts, practicing crop rotation, and removing and destroying infested plants or leaf rolls.
+</li><li>
+Biological control: Encourage the presence of natural enemies, such as predatory insects, spiders, and parasitic wasps, that feed on the larvae of rice leaf folders or leaf rollers. Avoid indiscriminate use of insecticides that can harm beneficial insects.
+</li><li>
+Chemical control: If the infestation reaches economic thresholds and cultural and biological control measures are not sufficient, insecticides may be used. Consult with local agricultural authorities or extension services for specific recommendations on suitable insecticides, application rates, and timing. Follow all safety guidelines and adhere to the recommended waiting period before harvesting.
+</li><li>Resistant varieties: Planting rice varieties with resistance or tolerance to rice leaf folders or leaf rollers can help reduce the damage caused by the pests. Consult with local agricultural experts or seed suppliers for information on resistant rice varieties suitable for your region.
+</li><li>
+Monitoring: Regularly monitor rice fields for signs of leaf folding or rolling, particularly during the early stages of plant growth. Early detection allows for timely intervention and control measures.
+</li>   </ul> </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Cultural control:</b> Implement cultural practices that help reduce the population of Hispa insects. These include maintaining field hygiene by removing weeds and alternate hosts, practicing crop rotation, and removing and destroying infested plants or leaf rolls.
+              </td>
+              <td><b>Insecticides:</b> Several insecticides are available for controlling Hispa insects in rice. Commonly used insecticides include pyrethroids, organophosphates, and carbamates. These insecticides can be applied as foliar sprays to target the Hispa larvae and adults. It is important to choose insecticides that are labeled for use on rice and are effective against Hispa insects in your region.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological control:</b> Encourage the presence of natural enemies that feed on Hispa insects. Predatory insects, spiders, birds, and parasitic wasps are beneficial in controlling Hispa populations. Create habitats that attract and support these natural enemies, such as by providing flowering plants and shrubs.
+              </td>
+              <td><b>Timing of application:</b> The timing of insecticide application is critical for effective control. In general, insecticides are applied when Hispa populations exceed the economic threshold, which is typically determined based on the number of adults or leaf damage. Consult with local agricultural authorities or extension services for specific recommendations on the timing and frequency of insecticide applications in your area.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Neem-based products:</b> Neem-based products derived from the neem tree (Azadirachta indica) have insecticidal properties and can be effective against Hispa insects. Neem oil or neem seed extract can be used as foliar sprays to deter Hispa and reduce their feeding and oviposition.
+              </td>
+              <td><b>Application method:</b> Insecticides can be applied using ground sprayers or aerial equipment. Ensure thorough coverage of the rice plants, targeting both upper and lower leaf surfaces where the Hispa insects reside. Follow the recommended application rates and spray volumes provided on the insecticide label.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Botanical extracts:</b> Some botanical extracts, such as garlic, ginger, and chilli extracts, have insecticidal properties and can be used as natural insecticides. Dilute these extracts in water and apply as a foliar spray on the affected rice plants.
+              </td>
+              <td><b>Resistance management:</b> To minimize the development of insecticide resistance in Hispa populations, it is important to rotate or mix different classes of insecticides with different modes of action. This helps prevent the selection of resistant individuals. Follow local resistance management guidelines and recommendations.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Organic insecticides:</b> Organic insecticides approved for organic farming, such as spinosad and pyrethrin-based products, can be used to control Hispa insects. Follow the instructions on the product label for proper application rates and timing.
+              </td>
+              <td><b>Safety precautions:</b> When using insecticides, it is crucial to follow all safety precautions and guidelines provided by the manufacturers. Wear appropriate personal protective equipment (PPE), such as gloves, goggles, and a mask, during handling and application. Adhere to local regulations regarding safe and responsible use of insecticides.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Traps and barriers:</b> Yellow sticky traps can be used to monitor and trap adult Hispa insects. Placing physical barriers like fine mesh nets or floating row covers can also help prevent adult insects from laying eggs on rice plants.
+              </td>
+              <td><b>Pre-harvest interval (PHI):</b> Pay attention to the pre-harvest interval specified on the insecticide label. This is the minimum period that must elapse between the last application and harvest to ensure that residue levels are within acceptable limits.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Beneficial microorganisms:</b> Beneficial microorganisms, such as certain strains of bacteria or fungi, can be used as biocontrol agents against Hispa insects. These microorganisms can be applied as foliar sprays or incorporated into the soil to promote plant health and deter insect pests.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Integrated pest management (IPM):</b> Adopt an integrated approach by combining multiple organic control methods. This includes regular monitoring of the pest population, using resistant rice varieties, implementing cultural practices, employing biological control agents, and using organic insecticides only when necessary.
+              </td>
+            </tr>
+
+          </table></br></br>
+          <p class="imp">"Integrated pest management (IPM) practices, which combine multiple control strategies, should be implemented for sustainable and effective management of rice Hispa disease. It is important to consider the specific conditions and pest pressures in your region and consult with local agricultural experts for the most appropriate and effective control measures.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

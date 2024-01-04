@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Cassava Bacterial Blight CBB</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Cassava Bacterial Blight CBB</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <b>Symptoms of Cassava Bacterial Blight include wilting, leaf necrosis (browning), and chlorosis (yellowing) of the leaves. The bacteria infect the vascular system of the plant, leading to blockage of the water and nutrient flow, causing the leaves to wither and the plant to decline. In severe cases, the entire plant may die.
+      </b>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+            
+          </div>
+          <div class="column">
+            <img  src="https://apps.lucidcentral.org/pppw_v10/images/entities/cassava_bacterial_blight_173/cassavabb2.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Xanthomonas axonopodis pv. manihotis is the pathogen that causes bacterial blight of cassava. Originally discovered in Brazil in 1912, the disease has followed cultivation of cassava across the world. Among diseases which afflict cassava worldwide, bacterial blight causes the largest losses in terms of yield.
+          CBB is primarily transmitted through infected planting material, such as cuttings or seeds. It can also spread through rainwater, irrigation, wind, and human activities like pruning and harvesting. The bacterium can survive in infected plant debris and soil, contributing to its persistence in agricultural areas.
+          </p>
+        <p class="imp"><b>Note:</b>The scientific name for Cassava Bacterial Blight is<i><b> Xanthomonas axonopodis pv. manihotis.</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"> <b>"Managing Cassava Bacterial Blight involves a combination of cultural, biological, and chemical control measures. Here are some strategies commonly employed":
+        </b>        </p>
+        <p class="para">
+<li><b>
+          1)Use disease-free planting material:</b> It is crucial to use healthy and certified planting material from reliable sources.
+</li><li><b>
+          2)Crop rotation:</b> Avoid planting cassava or related plants in the same area consecutively to reduce the buildup of the bacteria in the soil.
+        </li><li><b>
+          3)Sanitation:</b> Remove and destroy infected plant materials to prevent the spread of the disease.
+        </li><li><b>
+          4)Chemical control:</b> Copper-based bactericides can be used as preventive sprays, especially during the early stages of the disease. However, their efficacy may vary, and local regulations should be followed when using such chemicals.
+        </li><li><b>
+          5)Breeding for resistance:</b> Developing and cultivating cassava varieties with resistance to CBB is an effective long-term strategy. Breeding programs focus on selecting and developing resistant cultivars to minimize the impact of the disease.
+        </li>
+        
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Use disease-resistant varieties:</b> Selecting and planting cassava varieties that have natural resistance or tolerance to CBB is a key organic control strategy. This can be achieved through breeding programs or by sourcing and planting disease-resistant cultivars.
+              </td>
+              <td><b>Copper-based bactericides:</b> Copper-based compounds, such as copper hydroxide or copper oxychloride, are commonly used for controlling CBB. These bactericides work by inhibiting bacterial growth and suppressing the spread of the disease. They are typically applied as preventive sprays before the onset of the rainy season or when disease symptoms are first observed. Follow the instructions on the product label and adhere to local regulations for proper and safe use of copper-based bactericides.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Sanitation practices:</b> Implementing good sanitation measures is essential to reduce the spread and survival of the bacteria. Remove and destroy infected plant material promptly, including infected leaves, stems, and roots. Avoid leaving plant debris in the field after harvest to minimize the inoculum source for future infections.
+              </td>
+              <td><b>Antibiotics:</b> In some cases, antibiotics such as streptomycin or oxytetracycline may be used to control CBB. However, the use of antibiotics may have limitations due to concerns about resistance development and potential environmental impacts. Therefore, it is important to consult with local agricultural authorities or experts regarding the use of antibiotics for disease control and adhere to any restrictions or guidelines in place.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Crop rotation and diversification:</b> Practice crop rotation by avoiding consecutive plantings of cassava in the same field. This helps break the disease cycle by reducing the buildup of CBB bacteria in the soil. Additionally, intercropping cassava with other non-host crops can help create a less favorable environment for the bacteria and enhance overall plant health.
+              </td>
+              <td><b>When using chemical control measures, it is crucial to follow these guidelines:
+              </b><br>i)Apply chemicals at the recommended rates and timings specified on the product labels.
+                <br>ii)Ensure proper mixing and application techniques to achieve thorough coverage of the plant surfaces.
+                <br>iii)Rotate the use of different chemical groups to reduce the risk of resistance development.
+                <br>iv)Adhere to any local regulations, restrictions, or pre-harvest intervals associated with the use of chemical products.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural practices:</b> Implementing cultural practices that promote plant vigor and resilience can contribute to the organic management of CBB. These practices include maintaining proper plant nutrition, optimizing irrigation practices to avoid water stress, and ensuring adequate spacing between plants to improve air circulation.
+              </td>
+            </tr>
+            
+            <tr>
+              <td><b>Biocontrol agents:</b> Some beneficial microorganisms can antagonize the CBB bacteria and help suppress disease development. Biocontrol agents, such as certain strains of Bacillus spp. or Pseudomonas spp., can be applied to cassava plants as foliar sprays or soil drenches. These agents can colonize the plant surfaces and compete with the pathogen, thereby reducing its establishment and spread.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Organic amendments and soil management:</b> Incorporating organic matter into the soil, such as compost or well-decomposed manure, can improve soil health and promote a balanced soil microbial community. Healthy soils can support better plant growth and enhance the plant's ability to resist diseases, including CBB.
+              </td>
+            </tr>
+          </table></br></br>
+          <p class="imp">"It is important to note that the management of CBB requires a multidisciplinary approach, involving collaboration between farmers, agricultural extension services, researchers, and policymakers. Integrated disease management strategies can help reduce the impact of Cassava Bacterial Blight and protect cassava crops from severe losses.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

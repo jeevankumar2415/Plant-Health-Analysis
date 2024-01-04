@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Rice Leaf Blast</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Rice Leaf Blast</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <b>The symptoms of Rice Leaf Blast vary depending on the stage of infection, but commonly include:
+      </b><ul class="para">
+        <li><b>Leaf lesions:</b> Initially, small, spindle-shaped lesions with gray centers and brown borders appear on the leaves. As the disease progresses, the lesions enlarge and turn into diamond-shaped or spindle-shaped lesions.
+        </li><li><b>
+        Lesion expansion:</b> The lesions continue to expand and coalesce, leading to larger areas of blighted tissue on the leaves. The lesions may have a "blast" or "shot-hole" appearance, with small black dots known as pycnidia in the center.
+      </li><li><b>
+        Panicle infection:</b> In severe cases, the panicles (flowering structures) of the rice plant can also be infected. The panicle blast symptoms include blackening, shriveling, and partial or complete sterility of the grains.
+      </li><li><b>
+        Neck blast:</b> Neck blast refers to the infection that occurs at the junction of the leaf sheath and the panicle. It causes the neck region to turn dark brown or black, resulting in lodging and poor grain filling.
+        </li>
+      </ul>  
+
+
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://media.sciencephoto.com/c0/23/71/35/c0237135-800px-wm.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para"><b>Rice Leaf Blast is a fungal disease caused by the pathogen Magnaporthe oryzae. It is one of the most destructive diseases affecting rice plants worldwide. Leaf Blast primarily affects the leaves of rice plants, but it can also infect other parts such as stems, panicles, and even the neck and nodes of the plant.
+          Rice Leaf Blast is favored by warm and humid conditions. The disease can be introduced into the field through infected seeds or airborne spores. Crop residues left in the field after harvest can also serve as a source of inoculum for future infections.
+          </p></b>
+        <p class="imp"><b>Note:</b>The scientific name of the pathogen that causes Rice Leaf Blast disease is<i><b> Magnaporthe oryzae.</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+   <b>     <p class="para">To manage Rice Leaf Blast, a combination of cultural, genetic, and chemical control measures can be employed:
+   </b>        </p>
+        <p class="para">
+<br><b>          Resistant varieties:</b> Planting rice varieties with genetic resistance to Leaf Blast is an effective strategy. Resistant cultivars can limit the severity of the disease and reduce the need for chemical control. Consult with local agricultural extension services or breeders for information on resistant rice varieties suitable for your region.
+  <br><b>
+          Field sanitation:</b> Good field sanitation practices can help reduce the inoculum source. Remove and destroy infected crop residues after harvest to reduce the carryover of the pathogen.
+          <br><b> 
+          Proper water management:</b> Avoid excessive irrigation or waterlogging, as these conditions can promote disease development. Optimize water management practices to maintain optimal soil moisture levels.
+          <br><b>
+          Fungicide applications:</b> Fungicides can be used to manage Rice Leaf Blast, especially during periods of high disease pressure. Fungicide application timing and frequency depend on local conditions and disease severity. Consult with agricultural experts or extension services for specific fungicide recommendations and application guidelines.
+          <br><b>
+          Integrated pest management (IPM):</b> Incorporate IPM practices, including the integration of multiple control strategies, such as resistant cultivars, cultural practices, and fungicide applications, to manage Rice Leaf Blast effectively and sustainably.
+          <br>
+          
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Blast is favored by excessive nitrogen fertilization, aerobic soils, and drought stress. High nitrogen rates and nitrate nitrogen increase rice susceptibility to the disease. Extended drain periods may also encourage the disease by aerating the soil, by converting ammonium to nitrate, and by causing drought stress to rice.
+              </td>
+              <td><b>Triazoles:</b> Fungicides belonging to the triazole group, such as tebuconazole, propiconazole, and difenoconazole, have demonstrated efficacy against Rice Leaf Blast. They can be applied as foliar sprays to protect the rice plants from infection.
+              </td>
+            </tr>
+            <tr>
+              <td>Use proper seed sampling and testing to identify and avoid the use of blast-infested seed in areas where blast is not a problem. This may help limit the introduction of the disease into noninfested areas.
+              </td>
+              <td><b>Strobilurins:</b> Fungicides from the strobilurin group, such as azoxystrobin and pyraclostrobin, have also shown effectiveness against Rice Leaf Blast. These fungicides can be applied as foliar sprays to control the disease.
+              </td>
+            </tr>
+            <tr>
+              <td>Water seeding is recommended to reduce or eliminate disease transmission from seed to seedlings. Drill seeding is not recommended because it may allow seed transmission, nitrate formation, and result in drought stress.
+              </td>
+              <td><b>Carboxamides:</b> Fungicides containing carboxamide active ingredients, such as boscalid and fluopyram, are used for managing Rice Leaf Blast. They can be applied as foliar sprays or incorporated into the soil.
+              </td>
+            </tr>
+            <tr>
+              <td>Continuous flooding is recommended to limit blast development. Avoid field drainage, especially for extended periods because it allows the formation of nitrate and may cause drought stress. Some studies in other areas suggest that shallow water is more favorable to blast development than deeper water.
+              </td>
+              <td><b>Mixtures and formulations:</b> Some fungicides are available as mixtures or formulated products that combine different active ingredients for broader spectrum control and improved efficacy against Rice Leaf Blast.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Varietal Susceptibility:
+              </b><br>California varieties are susceptible to blast, and M-201 appears to be the most susceptible followed by M-104 and M-205. Of the widely grown varieties, M-202 appears to be more tolerant than others and exhibits some field resistance to leaf blast. Blast has been observed on M-201, M-202, M-204, M-205, M-103, M-104, S-102, L-204, Calmochi-101, and several proprietary varieties.
+                </td>
+            </tr>
+            <tr>
+              <td><b>Monitoring and Treatment Decisions:
+              </b><br>Monitor to determine the need for treatments. Throughout the season, examine plants in several locations throughout the field for the presence of leaf lesions; intensify monitoring as plants approach the boot stage. If blast lesions are present and increasing just before the boot stage, a treatment may be justified. When making a treatment decision, consider disease progress, crop growth stage, environmental conditions, and rice variety. For example, there is a greater risk of neck and panicle blast infections occurring when growing one of the more susceptible cultivars and long periods of leaf wetness and warm night temperatures occur. Use a protectant fungicide so that the panicles is protected as it emerges from the boots. Because rice blast is a multiple cycle disease, fungicide applications to control leaf blast early in the season are generally ineffective in reducing the incidence of neck blast and yield losses.
+                </td>
+            </tr>
+          </table></br></br>
+          <p class="imp">"Regular monitoring of rice fields, adherence to recommended management practices, and adjusting strategies based on local conditions are crucial for effectively managing Rice Leaf Blast. Consult with local agricultural authorities or extension services for specific recommendations and guidelines for Rice Leaf Blast disease management in your region."
+          </p>
+    </div> 
+
+
+
+
+</body>
+</html>

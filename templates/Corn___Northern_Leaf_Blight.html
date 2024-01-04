@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Corn Northern Leaf Blight</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Corn Northern Leaf Blight</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <li>Typical symptoms of northern corn leaf blight are canoe-shaped lesions 1 inch to 6 inches long. The lesions are initially bordered by gray-green margins. They eventually turn tan colored and may contain dark areas of fungal sporulation. The length or size of lesions may vary with in different corn hybrids reactions with different resistance genes. Lesions begin on the lower leaves and then spread to upper leaves. Severe symptoms can progress rapidly, resulting in blighted leaves. The disease can be confused with symptoms of Goss's leaf blight on some hybrids, and perhaps with Stewarts wilt where this disease occurs.
+        </li>
+      </ul>  
+
+
+        
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="https://cropprotectionnetwork.org/image?s=%2Fimg%2Fhttp%2Fgeneral%2FNLB-Daren-Mueller-02.jpg%2Fb66174470dfc96d91292b8c2eb5f2619.jpg&h=0&w=750&fit=contain" alt="disease image" style="width:100%">
+            
+            
+          </div>
+          <div class="column">
+            <img  src="https://cropprotectionnetwork.org/image?s=%2Fimg%2Fhttp%2Fgeneral%2FearlyNCLB2.jpeg%2Ffe107487dc1dd5e28307eff89bdc8e19.jpeg&h=0&w=750&fit=contain" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://cropprotectionnetwork.org/image?s=%2Fimg%2Fhttp%2Fgeneral%2FCorn-NCLB-2-Craig-Grau-and-University-of-Wisconsin-Teaching-Images.jpg%2Fab1402d4bfef29d9d3a6fe6a3c8777a7.jpg&h=256&w=750&fit=cover" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Northern corn leaf blight (NCLB) is caused by the fungus Setosphaeria turcica. Symptoms usually appear first on the lower leaves. Leaf lesions are long (1 to 6 inches) and elliptical, gray-green at first but then turn pale gray or tan. Under moist conditions, dark gray spores are produced, usually on the lower leaf surface, which give lesions a "dirty" gray appearance. Entire leaves on severely blighted plants can die, so individual lesions are not visible. Lesions may occur on the outer husk of ears, but the kernels are not infected. On hybrids that contain an Ht gene for resistance to the fungus, lesions are smaller, chlorotic, and may develop into linear streaks. These lesions rarely produce spores.
+        </p>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para"><br>
+          The most effective practices for NCLB management are hybrid selection and cultural decisions. If infection is established during the growing season in a field it may be beneficial to apply a fungicide, but proper timing and application is critical.
+<b><br>
+Hybrid Selection:</b>
+It is a good idea to plant a hybrid with some level of resistance to NCLB, especially if planting into a field with a history of the disease. Check with your seed provider to determine the NCLB rating for hybrids you are growing if NCLB has been an issue in the past.
+<b><br>
+Crop Rotation:</b>
+Rotating away from corn for one or two years can help decompose residue and reduce inoculum at a local level. Soybeans, small grains, and vegetables are good rotations for managing NCLB. Avoid sorghum or sudangrass as they can be alternate hosts for E. turcicum.
+<b><br>
+Tillage:</b>
+Tilling the soil can bury and accelerate the decomposition of infected corn residue. If tilling an infested field, be sure to clean tillage equipment before moving to a new field to avoid spreading the pathogen to new locations.
+<b><br>
+Fungicide Application:</b>
+If a field becomes infested and environmental conditions remain favorable for NCLB development, a fungicide application may be profitable. Fungicide applications between VT and R3 have been shown to have the greatest efficacy against this disease.
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Resistant varieties: Selecting corn varieties with inherent resistance to NCLB strains prevalent in your region is the most effective organic approach. Research resistant varieties suitable for your growing conditions.
+              </td>
+              <td>Fungicides: Several fungicides are registered for NCLB control, including strobilurins, triazoles, and benzimidazoles. Choose products specifically targeting NCLB and registered for corn in your region.
+              </td>
+            </tr>
+            <tr>
+              <td>Crop rotation: Rotate corn with non-host crops for at least a year to disrupt the fungal life cycle and reduce inoculum levels in the soil.
+              </td>
+              <td>Application timing: Timely application is crucial. Apply fungicides preventively before disease development or at early infection stages (usually during tasseling and silk emergence).
+              </td>
+            </tr>
+            <tr>
+              <td>Residue management: Tillage or deep plowing can incorporate infected corn debris into the soil, where it decomposes over time. However, consider the potential drawbacks like erosion and organic matter loss. Alternatively, shred or compost debris to accelerate decomposition.
+              </td>
+              <td>Spray coverage: Ensure thorough coverage of all plant surfaces, including the lower canopy, for effective control.
+              </td>
+            </tr>
+            <tr>
+              <td>Planting practices: Improve air circulation by avoiding dense planting and maintaining proper field spacing. This helps dry leaves and reduces humidity, hindering fungal growth.
+              </td>
+              <td>Follow label instructions: Always adhere to the manufacturer's directions on the fungicide label regarding application rates, timings, safety precautions, and pre-harvest intervals.
+              </td>
+            </tr>
+            <tr>
+              <td>Sanitation: Remove and destroy infected plant debris after harvest to minimize the number of overwintering fungal spores.
+              </td>
+            </tr>
+            <tr>
+              <td>Foliar sprays: Apply organic fungicides like neem oil, potassium bicarbonate, or hydrogen peroxide. These offer some suppression but may not be as effective as chemical counterparts.
+              </td>
+            </tr>
+            <tr>
+              <td>Nutrient management: Maintain good soil fertility, particularly potassium levels, as balanced nutrition strengthens plant defenses against disease.
+              </td>
+            </tr>
+          </table></br>
+          <p class="imp"><i>
+            <b><br>Monitor your corn plants regularly:</b> Early detection and intervention are key. Scout for NCLB symptoms, especially during warm, humid periods.
+              <b><br>Consider the economic threshold:</b> This is the point where the cost of control outweighs the potential yield losses from the disease. Evaluate the severity of infection and potential yield impact before deciding on control measures.
+                <b><br>Integrated pest management:</b> Combining multiple control methods, including preventative and active approaches, provides a more comprehensive and sustainable approach to managing NCLB.
+                  <b><br>Seek expert advice:</b> Consult your local agricultural extension agent or crop advisor for specific recommendations tailored to your region, crop variety, and environmental conditions. They can provide valuable insights and help you develop an effective NCLB control program for your corn production.
+                    <br>Remember, NCLB can be a serious threat to your corn crop, but by implementing these control strategies, you can protect your yields and ensure a successful harvest.
+          </i></p>
+    </div> 
+
+
+
+
+</body>
+</html>

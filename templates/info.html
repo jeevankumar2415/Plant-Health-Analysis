@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<style>
+    body{
+        font-family:Arial,Helvetica,sans-serif;
+        margin:0;
+    }
+    html{
+        box-sizing:border-box;
+    }
+    *,*:before,*:after{
+        box-sizing:inherit;
+    }
+    .column{
+        float: left;
+        width:33.3%;
+        margin-bottom: 16px;
+        padding:0 8px;
+    }
+    .card{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 8px;
+    }
+    .about-selection{
+        padding:50px;
+        text-align:center;
+        background-color:#474ed;
+        color:black;
+    }
+    .container{
+        padding:0 16px;
+    }
+    .container::after,.row::after{
+        content:"";
+        clear:both;
+        display:table;
+    }
+    .title{
+        color:grey;
+    }
+    @media screen and (max-width:650px){
+        .column{
+            width:100%;
+            display:block;
+        }
+    }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1 style="color:white;">Plant Disease Detector</h1>
+    <p class="header-text">Detect and diagnose diseases in plants</p>
+  </div>
+<div class = "about-selection">
+<h1><b>About Our Plant Disease Detector Web App</b></h1>
+<p class = "para">Welcome to our Plant Disease Detector, an innovative web application designed to help both hobbyist gardeners and professional farmers identify and manage plant diseases with ease. Our mission is to empower individuals in the realm of agriculture and horticulture by leveraging the power of machine learning and computer vision.</p>
+<h1><b>Our Vision</b></h1>
+<p>At <b>Plant Disease Detector</b>, we envision a world where plant diseases are swiftly identified, diagnosed, and treated, leading to healthier crops, reduced agricultural losses, and ultimately, a more sustainable food production system.</p>
+<div class = "key-features"><h1><b>Key Features</b></h1>
+<ul><li><b>Accurate Disease Detection:</b> Our web app utilizes state-of-the-art pre-trained machine learning models to accurately identify plant diseases based on uploaded images.
+</li><li><b>
+    User-Friendly Interface:</b> We've designed our app with a simple and intuitive user interface, making it accessible to users with varying levels of technological expertise.
+</li><li><b>
+    Swift Results:</b> Within seconds of uploading an image, our algorithm processes the data and provides users with detailed information about the detected disease.
+</li><li><b>
+    Plant Disease Library:</b> Access a comprehensive library of plant diseases, complete with descriptions, causes, and recommended management strategies.
+</li><li><b>
+    Mobile Compatibility:</b> Our web app is optimized for mobile devices, allowing users to conveniently identify plant diseases while out in the field.
+</li></ul></div>
+<div class = " How-it-works">
+<h1><b>How It Works</h1></b>
+<ul><li><b>Upload an Image:</b> Capture a photo of the affected plant using your smartphone or camera, and upload it to our web app.
+</li><li><b>
+Instant Analysis:</b> Our advanced machine learning models analyze the image, comparing it to a vast database of plant diseases.
+</li><li><b>
+Disease Identification:</b> Receive real-time feedback about the disease affecting your plant, along with valuable insights on how to address the issue.
+</li>
+</div>
+
+<div class ="Our Commitment">
+    <h1><b>Our Commitment</h1></b>
+<p class ="para">
+    At<b> Plant Disease Detector</b>, we are committed to staying at the forefront of technology and research in the field of agriculture. We continuously update and improve our machine learning models to ensure the highest level of accuracy and reliability in disease detection.
+</p>
+</div>
+<div class = "Get Involved">
+        <h1><b>Get Involved</h1></b>
+        <p class ="para">
+            Join us in our journey to revolutionize plant disease management. Whether you're a farmer, a gardener, a researcher, or simply passionate about sustainability, your support and feedback are invaluable. Together, we can make a meaningful impact on global agriculture.
+        </p>
+</div>
+</div>
+<u><div class="our-team">
+<h2 style="text-align:center">Our Team</h2>
+</u><div class ="row">
+    <div class ="column">
+        <div class ="card">
+            <div class ="container">
+                <h2>JEEVAN KUMAR</h2>
+                <p class ="title">SVCE CSM STUDENT</p>
+                <p><b>Roll No: </b> 21BF1A3362 <br><P>
+                    <p><b>E-MAIL: </b> 2021csm.r62@svce.edu.in</p>
+                </div>
+            </div>
+        </div>
+        <div class ="column">
+            <div class ="card">
+                <div class ="container">
+                    <h2>SIVA BALAJI</h2>
+                    <p class ="title">SVCE CSM STUDENT</p>
+                    <p><b>Roll No: </b> 21BF1A3333 <br><P>
+                        <p><b>E-MAIL: </b> 2021csm.r33@svce.edu.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class ="column">
+                <div class ="card">
+                    <div class ="container">
+                        <h2>KRISHNA TEJA</h2>
+                        <p class ="title">SVCE CSM STUDENT</p>
+                        <p><b>Roll No: </b> 21BF1A3366 <br><P>
+                            <p><b>E-MAIL: </b> 2021csm.r66@svce.edu.in</p>
+                        </div>
+                    </div>
+                </div>
+                <div class ="column">
+                    <div class ="card">
+                        <div class ="container">
+                            <h2>A MADHAN MOHAN</h2>
+                            <p class ="title">SVCE CSM STUDENT</p>
+                            <p><b>Roll No: </b> 21BF1A3307 <br><P>
+                                <p><b>E-MAIL: </b> 2021csm.r07@svce.edu.in</p>
+                            </div>
+                        </div>
+                    </div>
+                        
+    </div>
+</body>
+</html>

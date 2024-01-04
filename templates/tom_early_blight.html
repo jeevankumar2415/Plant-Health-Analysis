@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Tomato Early Blight</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>TOMATO EARLY BLIGHT</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <li>Initially, small dark spots form on older foliage near the ground. Leaf spots are round, brown and can grow up to 1/2 inch in diameter.
+Larger spots have target-like concentric rings.</li>
+         <li>The tissue around spots often turns yellow.
+Severely infected leaves turn brown and fall off, or dead, dried leaves may cling to the stem.</li>
+         <li>Seedling stems are infected at or just above the soil line. The stem turns brown, sunken and dry (collar rot). If the infection girdles the stem, the seedling wilts and dies.</li>
+         <li>Stem infections on older plants are oval to irregular, dry brown areas with dark brown concentric rings.
+Fruit can be infected at any stage of maturity.</li>
+          <li>Fruit spots are leathery and black, with raised concentric ridges. They generally occur near the stem. Infected fruit may drop from the plant.</li>
+      </ul>  
+
+
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        <div class="row">
+          <div class="column">
+            <img  src="https://content.ces.ncsu.edu/media/images/IMG_1301.JPG" alt="Disease image" style="width:100%">
+            
+            
+          </div>
+          <div class="column">
+            <img  src="https://content.ces.ncsu.edu/media/images/Shoemaker_7068.JPG" alt="Disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://content.ces.ncsu.edu/media/images/IMG_1302.jpeg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Tomato early blight, also known as Alternaria leaf spot, is a common fungal disease that affects tomato plants. It is caused by the fungus Alternaria solani and can cause significant damage to the leaves, stems, and fruit of the tomato plant. Early blight is most prevalent in warm, humid climates and can be particularly problematic in regions with extended periods of rainfall or high humidity.</p>
+        <p class="imp"><b>Note:</b> Scientific name of Tomato Early Blight is <i><b>Alternaria solani</b></i>.Also found in Capsicum,Chilli,Brinjal,Potao.
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para">The fungus that causes early blight can overwinter in plant debris and soil, making crop rotation an important preventive measure. Additionally, the disease can be spread through splashing water, tools, or by insects. Here are some tips to manage and prevent tomato early blight:</p>
+        <p class="para"><br><b>Crop rotation:</b>b Avoid planting tomatoes or other related plants in the same location year after year. Rotate your tomato crops with non-host plants, such as legumes or brassicas, to reduce the buildup of fungal spores in the soil.<br>
+
+          <br><b>Plant resistant varieties:</b> Some tomato varieties are bred to be resistant to early blight. Look for varieties labeled as resistant or tolerant to early blight when selecting your seeds or transplants.<br>
+          
+          <br><b>Proper spacing:</b> Plant tomatoes with adequate spacing to promote air circulation and reduce humidity around the plants. This can help prevent the favorable conditions for fungal growth.<br>
+          
+          <br><b>Mulching and staking:</b> Mulch around the base of the plants to prevent soil splashing and reduce the chances of fungal spores reaching the lower leaves. Staking or caging the plants can also keep the foliage off the ground, minimizing contact with the soil and reducing the risk of infection.<br>
+          
+          <br><b>Watering practices:</b> Avoid overhead watering, as wet leaves can create a favorable environment for disease development. Instead, water at the base of the plant or use drip irrigation to keep the foliage dry.<br>
+          
+          <br><b>Sanitation:</b> Remove and destroy any infected plant debris to prevent the fungus from overwintering. Clean your garden tools regularly to avoid spreading the disease from one plant to another.<br>
+          
+          <br><b>Fungicides:</b> In severe cases, or when preventive measures are not sufficient, fungicides labeled for use on tomatoes can be applied. Follow the instructions on the product label for proper usage and safety precautions.<br>
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Clear infected debris from field to reduce inoculum for the next year.
+                Water plants in the morning so plants are wet for the shortest amount of time.</td>
+              <td>There are numerous fungicides on the market for controlling early blight. Some of the fungicides on the market are (azoxystrobin), pyraclostrobin, Bacillus subtilis, chlorothalonil, copper products, hydrogen dioxide (Hydroperoxyl), mancozeb, potassium bicarbonate, and ziram.</td>
+            </tr>
+            <tr>
+              <td>Use a drip irrigation system to minimize leaf wetness which provides optimal conditions for fungal growth.
+                Use mulch so spores in soil cannot splash onto leaves from the soil.</td>
+              <td>Specific spraying regiments are found on the label. Labels for these products should be read carefully before applying.</td>
+            </tr>
+            <tr>
+              <td>Rotate to a non-Solanaceous crop for at least three years. The more potato-free years, the less infection.
+                If possible control wild population of Solanaceae. This will decrease the amount of inoculum to infect your plants.
+                Closely monitor field, especially in warm damp weather when it grows fastest, to reduce loss of crop and spray fungicide in time.
+                Plant resistant cultivars.</td>
+              <td>Quinone outside inhibitor (QoIs) fungicides e.g. azoxystrobin are used due to their broad-spectrum activity. </td>
+            </tr>
+            <tr>
+              <td>Increase air circulation in rows. Damp conditions allow for optimal growth of A. Solani and the disease spreads more rapidly. This can be achieved by planting farther apart or by trimming leaves.</td>
+              <td>However, decreased fungicide sensitivity has been observed in A. solanidue to a F129L (Phenylalanine (F) changed to Leucine at position 129) amino acid substitution.</td>
+            </tr>
+          </table></br></br>
+        <b><h1 class="iden">Caused By:</h1></b>
+          <p class="para">Early blight, caused by Alternaria solani, is a common fungal disease of tomatoes grown in fields, greenhouses, and high tunnels. In warm, rainy and wet weather, epidemics of this disease can cause severe defoliation, yield loss, and poor fruit quality. The fungus also infects potato.</p>
+        </br></br>
+      <b><h1 class="iden">Historical Impact:</h1></b>
+          <p class="para">Though the causal pathogen is distributed worldwide and can cause crop yield reductions, early blight has never caused widespread famine or other sudden and major detrimental effects on humanity. The disease is not to be confused with late blight, which is caused by the oomycete Phytophthora infestans. Late blight disease together with the socio-economic situation at the time was responsible for the Great Famine of Ireland in the 1840s.
+          </p></br>
+          <p class="imp">It's important to monitor your tomato plants regularly and take action at the first sign of disease. By implementing these preventive measures and promptly treating any infections, you can help manage tomato early blight and minimize its impact on your crop.</p>
+    </div> 
+
+
+
+
+</body>
+</html>

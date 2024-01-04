@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Rice BrownSpot</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Rice BrownSpot</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para"><li>
+        1)Brown Spot is called as sesame leaf spot or Helminthosporiose or fungal blight
+      </li><li>2)The fungus attacks the crop from seedling in nursery to milk stage in main field.
+      </li><li>3)The disease appears first as minute brown dots, later becoming cylindrical or oval to circular.(resemble sesame seed)
+      </li><li>4)Spots measures 0.5 to 2.0mm in breadth - coalesce to form large patches.
+</li><li>5)Then several spots coalesce and the leaf dries up.
+</li><li>6)Infection also occurs on panicle, neck with brown colour appearance
+</li><li>7)Seeds also infected (black or brown spots on glumes spots are covered by olivaceous velvety growth)
+</li><li>8)The seedlings die and affected nurseries can be often recognized from a distance by their brownish scorched appearance.
+</li><li>9)Dark brown or black spots also appear on glumes.
+</li><li>10)The infection of the seed causes failure of seed germination, seedling mortality and reduces the grain quality and weight.
+</li><li>11)50% yield reduction in severe cases .
+</li>
+      </ul>  
+
+
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para"></p>
+        <p class="imp"><b>Note:</b>The Scientific Name is<i><b></b></i>
+        <br>  <b>Brown Spot: Helminthosporium oryzae—FUNGAL DISEASE. (Syn: Drechslera oryzae) (Sexual stage : Cochliobolus miyabeanus)
+          </b><br>
+          Mode of spread and survival
+          <br><b>
+          ->The infected seeds are the most common source of primary infection.
+          </b>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para">
+          <br>Seed treatment with Pseudomonas fluorescens @ 10g/kg of seed followed by seedling dip @ of 2.5 kg or products/ha dissolved in 100 litres and dipping for 30 minutes.
+<br>seed soak / seed treatment with Captan or  Thiram at 2.0g /kg of seed
+<br>Seed treatment with Agrosan or Ceresan 2.5 g/kg seed to ward off seedling blight stage;
+<br>Since the fungus is seed transmitted, a hot water seed treatment (53-54°C) for 10-12 minutes may be effective before sowing. This treatment controls primary infection at the seedling stage. Presoaking the seed in cold water for 8 hours increases effectivity of the treatment.
+<br>
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>As disease is seed borne,Use disease free seeds.</td>
+              <td>seed soak / seed treatment with Captan or  Thiram at 2.0g /kg of seed
+              </td>
+            </tr>
+            <tr>
+              <td>Removal of alternate & collateral hosts.
+              </td>
+              <td>Spray Mancozeb (2.0g/lit) or Edifenphos (1ml/lit) - 2 to 3 times at 10 - 15 day intervals.
+              </td>
+            </tr>
+            <tr>
+              <td>The use of resistant varieties is the most economical means of control.
+              </td>
+              <td>Spray preferably during early hours or afternoon at flowering and post - flowering stages.
+              </td>
+            </tr>
+            <tr>
+              <td>Growing Resistant varieties like ADT 44,PY 4,CORH 1,CO 44,CAUVERY,BHAVANI,TPS 4 and Dhanu.
+              </td>
+              <td>Seed treatment with Agrosan or Ceresan 2.5 g/kg seed to ward off seedling blight stage; Spraying copper fungicides to control secondary spread;
+              </td>
+            </tr>
+            <tr>
+              <td>Providing proper nutrition for optimum plant growth and prevention of water stress seem to be the most important factors in controlling brown spot.
+              </td>
+              <td>Grisepfulvin, nystatin, aureofungin, and similar antibiotics have been found effective in preventing primary seedling infection...
+              </td>
+            </tr>
+            <tr>
+              <td>The disease is rarely observed in normally fertile rice soils.
+              </td>
+              <td>Seed treatment with captan, thiram, chitosan, carbendazim, or mancozeb has been found to reduce seedling infection. Seed treatment with tricyclazole followed by spraying of mancozeb + tricyclazole at tillering and late booting stages gave good control of the disease. Application of edifenphos, chitosan, iprodione, or carbendazim in the field is also advisable.
+              </td>
+            </tr>
+            <tr>
+              <td>Soils known to be low in plant-available silicon should be amended with calcium silicate slag before planting and the field should be well irrigated to avoid water stress.
+              </td>
+            </tr>
+          </table></br></br>
+          <p class="imp">"Regular monitoring of rice fields, adherence to recommended management practices, and adjusting strategies based on local conditions are crucial for effectively managing brown spot disease. Consult with local agricultural authorities or extension services for specific recommendations and guidelines for brown spot disease management in your region.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

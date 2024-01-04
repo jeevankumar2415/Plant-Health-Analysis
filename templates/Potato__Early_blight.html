@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Potato Early Blight</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Potato Early Blight</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+<b>      Potato Early Blight Disease typically manifests in the following ways:
+</b><br>
+      <ul class="para">
+        <li><b>
+        Leaf Symptoms:</b> The most noticeable symptoms appear on the leaves. They include small, dark brown to black circular lesions with a series of concentric rings, giving them a target-like appearance. These lesions often have a yellow halo surrounding them.
+        </li><li><b>
+        Leaf Yellowing:</b> As the disease progresses, the infected leaves turn yellow and wilt. In severe cases, the entire leaf can become necrotic and die, leading to defoliation.
+      </li><li><b>
+        Stem and Tuber Symptoms:</b> In some instances, Early Blight can affect the stems and tubers, leading to stem cankers and shallow, corky lesions on the potato skin. However, leaf symptoms are more common and severe.
+      </li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://images.ctfassets.net/l2hapltrg3cz/32lFKOCYJtoBvt5LgoAHPz/9606e6c4529327971a84824f3e8fc52f/early-blight-potatoes.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Potato Early Blight Disease, caused by the fungal pathogen Alternaria solani, is a common and destructive disease affecting potato plants (Solanum tuberosum). It primarily affects the leaves of the plant, leading to reduced potato yields and quality. Here's more information about Potato Early Blight Disease:
+        </p>
+        <p class="imp"><b>Note:</b>The Scientific Name Of Potato Early Blight Disease is <i><b> Alternaria solani</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para">        <b>  Managing Potato Early Blight Disease involves a combination of cultural, biological, and chemical control methods:
+        </p></b>
+        <p class="para"><br><b>
+Crop Rotation:</b> Avoid planting potatoes in the same location for consecutive growing seasons to reduce the buildup of the pathogen in the soil.
+<br><b>
+Resistant Varieties:</b> Some potato varieties are less susceptible to Early Blight; consider planting these if the disease is a recurring issue.
+<br><b>
+Sanitation:</b> Clean and disinfect tools and equipment regularly to prevent the spread of the fungus.
+<br><b>
+Proper Spacing:</b> Adequate spacing between potato plants helps improve air circulation, reducing humidity and the likelihood of disease spread.
+<br><b>
+Fungicides:</b> Fungicides containing active ingredients like chlorothalonil or mancozeb can be applied preventatively to protect plants from infection. Follow recommended application schedules.
+<br><b>
+Foliar Removal:</b> Pruning and removing infected leaves early in the season can help slow the spread of the disease.
+<br><b>
+Nutrient Management:</b> Proper fertilization practices can improve the plant's overall health and ability to resist infection.
+<br><b>
+Mulching:</b> Applying organic mulch around the base of potato plants can help reduce soil splashing onto leaves, potentially lowering the risk of infection.
+<br><b>
+Disease Monitoring:</b> Regularly inspect your potato crop for signs of Early Blight and take action promptly if the disease is detected.
+<br>
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Cultural Practices:</b> Implement proper crop rotation and maintain good spacing between plants to promote air circulation and reduce humidity, which can help prevent disease development.
+              </td>
+              <td><b>Fungicides:</b> Apply fungicides containing active ingredients such as chlorothalonil, mancozeb, or azoxystrobin. These can help protect the plants from infection. Follow the recommended application schedule and adhere to safety precautions.
+              </td>
+            </tr>
+            <tr>
+              <td><b>
+                Resistant Varieties:</b> Choose potato varieties that have demonstrated resistance or tolerance to Early Blight Disease.
+                </td>
+              <td><b>Systemic Fungicides:</b> Some systemic fungicides can be absorbed by the plant and provide protection from within.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Sanitation:</b> Keep the growing area free from debris and infected plant material to reduce the source of inoculum.
+              </td>
+              <td><b>Protectant Fungicides:</b> These create a barrier on the plant surface, preventing the pathogen from infecting the plant.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological Control:</b> Use biocontrol agents, such as beneficial fungi or bacteria, that can suppress the growth of the Early Blight pathogen.
+              </td>
+              <td><b>Fungicide Rotation:</b> To reduce the risk of developing resistance, rotate between different classes of fungicides with different modes of action.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Organic Fungicides:</b> Some organic fungicides, like those containing copper or sulfur, can provide limited control of the disease. Apply these as a preventive measure and follow recommended guidelines.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Foliar Sprays:</b> Use organic solutions like neem oil or garlic-based sprays, which are known for their antifungal properties.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Nutrient Management:</b> Maintain balanced fertilization to promote healthy plant growth, as healthier plants are often more resistant to diseases.
+              </td>
+            </tr>
+          </table></br></br>
+        <b><h1 class="iden">Spread:</h1></b>
+          <p class="para">Early Blight is spread through spores produced by the fungus. These spores can be splashed onto plants by rain, carried by wind, or transferred via contaminated tools and equipment. The fungus can also overwinter on infected plant debris in the soil, contributing to its persistence from one growing season to the next.
+          </p>
+</br>
+          <p class="imp">"Integrated disease management, combining multiple strategies, is often the most effective approach to controlling Potato Early Blight Disease. It's essential to adapt these strategies based on local conditions and consult with agricultural experts or extension services for the most up-to-date recommendations and control measures.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

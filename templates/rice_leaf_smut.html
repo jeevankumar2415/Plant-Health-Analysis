@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Rice Leaf Smut</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Rice Leaf Smut</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+        <li><b>Symptoms:</b> The primary symptom of Rice Leaf Smut is the presence of smut balls or false smut structures within the rice panicles. These structures start as small, greenish-white masses but progressively enlarge and turn dark brown or black. The smut balls replace the rice grains and can vary in size and shape.
+        </li>
+        <li><b>
+        Disease development:</b> Rice Leaf Smut initially infects the young panicles during the booting stage or soon after flowering. The pathogen colonizes the rice flowers and develops within the ovaries, resulting in the formation of smut balls.
+      </li>
+      <li><b>
+        Impact on yield:</b> Rice Leaf Smut can cause yield losses by reducing grain quality and quantity. The smut balls replace the normal grains, leading to a decrease in market value and overall crop productivity.
+      </li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://cdn.mos.cms.futurecdn.net/BPUBYu5qqAbLS2e8KjjvXm.jpg" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,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" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="https://bugwoodcloud.org/images/3072x2048/5356989.jpg" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Rice Leaf Smut, also known as False Smut or Ustilaginoidea virens, is a fungal disease that affects rice plants. It is characterized by the formation of smut balls or spore-filled structures within the rice panicles. These smut balls are initially greenish-white but turn dark brown or black as they mature. Rice Leaf Smut can cause significant yield losses if left unmanaged.
+        </p>
+        <p class="imp"><b>Note:</b>The Scientific Name Of Rice Leaf Smut Disease is<i><b>Ustilaginoidea virens</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"><b>Managing Rice Leaf Smut involves a combination of cultural, genetic, and chemical control measures. Here are some strategies:
+        </p></b>
+        <p class="para">
+ <br><b>         Resistant varieties:</b> Planting rice varieties with genetic resistance to Rice Leaf Smut is an effective strategy. Resistant cultivars can significantly reduce the incidence and severity of the disease. Consult with local agricultural extension services or breeders for information on resistant rice varieties suitable for your region.
+  <br><b>Field sanitation:</b> Practice good field hygiene by removing and destroying infected panicles or smut balls to reduce the inoculum source. Proper disposal of crop residues is important to minimize the carryover of the pathogen.
+    <br><b>Seed treatment:</b> Treating rice seeds with fungicides or hot water treatment can help reduce the transmission of Rice Leaf Smut through infected seeds. Follow recommended seed treatment protocols for your specific region.
+
+      <br><b>Fungicide applications:</b> Fungicides can be used to manage Rice Leaf Smut, particularly during periods of high disease pressure. Fungicides like triazoles or strobilurins may be effective against the disease. Consult with local agricultural experts or extension services for specific fungicide recommendations and application guidelines.
+
+        <br><b>Crop rotation:</b> Rotate rice with non-host crops to break the disease cycle and reduce inoculum buildup.
+
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Crop rotation:</b> Rotate rice with non-host crops, such as legumes or grasses, to break the disease cycle and reduce the buildup of the pathogen in the soil.
+              </td>
+              <td><b>Triazoles:</b> Fungicides from the triazole group, such as tebuconazole, propiconazole, and difenoconazole, have shown efficacy against Rice Leaf Smut. These fungicides can be applied as foliar sprays during the booting stage or soon after flowering.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Sanitation:</b> Practice good field hygiene by removing and destroying infected panicles or smut balls. Proper disposal of crop residues helps minimize the source of inoculum.
+              </td>
+              <td><b>Strobilurins:</b> Fungicides belonging to the strobilurin group, such as azoxystrobin and pyraclostrobin, can also provide control of Rice Leaf Smut. These fungicides have both protective and curative properties and can be applied as foliar sprays.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Seed selection:</b> Use certified disease-free seeds from reliable sources to reduce the chances of introducing the pathogen into the field. Avoid saving and replanting seeds from infected plants.
+              </td>
+              <td><b>Carbendazim:</b> Carbendazim is another fungicide that can be used for Rice Leaf Smut control. It is a systemic fungicide and can be applied as a foliar spray or incorporated into the soil.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological control agents:</b> Explore the use of biological control agents, such as beneficial microorganisms and antagonistic fungi, to suppress the growth and spread of the Rice Leaf Smut pathogen. Consult with agricultural experts or researchers for information on effective biological control options.
+              </td>
+              <td><b>Mixtures and formulations:</b> Some fungicides are available as mixtures or formulated products that combine different active ingredients for broader spectrum control and improved efficacy against Rice Leaf Smut.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Organic amendments:</b> Incorporate organic matter, such as well-composted manure or compost, into the soil to improve soil health and enhance the plant's natural defense mechanisms against diseases.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Nutrient management:</b> Maintain balanced soil fertility and provide adequate nutrition to the rice plants. Proper nutrient management helps promote plant vigor and resilience against diseases.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural practices:</b> Implement practices that promote good airflow and reduce excessive humidity, such as proper spacing between plants, avoiding excessive nitrogen fertilization, and ensuring adequate drainage in the field.
+              </td>
+            </tr>
+<tr>
+  <td><b>Resistant varieties:</b> Select rice varieties that are known to exhibit resistance or tolerance to Rice Leaf Smut. Consult with local agricultural extension services or breeders for information on resistant rice varieties suitable for your region.
+  </td>
+  <td></td>
+</tr>
+
+          </table></br></br>
+        <b><h1 class="iden">Caused By:</h1></b>
+          <p class="para">Leaf smut, caused by the fungus Entyloma oryzae, is a widely distributed, but somewhat minor, disease of rice.
+          </p>
+        </br></br>
+          <p class="imp">"Regular monitoring of rice fields, adherence to recommended management practices, and early intervention are crucial for effectively managing Rice Leaf Smut. Consult with local agricultural authorities or extension services for specific recommendations and guidelines for disease management in your region.
+            "</p>
+    </div> 
+
+
+
+
+</body>
+</html>

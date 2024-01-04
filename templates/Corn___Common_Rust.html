@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Corn Common Rust</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Corn Common Rust</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+      <ul class="para">
+         <li>Common rust produces rust-colored to dark brown, elongated pustules on both leaf surfaces. The pustules contain rust spores (urediniospores) that are cinnamon brown in color. Pustules darken as they age. Leaves, as well as sheaths, can be infected. Under severe conditions leaf chlorosis and death may occur. Common rust can be differentiated from Southern rust by the brown pustules occurring on both top and bottom leaf surfaces with common rust.</li>
+      </ul>  
+
+
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://cropprotectionnetwork.org/image?s=%2Fimg%2Fhttp%2Fgeneral%2FCommon-rust_Early-symptoms_Wise.jpg%2Fda32af85ff3993245a751ce1278e484c.jpg&h=256&w=227&fit=cover" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://cropprotectionnetwork.org/image?s=%2Fimg%2Fhttp%2Fgeneral%2FCommon-rust-Adam-Sisson-9-close-up-1643298849.jpg%2F2f69973f215a00ef4908bf8abf6e448f.jpg&h=256&w=227&fit=cover" alt="disease image" style="width:100%">
+            
+            
+        </div>
+          <div class="column">
+            <img  src="https://cropprotectionnetwork.org/image?s=%2Fimg%2Fhttp%2Fgeneral%2FCommon-rust-Adam-Sisson-20.jpg%2Ff3185d56369fb530b0f9a797f44eea31.jpg&h=256&w=227&fit=cover" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Common rust is caused by the fungus Puccinia sorghi and occurs every growing season. It is seldom a concern in hybrid corn. Rust pustules usually first appear in late June. Early symptoms of common rust are chlorotic flecks on the leaf surface. These soon develop into powdery, brick-red pustules as the spores break through the leaf surface. Pustules are oval or elongated, about 1/8 inch long, and scattered sparsely or clustered together. The leaf tissue around the pustules may become yellow or die, leaving lesions of dead tissue. The lesions sometimes form a band across the leaf and entire leaves will die if severely infected. As the pustules age, the red spores turn black, so the pustules appear black, and continue to erupt through the leaf surface. Husks, leaf sheaths, and stalks also may be infected.
+        </p>
+       
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <p class="para"></p>
+        <p class="para"><br><b>
+          Genetic Resistance</b><br>
+Corteva Agriscience researchers screen hybrids and parent lines for resistance and provide ratings for customers.
+<br> hybrids are rated from “3” to “6” on a scale of 1 to 9 (9=resistant), indicating there are clear differences between hybrids, but complete resistance is not available.
+<br>Growers should choose hybrids with a “5” or “6” rating in areas that frequently experience common rust.
+<br>Scout corn to detect common rust early.
+<br>Monitor disease development, crop growth stage, and weather forecast.
+<br><b> Apply a foliar fungicide if:</b>
+<br>Rust is spreading rapidly or likely to spread and yield may be affected.
+<br>Disease exceeds threshold established by your state extension plant pathologist.
+<br>Disease is wind-borne and does not overwinter in crop residue; therefore, rotation and tillage are not effective for reducing disease severity.
+      </p>
+          <br>
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td>Resistant varieties: Planting corn varieties resistant to common rust is the most effective organic control method.
+              </td>
+              <td>Fungicides: Several fungicides are effective against common rust, including strobilurins, triazoles, and benzimidazoles.
+              </td>
+            </tr>
+            <tr>
+              <td>Crop rotation: Avoid planting corn in the same field year after year, as this can increase the build-up of fungal spores in the soil.
+              </td>
+              <td>Application timing: Apply fungicides early in the disease cycle, when lesions are first starting to appear.
+              </td>
+            </tr>
+            <tr>
+              <td>Sanitation: Remove and destroy infected plant debris after harvest to reduce the number of overwintering spores.
+              </td>
+              <td>Spray coverage: Make sure to thoroughly cover all plant surfaces with the fungicide spray.
+              </td>
+            </tr>
+            <tr>
+              <td>Planting practices: Plant corn with good air circulation to help dry leaves and reduce humidity, which can favor fungal growth.
+              </td>
+              <td>Follow label instructions: Always read and follow the label instructions on the fungicide product carefully.
+              </td>
+            </tr>
+            <tr>
+              <td>Soil health: Maintain healthy soil with good drainage and organic matter content, as this can promote plant growth and resistance to disease.
+              </td>
+            </tr>
+            <tr>
+              <td>Foliar sprays: Apply organic fungicides such as neem oil, potassium bicarbonate, or hydrogen peroxide. These sprays can help suppress fungal growth but may not be as effective as conventional fungicides.
+              </td>
+            </tr>
+          </table></br></br>
+        
+          <p class="imp">Monitor your corn plants regularly for signs of common rust.Scout for fungal spores in the air, especially in warm, humid weather.Be aware of the economic threshold for your corn crop, which is the level of disease at which the cost of control measures outweighs the potential losses in yield.
+          </p>
+    </div> 
+
+
+
+
+</body>
+</html>

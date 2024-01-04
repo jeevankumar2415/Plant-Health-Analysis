@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <style>
+    .title1 {
+        background-color: #53c17e;
+        padding:10px;
+        text-align: center;
+        
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    .description {
+      background-color: lightyellow;
+      color: black;
+      padding: 5px;
+      font-family: cursive;
+      
+      
+      text-align: center;
+    }
+    .selection {
+      background-color: wheat;
+      padding: 5px;    
+    }
+    .para{
+      font-size: 20px;
+    }
+    .iden{
+      font-size: x-large;
+    }
+    .imp{
+      font-family: cursive;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 2px solid white;
+    }
+
+    tr:hover {background-color: #ECFFDC		;}
+    .center {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+    }
+    * {
+       box-sizing: border-box;
+    }
+
+    .column {
+       float: left;
+       width: 33.33%;
+       padding: 5px;
+    }
+
+/* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    body{
+      background-color: #53c17e	;
+    }
+  </style>
+</head>
+<body><div class="header">
+  <h1 style="color:white;">Plant Disease Detector</h1>
+  <p class="header-text">Detect and diagnose diseases in plants</p>
+</div>
+    <div class="description">
+      <p>Detected disease is <q>Potato Late Blight</q></p>
+    </div></center>
+    <div class="selection">
+      <center>
+      <h1>Potato Late Blight</h1>
+    </center>
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Identification:</h1>
+<b>      Late Blight can progress rapidly and cause severe damage to potato plants. Symptoms include:
+<br></b>
+      <ul class="para">
+
+        <li><b>Leaf Lesions:</b> Irregularly shaped, water-soaked lesions that are initially dark green and oily in appearance develop on the leaves. These lesions can expand and turn brown, often with a pale green halo.
+        </li><li><b>
+        White Fungal Growth:</b> Under high humidity or moist conditions, a white, fuzzy, downy growth can be observed on the underside of infected leaves. This growth is the reproductive stage of the pathogen and contains spores.
+      </li><li><b>
+        Lesion Expansion:</b> As the disease advances, the lesions expand and become necrotic, leading to tissue death.
+      </li><li><b>
+        Stem and Tuber Symptoms:</b> Late Blight can also affect the stems, leading to dark lesions and rot. Infected tubers can develop dark, irregular spots on their skin. If left in the ground, the tubers can rot.
+      </li><li><b>
+        Rapid Spread:</b> Late Blight can spread quickly, especially during wet and humid conditions. Wind and rain can carry spores to new plants and fields.
+      </li>
+      </ul>  
+
+
+        
+      <h1 class="iden" style="font-size: 40px; line-height:40px; color:#A52A2A">Sample Images:</h1>
+        
+        <div class="row">
+          <div class="column">
+            <img  src="https://images.indianexpress.com/2019/12/potatao-blight-759.jpg?w=414" alt="disease image" style="width:100%">
+            
+          </div>
+          <div class="column">
+            <img  src="https://www.apsnet.org/edcenter/disandpath/oomycete/pdlessons/Article%20Images/LateBlight03.jpg" alt="disease image" style="width:100%">
+            
+        </div>
+          <div class="column">
+            <img  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhUYGRgaHBwcGhocGhoaHxweHBoaGRoaGhgcIS4lHB4rIRgcJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHzQrJSs0NDQ2NjQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAMIBAwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAACBQEGB//EADoQAAEDAgQDBgUEAQMEAwAAAAEAAhEDIQQSMUFRYXEFIoGRofATMrHB0QZCUuHxFGLCFYKy0iNykv/EABkBAAMBAQEAAAAAAAAAAAAAAAECAwAEBf/EACcRAAICAgIBBAICAwAAAAAAAAABAhEhMQMSQRMiMlFhcUKxFFKB/9oADAMBAAIRAxEAPwDXzACDohvbLYk+G6u0wI8jwCBVdJtwXNJdsHn1YrUYBYWVSzjZFc0z7K44cTKRRFooHlvAgoJfyn1RywAi17KPf5o0kEV+GSeA5/jVVfh2kwZNjYW9dYRtvqu02xfdZpPBhfBuh+RzQBcQNNLXN+Car1QDlIgOAiIFwdNOIS9aQ9h8T4Ee/FOdsUIZmF8p8b3+6ko5RaKukwLHkc0VlSfwsyh2hFnXHEJ1mJYbgiPfqqSfXYsoSjtDrHlswbR6cFndrdoFrcjSJcDJ4A7JxtNzhYwDoTeeg3SruymF3fe53SylGScrlr+zcfVSuXgwqPdMo78XNlrf9Iok2c/zH4XT2FSOjn+Y/Cu+WJ1+vExBe60ML2q5vdd3hwP2KYHYrY7tTzH4StTseo24hwnY38ii5QkqYHKE1Vmg3HMvLo2vrHPZNMxbCIDgeF+S8tinR3SCDwKGydkkeFrKZP8Ax01s9hiKwYzOZgRpfUgR68UVtQEBwuDfz3Xk3OdEFziOBJjyTOF7VNNgaGzEzfiZVOsoo0uBqONnqm1YMjT00SlftVjDlceaxmdtuNg0DnMoWJw5eZJud0EnL5YFjwu/cNY/9SOLSGN8T+F5ytXc8kuMkrXrYQBqxnEAp1FLR0QjFaIxWY5DzKhenKDbmyELD4p7DE91WpVFR5krSSewNJ7NWjimOF9Uk29QZRIlI5b6rb7Dphxg7JJPrGycvamPf6VvBRa3wAok9Q5+7GGtnoPx/SDVgmRpp4jVV7VxWRkNsXafT8rAw2NNNxIuD8w48+qGZW0CPE5RbRtPjiqsYSb9UBnaLHb5Twdb10TLH7ggz7sk71slKMo7RWrr9EEDUotUSqEAaugc1nJJAKZb9FHvvA33Ow3KDVxzGgwcx5flLUcUXmSsoyksFYcMpfgs8EuABOsSeesAaL0OLo56YtctHmLff0XmMRUOYakcvtzXsqLMzOjnDwKWUHFbKODhVs8FEa6rS7LwwjO4A/xB85KvjMLlr3HdJzDnvCar1c+UQE0+RukvI3Ny4SXkMKxJk+CqTLrIdtLBEawgm0yBEX1E6pIxORBhDdBfihwSC68BcNN/AiffgiZSLEwOA+qbqGgfxjrMclai86kkBWaGi4AJ53Ks541LAPC6RxRqJVYx4yvbI1Fr+B1CSd2Ow/I4g8HaeeybOI1gWU+K4xAKKco/FjxnKOmY+Owr2fM3odj4rLcwkwAvWNeSCHAEbg3UZgGTLbHgfsVWPNfy2Xjz4ysmLgey3albdDAQm2NgIjVTeyUpybFqmADhCxe0OwrSF6WVwhFBjNo+dV6BYYKExkr0/wCoMFbMAvNU9U51wl2VnQYXcu6s90qzVhhGrMr1H6fZDZ3WFRph74XrexcHlEISj2JcqtUGdiCNlFoHCBRH04kukTzOPe5zszj/AEkntWo+i5/yjx2HipSwrG/N3j6eSk5RiqKvkjBUZ9HCOfpYDUnQJ3DdlsbcucTyOUel/VOB+axMRpAjy4LoYAdSpNuX4OafPKWsIIzD90uAkCJlx32HNDGFY85cmZ3Ug+anw+BI/KO4d1pLBAsHCQSbm53QXHWUTTd2jKxPZMg5HeDreqzqdNzHZXAg8PeoXpWETOvKSl8XhQ8Xs5uh26HkqRk1s6OPnaxIQpYcvc0DiPrqvZ0+608yXRy3jwWN2NhNibm9tAOvE6LSq45gqBlp4cAREJOSXZ4DOXd48Ae0KDXsJZcg3E3n8/lYpY6dMkWuL+Wp6qYvFvoVczdwMw2MS3wNtVrDJXAe0lpOnAn+J4HkkUdSJThhSM6lTbrqeJv5JgSLkW9+SqWFhM2cPLqFzO4iIgG5nly807t6J0CdUc4322VvicD5+/cK7aAO5jUx7srMpMFi3jxTdTUBDp3/ALXAHOIE+/um302gDutjouhzeAjgg4owP4eSAW6jxV6dUNM3Jg257K1Rjdb9ZKj8OYzNIvxN7R+VqD+gdjd2vJEZTDdNJ99UNwvYxbeN9bBRlM8TPRI4pgY6rwl6TyNY5fiU02FWEvDCslAuwukhczKoTtTCh7SF4vtjsp1MkjRe4w9SCsb9T4tpERdMtFuKTTo8ZRbJutGphIbZJaJuniiW5VsnS78CFPuungV7Dsh7nQdAksJ2IXDNCJiMaKIiLoNvwTk1LR6aWri8HU/UFSTEKJakbozac/MInw0XGADkOkqpE7e+qIAIEnwXOkjgKuaI4IjWDIHZpJPywfOV1gZBkSbZb77yN10PuJT4CqRxjbHumbRp4yFYNfEZhGvioLn+1eoZNh5aI2jWUOHvBJaTy21m6s1gFnOLuUBWzE6km0a7cOimHo5nhlxNyeQ/P3WbD+jS+MynSL73EidY0aOUkryeFru+KHEyXEyebpH3Wr+ocVIDeLtOTALebh5LzrqhBBFiCtCNxb+zs4orpf2bn6hGZmfo4cg4X9Qh9gGGPzTDnDKIOwIJHmB4JprRVZkOneb6hw9CnHhrAGt2EAeClGVrqc8uT29TtPFwBmaHNbqTdw/MLuJY2zmvaQ64P1QsOyWi0z6qj2ZOJDpt5aeeqdYwhU/DDUWCb9AV2qzLvbY/RUFMfMJI9RyPAoNWpfW3BF2mZqgoqc7dPsuZr2I1MdEFrCbhpga6x56cUR+GfE5Tl8PytTaBTC03t0Ou0acgUwWZvlA2ERF529AlKdHMDM5jbY2AnY3FkRuNc3YDwiekaJaYTlVv8mkc435HjyQ2Bw5jkYTdDEtMkgQPmOs+CIWCS5oBtuIA330t1+6DQKAU2Oc2czQOE348FZlXQEeIMqr2gyQ3LOmt/H3qgAnf6pXa0Z4HoXIVGOBFjpbj6ojV0Ql2VmOhea/UNQErcxuJDGleMxmIL3E7J0X4Y27APCvhB32zxVhBCBpomOpn0vB1Gtp+C8T+o8Q0vsg/9YeGZVl16hNysicY0yyiDmUTFD2bqjYgf5VddL7QBrPDdRzRmEHMIEkW11F10gAyNCbaT4rjSs8yjrdSCIjz8lCAVZlL+RI+qvDdm6bm/wBUyQCjZ26WEogY4aD7Iz3jQQbCTERuRqhueQfumwM1RUsdyjr907THw2zq9wvyA298uCTYM72t21PQI5cHOOw05QLCOSSWcGAPwzHtymev3lYHaGFNJzSQS0mx2nhyXpGCCR5K+IoMewsdo61v2nYg+RSyUoq0wxnKKpMS7EecjnSD3o4CYuRx2T2xdxWN2JVDGvpOsWuM9Qcro5WWs98iM1ve6TjkkKw2BacvhblGyFXeJFzIg9NiJ2XaT8rDa948Zj6pOubgDbU694xN+keapBNyZXijbG61ZtyIHLUGI14a/XqqVAIzNAjccDG6Rpvggm6eq4lkAjUiC0WzCdzxsY6K3U6JwTWDtLEQDGpsd58Ew/HOyZDpbbh79FmkEDM0S3WQNOM8I96qj8TznkNuqm7ujnUJaQ8ytlJy7gA8efoVf9pg3iVlvrZgDN9tZ9UxRDi0+Vz52GqFtMDhJeBimGu2E+XqEV1dzBDYgQL3jmEg2o4HQg6o7Kxm9+J21j7hC/sGhx9Co7vFwNp362HvZCAkanNuD9iFfBVS020vI6/a2ilRwJkCOK3VmZWm8B0XE6g/VDxGMDJnVGeSYJ02WP8AqKncOG4BPqPstBVKgwinKmZvaPaBeYGizyVMwhVhdSVHdGKSpHA9czXVqNPvAcVs47ANDJCKQbMZ7xCUfdFezdCaboGB5ComJUTGo9Wxk7phjQ0Wk69f6Q2b+gC48kWII3vIsffouS0tHlhWGZlcJnQc/coIeA21yZk8VX4s/la7MM1ZH1HmoX+yhB9hdEpNzQ0GSeu6I1DVKwLv5WGuguf88lVrvf1RHgTA0aI8rFDAuffNBasDLOZfr9lZjSOmy5VGh4ItJkgEHj4IPMQHnO1h8Kq99w3MCOeeHH6laVCqHDNM/wCJWV+qnl1RrT8oDD1JGXyEIeAxGVjsxNtfrtqoyTdNFJZqvo2W4iJB0doffT1QaFWRHOYmNL+I0SOM7QYW90yDYEIGGxPdLiCYB8brp4cqzo4VSN1tOwtd3qNvokK9JwloGvh71XOz8cXidMpjjFveqax1NpElxbA1mAOEnwNlU6EJ4XGvZ85JabEHQ3nxN9OqadUY28ANNw4ToRaRvYjxSmGa10tfqTIdHOxHDinamChhE59TBAsOm3FF0zNUKjGguu0m+sxbXmnKdaDILtALxFwshteHXb3uceUGxT+FcS7Mb210FtJlCkxWmaDHZgcxE/1aEJlIfmVRjzJJnNJtrJ2THw9+emt1OUVdHPyw8l8NUh3vTmmqw3CzyTMpnOYExHIykSaZGhhr7T+bIONoZ2CRx+v9orwCLe+XRHw5BaPFaPyRk6Z4HH4fI4hLtcvSfqPs8jvBeZAXSd0HaGafqi4jFvLcpKAzRc1RsYXdOiAdUeoboTmoGL5VF2VExj1DHX9wo/5i1pzcTEdUNjSRJ092R2tHguGK+zzEVbTBi5g2VnNaNAfE/iFGHpYyFHPkngfRUMHgCLDyH3TuD7oc6BGgsNSk2P5AcE0NAPE/ZbwNo7pI6obHXidSArg3QiyT5x78kGKwjzeEVrYN/HhpOqXLDl3jhzHPiku0MecuRvifqFNt31AZvbDxUeSBaAB0G/iZKTwf7gTIIjz9+iK47bqtMQSDuNeeyZrGCiFqVMDM1wsD7KZYyWwHs0Ig6bRtI3v08aVWm7h4qjHc/fQoRk4vZWMur2aNWuWBj3CLhlRxFiADDiRyt4halHB1KjM9MNOsgmJEWAkcd52XncG8tzXDmkCWPEi07i4tuF7bsDFNdSZk7vFszljVp46qilawyymqwYWJw72u7zcrxeZvB5jbZVqY5wBho4Fet7UwBewQQHag8OvLZeGxlPLIIjXM0xqNR4p4uykZ9kLuxLXkhwMgiBHrI0ELZwRZkc6LAc7cLLM7Npmo4uiBpJi8aGdzJWpVaLMZMEidv3CbnhyTPGTNjuGoj5jc7cAOIRH1JsBYGePjZLMql30gK7ahDsoAtFz9lCTzZyzn20dyy5FAAjVUc/j6f0rtM2BsUz/BJkLt/OOKcwpsNrn7JZ9PkZ9+aLWfkbfb6+/olhmYFsyf1Jj7ZV5R60O0K+d53SK6rO+EaiEY+yG9+6q4rjWWQHAvfKtTdcBT4ZXMsGUQDeRRCFQqI2Lk9PUcIge/BcYybmQB70UmCIHvmoTMjj71XGjz0HcwNvM6ckPI0XiZVmNJteBxV20zy1T5+gl6Lcxbw26JxzgShU2QCZ0sON+Ss4QdNkaM3g5x8EOk4X6fX/HqrudHkUNrgxsu/vkI42SSdCnamJDGXN9hOp28tV5+o0G5KZxFYuOY9AOH5KTqOmI+i0V5ewpYKOO/BKPeZ1TD3+SWqv1WlLwGy+GxN+uvJR5gwR4jgUlUdl6nVUbjJsb8OSm1aGSseY+N1pdhYnJXb34Y4kPB0uLOjYzHgSvOis4mAEajUeDMCx15haKayNFNM+tVHCBe23l9F5r9S9mkzUbeRDgBuYAdbkIRexMQ0MDHGZuzWBYujlvG0QtmWvDgYIIE8wduKvHDLdXHJ4/sXs7MQHksgWA1Nz4HSYW7jCA0RHKRrb35LEY5zKj6cuDWv7rt28OovHNa9StnYHFveIE7Qdyl5E1JPwGT8itMorImbcPG6WYD7+yM2wA63QZyhnODtPLRDLYKvltYxaFRtMnceJsI1J5JZSVILSdUM/GytDnftNp9AsPtXtIuBAKU7Z7RzuhtmNs0fVx5n8DZZdWvLYVuOFLOzphw1lmh2RUa6xiVbtSm0XCQwPZtR57gJdwH34Leofpio6PjVGt/2t77vMd0eZRbUXlhbUXbZ5suldpVNl7uh2BhmAf/ABZje73Ztf8AaIb6K1fs/DmxoM01AywBP7gbLeovoHrRPHNao6jZPdqYMUX5RMESAdRciJ301VcNTz8hpPPSAqKcat6KOS69jHIUXoW9gA379+n4US+rET1ohspMFNYWjbMeNgqBsRCapu7gPWVFKjiKPsZ2+vJdYPI+wiUWF2iM1mxCokzFGi3jPoo2b3kTa2lhqesq7ruPvRcAhBhslNgc8DjIHWO76wsftB5zwTa0Dw0C1DPr/hJdqU5bnAuLO0tJ15CTHipSVNMBlvfyQXu4qPfCC9yNhWijjPRLV3X4xw3XKtVKvep2NRStUXcNhi428SdAqZeKfwzO7eyaNeRlhFRTjewsOaO2nI9fZUIFm+KO02ho8UXo2aNnshzDDHuIc2MtyAeE8VsU3jK4tdncBORpAP8Ai68iwkOsL21K3X1DlnRw3H16rdnTHjyOqZzCVXvc9z8rc0ggXIG0mwLuNkyGwIzS3nPSL6AcOaTb2m6YexrucZT58fBMsr03izXA7XBB+kKfquRuzYPLcmEWm31RmFhES4Hfuj/2WTj+2BTOVlMO5vd/xaB9VqnJ4RNQlJ0jUB4wANyYA5krA7V7ZBBZTnL+52maNhwb9Uhie06lT53d3+Is3yGvUytLs39PvfD6ksZItEOdvYH5RG58FWPEo+6Ttl48cYZkzLweGfWdkY3MdeQHEnYL0mA/TDG3rOLzY5W91vQu+Y+ELbw1NtNmRjGtaBt93ak8yrhv7rIuUpfhCT5m/iWa0NGRjQxuzRYD8nmuZ44nmqPf799VUHxP0HNZRIlnNJ1N15ztftgtNSnTYXQ0te8kkCe66ANrxJO/n6g1ACIv9twsZ2CZh6VTI7K6oCA55zGf4tyjgXX4kJotIpxdbyeRw7HPytBOzZuQ0Tbw5L1uEwbWEMj5ROm558fyg9jYFtNgdEuIBceon0WphG/u/lfXy2ss/czcs7dBpH8fUKLsFRPgmeYwfabHGHHKeB08CtNhEcTFuC8VWYuYTtOpTcIdLf4nRF8flFZ8OcH0fCDuC0ceq66mRqlf0/2uyr3fledj9lp4luUydPutWCTi1szxxK4CuP6WVQVMQqyZ5aKtX5Xj/a7/AMSbeMKzDE8/P2Ul2jVytyz3nWjgNz9vPgpTapIK2YtUpSvUR8QYSFV0pZMbAtUeoWIjWJvD4F79BASWa6EWMMhalNnkFr4HsdjbuuVnYmmQ9wAtJVY35DdoEwSZKaZBj1QmM6pmIGgTPJnIjKcuT9CqCLJKnRkC+u3CVnUqrmGOGyMU7ZSMHJOjfr4TNcWPBKsJaY0KrR7U4ouIxTHAHcKXJxV7lsDjJbQya0SeS83jyXuJW1BdDWiSTAHGVqdm9kspuD3HO8aCO408Tu+OFgq8c11KQkoq2ZvY/wCng0MqVbuPeazYbgv4yBMaQbzK9KD/ACPUqr3kukmTqSq5ptvw97LbdsjKTk7ZYtBNhb7qVDt6aKB8CIhQvFhr6LbYpysbDRp2k+vP/CuzQXk+9SlWd57p9xsmmHY21PQpnkBVwvPDbisvtuoTkZE2LpvqTp5ALRrndZ9duZ7XC8hsEHgADfkfd1lSK8VJ2MBuVgbFyAEyzQIAb3uMTHojhvosiW2c+L7hRAOLHPyUR7BPG4uksisF6HFMWDi2wV0L6O6SsPgcQWkEGCNCvo9LEOfQY92rhfw3XyVjyCvqODfGGog65UksJnPyaIShvt78lZzhul8XXDG5j4Dib26Lmb8I51FydIM94AkmLQkcRUY45jBKyK+Je90uPgNByAT2HwlplMuP/Y6VwqPyZm4qk97jDbbKUuzYu/yWmxpBhGfTkIenFO27G9OEXbYvhmUhYATzTuSByWWMPD5Wo1pypJOP8SM1G/aFov1KxashxzWlN4moWCQlg/OA47GPwtGV4FSwRreJXIkwutYSYGqZZhyIEXTpYGWrONZCz+16eV4d/MSeR3H0K1MuxQcdQD266XHXcLRdSsfilUjJGimFwj6jwxgLj6AbknQDmUxQwbnuDGiSfQbk8gvU4DCNosysuSRncbF0af8A1AkwOapOdY8luTkUV+TvZ+DbRZlBzE/M/wD4t4N+vkE21vmUNh9L/wCFx7uOvFRUadnG227ZHO2PpdRjYJ6qxIAmbrpE3TtUjFi/bnPohZfH3orudGmiHXf3TEXn7zC0TI5QGVtr8bozjIk+wg0SIkK7TZYAtiGGQJMGfcps2EbcPuqfDJNrxf8AyUcPbEWLuJuBA+Ucfos2rCBqVGtbJ1OgiSem3ikn1S8yLDYD7ncpmtgXGXEuJ2lLf6WDqAd5+4Wz5A7K/He20C3IKK+U8CojZjExLVg9oMW3VqSs/F05C6GehQL9M9kivWAeQGNu7nyXucfWYCQIDAIE2EDRfMxUcx3dJHQxK2Mf2kaxDgIAFhM9Spcyk6SObkjbNmt2wwEhoLjx0H5Sdao55lx6AaDosjD53nutJWxSwr4uIQjGMc+R49IZFxZaWGxUCEo7CHWeqjqewK0uSIZcsWadJwJlHySsnDPLddFo08WJASpxemRklJ4YyMINSo8QmqmkpWCZkHrt5rSj4QnXwef7UxMOhFw92kDhPkmMbgQ5025XCGym5p0sNVHq0s7HWElQxgXhs5gSTpwCu55JS9J6u+rFhqqOTeBJXoI87bqPYYgbKlEDc3K0cEzM493utiTxJBgDibeCXQYYdnOyMPkY55jO8kDkwcOrgf8A8p1xgR4qtV94iBy0A5IT/fSEFl2wTl2lYVjtV0O25obBwKsAneABTl3kDkENs7Xn3opJy3J4LlMOI7okIthYVp9lDq0wRE6rpB8fdldoiCbAG5P0HE8gs8IyKt+UBQiBJJAOgAueY4DmfVdrvI+URG5gnwAsPVLvqkXmet/VD9A0ENSRpA4fck6n82hdougidEMVGuAj+50hXdACyVAHf9QIPePkk6mLZoW35brhJcAOG2nmgOAHGUzmbsX+M3g7zP4UQ8vJRDsvoFnmXKlTRRRdUj0jDxnzJzs7ZRRJPRDkPZYFggWCrW1XVFHwcbEnb9EpT+YKKKb2gIu/VFH2UUSvRvI5gHnIbnVP4r5Aoor8fx/4U/ijHxGpS9X5SookYqKNTOH0UUSxHltjDNQtWl8jPH/yKiiE/H7F8Ef8w8foqDdRRGQDtTQK7VFEzCy5PdHipgf3f930UUW8BDcP+1DxPzHlMcunBRRLLaM9Cg36lVf8vvioomehGLUPmKfwlwJvf7riiZBWhndqC3XxK6olYAiiiiYY/9k=" alt="Disease image" style="width:100%">
+            
+        </div>
+        </div>
+      </br>
+        <h1 class="iden" style="font-size: 40px;line-height:40px; color:#A52A2A">Description:</h1>
+        <p class="para">Potato Late Blight Disease, caused by the oomycete (water mold) pathogen Phytophthora infestans, is one of the most notorious and devastating diseases affecting potatoes (Solanum tuberosum) and tomatoes (Solanum lycopersicum). It gained historical significance due to its role in the Irish Potato Famine in the 1840s. Here's more information about Potato Late Blight Disease:
+        </p>
+        <p class="imp"><b>Note:</b>The Scientific Name of Potato Late Blight Disease is<i><b> Phytophthora infestans</b></i>
+        </p>
+      </br>
+        <center><b><u><h1 class="iden"style="font-size: 40px; color:#A52A2A">Preventive Measures</h1></b></u></center>
+        <b><p class="para">          Managing Potato Late Blight Disease requires a combination of preventive and control measures:
+        </p></b>
+        <p class="para"><br><b>
+          Resistant Varieties:</b> Plant potato varieties that are resistant to Late Blight if available.
+          <br><b>
+          Cultural Practices:</b> Space plants adequately to provide good air circulation and reduce humidity. Avoid overhead irrigation to prevent leaf wetness.
+          <br><b>
+          Fungicides:</b> Fungicides are often necessary to manage Late Blight. Apply fungicides preventively according to recommended schedules and adhere to guidelines for resistance management.
+          <br><b>
+          Monitoring:</b> Regularly inspect plants for symptoms. If Late Blight is detected, take immediate action to control its spread.
+          <br><b>
+          Timely Harvesting:</b> Harvest potatoes promptly if Late Blight is present in the field to prevent tuber infection.
+          <br><b>
+          Crop Rotation:</b> Avoid planting potatoes in the same location consecutively. Phytophthora infestans can survive in the soil and on plant debris.
+          <br><b>
+          Destroy Infected Debris:</b> Remove and destroy infected plant debris to reduce overwintering of the pathogen.
+          <br><b>
+          Weather Forecasting:</b> Utilize weather forecasts and disease prediction models to anticipate disease pressure and make informed decisions.
+          <br>
+          </p>
+          <center><b><u><h1 class="iden" style="font-size: 40px; color:#A52A2A">Management</h1></b></u></center>
+
+          <table>
+            <tr>
+              <th><u><b><h2>CULTURAL CONTROL</h2></u></b></th>
+              <th><u><b><h2>CHEMICAL CONTROL</h2></u></b></th>
+            </tr>
+            <tr>
+              <td><b>Resistant Varieties:</b> Plant potato varieties that are naturally resistant to Late Blight if available. Some heirloom varieties have shown resistance.
+              </td>
+              <td><b>Fungicides:</b> Several fungicides are available for chemical control of Late Blight. These include systemic and protectant fungicides. Apply them preventively and according to recommended schedules.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cultural Practices:</b> Space plants adequately to improve air circulation. Use drip irrigation instead of overhead watering to minimize leaf wetness.
+              </td>
+              <td><b>Phosphonate-Based Fungicides:</b> Certain phosphonate-based fungicides are effective against Late Blight and are used in integrated disease management.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Mulching:</b> Apply organic mulch to reduce soil splashing onto the lower leaves and to maintain consistent soil moisture.
+              </td>
+              <td><b>Mancozeb:</b> Mancozeb is a protectant fungicide often used to manage Late Blight. Rotate with other fungicides to prevent resistance development.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Copper-Based Fungicides:</b> Certain copper-based fungicides, approved for organic farming, can help suppress the disease. Apply these as a preventive measure.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Sulfur:</b> Sulfur-based products can also be used as a preventative measure to create an unfavorable environment for the pathogen.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Biological Control:</b> Use beneficial microorganisms or biofungicides that can antagonize the Late Blight pathogen.
+              </td>
+            </tr>
+            <tr>
+              <td><b>Plant Extracts:</b> Some plant extracts, such as neem oil, have been explored for their potential antifungal properties against Late Blight.
+              </td>
+            </tr>
+          </table></br></br>
+        <b><h1 class="iden">Spread:</h1></b>
+          <p class="para">The pathogen Phytophthora infestans spreads through spores that are produced on infected plant tissues, particularly during humid conditions. The spores can be transported by wind, water, and movement of infected plant material.
+          </p>
+        </br></br>
+          <p class="imp">"Due to the aggressive nature of Potato Late Blight Disease, timely management and a combination of strategies are crucial. Integrated disease management practices, including cultural practices, fungicide applications, and vigilant monitoring, can help reduce the impact of this devastating disease on potato crops."</p>
+    </div> 
+
+
+
+
+</body>
+</html>
