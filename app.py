@@ -5,7 +5,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 from tensorflow.keras.preprocessing import image
 from flask import Flask,render_template,request,redirect,url_for
-from asgiref.wsgi import WsgiToAsgi
+#from asgiref.wsgi import WsgiToAsgi
 import requests
 
 app = Flask(__name__, static_url_path='/uploads')
